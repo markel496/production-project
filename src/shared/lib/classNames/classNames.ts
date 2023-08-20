@@ -13,7 +13,7 @@ export function classNames(
     ...Object.entries(mods)
       .filter(([_, value]) => Boolean(value))
       .map(([className]) => className)
-  ].join(" ")
+  ].join(' ')
 }
 
 // classNames('class', {hovered: true,selected: false,someClass: true}, ['sad', 'asd'])

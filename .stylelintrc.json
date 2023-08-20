@@ -1,0 +1,15 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "string-quotes": "single",
+    "no-eol-whitespace": [
+      true,
+      {
+        "ignore": ["empty-lines"]
+      }
+    ],
+    "custom-property-empty-line-before": null,
+    "selector-class-pattern": null,
+    "length-zero-no-unit": null
+  }
+}

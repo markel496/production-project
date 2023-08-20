@@ -4,48 +4,49 @@ module.exports = {
     es2021: true
   },
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime"
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:i18next/recommended'
   ],
   overrides: [
     {
       env: {
         node: true
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: "script"
+        sourceType: 'script'
       }
     }
   ],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module"
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
-  plugins: ["@typescript-eslint", "react"],
+  plugins: ['@typescript-eslint', 'react', 'i18next'],
   settings: {
     react: {
-      version: "detect"
+      version: 'detect'
     }
   },
   rules: {
-    indent: ["error", 2],
-    "linebreak-style": ["error", "windows"],
-    quotes: ["error", "double"],
-    semi: ["error", "never"],
-    "react/no-deprecated": "off",
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
+    indent: ['error', 2],
+    'linebreak-style': ['error', 'windows'],
+    quotes: ['error', 'single'],
+    semi: ['error', 'never'],
+    'react/no-deprecated': 'off',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
       {
-        varsIgnorePattern: "^_+$",
-        argsIgnorePattern: "^_+$"
+        varsIgnorePattern: '^_+$',
+        argsIgnorePattern: '^_+$'
       }
     ],
-    "react/button-has-type": "error",
-    "@typescript-eslint/ban-ts-comment": "off"
+    'react/button-has-type': 'error',
+    '@typescript-eslint/ban-ts-comment': 'off'
   }
 }
