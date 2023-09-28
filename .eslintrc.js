@@ -3,7 +3,14 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:react/jsx-runtime', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:i18next/recommended',
+    'plugin:storybook/recommended'
+  ],
   overrides: [
     {
       env: {
@@ -28,7 +35,10 @@ module.exports = {
   },
   rules: {
     indent: ['error', 2],
-    'linebreak-style': ['error', 'windows'],
+    'linebreak-style': [
+      'error',
+      process.platform === 'win32' ? 'windows' : 'unix'
+    ],
     quotes: ['error', 'single'],
     semi: ['error', 'never'],
     'react/no-deprecated': 'off',
