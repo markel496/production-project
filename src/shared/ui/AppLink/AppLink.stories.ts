@@ -25,10 +25,10 @@ export const Primary: Story = {
   }
 }
 
-export const Secondary: Story = {
+export const Inverted: Story = {
   args: {
     children: 'Text',
-    theme: AppLinkTheme.SECONDARY
+    theme: AppLinkTheme.INVERTED
   }
 }
 
@@ -40,10 +40,10 @@ export const PrimaryDark: Story = {
   decorators: [ThemeDecorator(Theme.DARK)]
 }
 
-export const SecondaryDark: Story = {
+export const InvertedDark: Story = {
   args: {
     children: 'Text',
-    theme: AppLinkTheme.SECONDARY
+    theme: AppLinkTheme.INVERTED
   },
   decorators: [ThemeDecorator(Theme.DARK)]
 }

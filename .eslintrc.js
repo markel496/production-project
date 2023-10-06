@@ -16,7 +16,7 @@ module.exports = {
       env: {
         node: true
       },
-      files: ['.eslintrc.{js,cjs}'],
+      files: ['.eslintrc.{js,cjs}', 'loki.config.js'],
       parserOptions: {
         sourceType: 'script'
       }
@@ -46,8 +46,8 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': [
       'warn',
       {
-        varsIgnorePattern: '^_+$',
-        argsIgnorePattern: '^_+$'
+        varsIgnorePattern: '^_[a-zA-Z]+$',
+        argsIgnorePattern: '^_+$|^_[a-zA-Z]+$'
       }
     ],
     'react/button-has-type': 'error',
