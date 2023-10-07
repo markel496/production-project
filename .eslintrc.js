@@ -16,7 +16,11 @@ module.exports = {
       env: {
         node: true
       },
-      files: ['.eslintrc.{js,cjs}', 'loki.config.js'],
+      files: [
+        '.eslintrc.{js,cjs}',
+        'loki.config.js',
+        '/scripts/generate-visual-json-report.js'
+      ],
       parserOptions: {
         sourceType: 'script'
       }
