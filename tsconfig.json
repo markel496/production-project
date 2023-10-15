@@ -3,7 +3,8 @@
     "outDir": "./dist/",
     "noImplicitAny": true, //Подсвечивает места где не указан тип
     "module": "ESNext",
-    "target": "es2015", // В какую спецификацию компилируем: для поддержки большинства браузеров
+    "target": "ES5", // В какую спецификацию компилируем: для поддержки большинства браузеров
+    "downlevelIteration": true,
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",

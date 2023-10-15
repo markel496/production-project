@@ -4,7 +4,7 @@ import {
   Theme,
   ThemeContext
 } from '../lib/themeContext'
-import { bodyClasses } from '../lib/bodyClasses'
+import { getInitialBodyClasses } from '../lib/getInitialBodyClasses'
 
 const defaultTheme =
   (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT
@@ -18,7 +18,7 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   const { children, initialTheme } = props
   const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme)
 
-  document.body.className = `${theme} ${bodyClasses()}`
+  document.body.className = `${theme} ${getInitialBodyClasses()}`
 
   //useMemo - для того, чтобы при рендере компонента объект({ theme, setTheme }) заново не инициализировался. Без useMemo объект каждый раз будет новый, ссылка на него новая, компонент будет перерисовываться
   const defaultProps = useMemo(() => ({ theme, setTheme }), [theme])
