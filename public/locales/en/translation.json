@@ -4,5 +4,8 @@
   "Страница не найдена": "Page not found",
   "О сайте": "About us",
   "Главная": "Main",
-  "Произошла непредвиденная ошибка": "There was an unexpected error"
+  "Произошла непредвиденная ошибка": "There was an unexpected error",
+  "Войти": "Sign in",
+  "Пользователь": "Username",
+  "Пароль": "Password"
 }

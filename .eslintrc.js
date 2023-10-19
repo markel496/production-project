@@ -53,6 +53,7 @@ module.exports = {
     'react/button-has-type': 'error',
     '@typescript-eslint/ban-ts-comment': 'off',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
-    'react-hooks/exhaustive-deps': 'warn' // Checks effect dependencies
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
+    'react/display-name': 'off'
   }
 }
