@@ -2,12 +2,14 @@ import { ReducersMapObject, configureStore } from '@reduxjs/toolkit'
 import { StateSchema } from './StateSchema'
 import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
+import { loginReducer } from 'features/AuthByUsername'
 
 //Так можно будет отдельно создавать store для jest или storybook
 export function createReduxStore(initialState?: StateSchema) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     counter: counterReducer,
-    user: userReducer
+    user: userReducer,
+    loginForm: loginReducer
   }
 
   return configureStore<StateSchema>({

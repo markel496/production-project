@@ -9,15 +9,11 @@ import {
   useState
 } from 'react'
 
-/**Omit забирает все пропсы у InputHTMLAttributes<HTMLInputElement>, но исключает 'value' и 'onChange' */
-type HTMLInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  'value' | 'onChange'
->
+/**Omit забирает все пропсы у InputHTMLAttributes<HTMLInputElement>, но исключает 'onChange' */
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>
 
 interface InputProps extends HTMLInputProps {
   className?: string
-  value?: string
   onChange?: (value: string) => void
 }
 
