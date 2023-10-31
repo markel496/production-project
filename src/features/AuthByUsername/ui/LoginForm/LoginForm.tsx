@@ -4,22 +4,38 @@ import { useTranslation } from 'react-i18next'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
 import { useDispatch, useSelector } from 'react-redux'
-import { loginActions } from '../../model/slice/loginSlice'
+import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import { memo, useCallback } from 'react'
-import { getLoginState } from '../../model/selectors/getLoginState/getLoginState'
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername'
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername'
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading'
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
+import {
+  DynamicModuleLoader,
+  ReducersList
+} from 'shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
 
-interface LoginFormProps {
+/**Можно было бы сразу передать в reducers объект напрямую, но в том случае на каждый рендер компонета внутри reducers создавался бы новый объект, новая ссылка. В данном случае объект будет всегда постоянный и ссылка на него меняться не будет  */
+const initialReducers: ReducersList = {
+  loginForm: loginReducer
+}
+
+export interface LoginFormProps {
   className?: string
 }
 
-export const LoginForm = memo((props: LoginFormProps) => {
+const LoginForm = memo((props: LoginFormProps) => {
   const { className } = props
   const { t } = useTranslation()
 
-  const { username, password, isLoading, error } = useSelector(getLoginState)
   const dispatch = useDispatch()
+
+  const username = useSelector(getLoginUsername)
+  const password = useSelector(getLoginPassword)
+  const isLoading = useSelector(getLoginIsLoading)
+  const error = useSelector(getLoginError)
 
   const onChangeUsername = useCallback(
     (value: string) => {
@@ -39,32 +55,36 @@ export const LoginForm = memo((props: LoginFormProps) => {
   }, [dispatch, username, password])
 
   return (
-    <div className={classNames(cls.LoginForm, {}, [className])}>
-      <Text title={t('Форма авторизации')} />
-      {error && (
-        <Text text={t('Неверный логин или пароль')} theme={TextTheme.ERROR} />
-      )}
-      <Input
-        className={cls.input}
-        placeholder={t('Пользователь')}
-        onChange={onChangeUsername}
-        value={username}
-        autoFocus
-      />
-      <Input
-        className={cls.input}
-        placeholder={t('Пароль')}
-        value={password}
-        onChange={onChangePassword}
-      />
-      <Button
-        className={cls.formBtn}
-        theme={ButtonTheme.OUTLINE}
-        onClick={onLoginClick}
-        disabled={isLoading}
-      >
-        {t('Войти')}
-      </Button>
-    </div>
+    <DynamicModuleLoader reducers={initialReducers}>
+      <div className={classNames(cls.LoginForm, {}, [className])}>
+        <Text title={t('Форма авторизации')} />
+        {error && (
+          <Text text={t('Неверный логин или пароль')} theme={TextTheme.ERROR} />
+        )}
+        <Input
+          className={cls.input}
+          placeholder={t('Пользователь')}
+          onChange={onChangeUsername}
+          value={username}
+          autoFocus
+        />
+        <Input
+          className={cls.input}
+          placeholder={t('Пароль')}
+          value={password}
+          onChange={onChangePassword}
+        />
+        <Button
+          className={cls.formBtn}
+          theme={ButtonTheme.OUTLINE}
+          onClick={onLoginClick}
+          disabled={isLoading}
+        >
+          {t('Войти')}
+        </Button>
+      </div>
+    </DynamicModuleLoader>
   )
 })
+
+export default LoginForm

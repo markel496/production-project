@@ -2,21 +2,31 @@ import { ReducersMapObject, configureStore } from '@reduxjs/toolkit'
 import { StateSchema } from './StateSchema'
 import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
-import { loginReducer } from 'features/AuthByUsername'
+import { createReducerManager } from './reducerManager'
 
 //Так можно будет отдельно создавать store для jest или storybook
-export function createReduxStore(initialState?: StateSchema) {
+export function createReduxStore(
+  initialState?: StateSchema,
+  asyncReducers?: ReducersMapObject<StateSchema>
+) {
   const rootReducers: ReducersMapObject<StateSchema> = {
+    ...asyncReducers,
     counter: counterReducer,
-    user: userReducer,
-    loginForm: loginReducer
+    user: userReducer
   }
 
-  return configureStore<StateSchema>({
-    reducer: rootReducers,
+  const reducerManager = createReducerManager(rootReducers)
+
+  const store = configureStore<StateSchema>({
+    reducer: reducerManager.reduce,
     devTools: __IS_DEV__,
     preloadedState: initialState
   })
+
+  //@ts-ignore
+  store.reducerManager = reducerManager
+
+  return store
 }
 
 /** Для тестов, сторибуков понадобится инициализировать store для того, чтобы инициализировать нужные данные. Эти данные можно принимать аргументом как initialState*/
