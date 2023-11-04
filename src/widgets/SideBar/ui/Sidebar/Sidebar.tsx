@@ -1,21 +1,17 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Sidebar.module.scss'
-import { useTranslation } from 'react-i18next'
-import { useState } from 'react'
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
-import { routePath } from 'shared/config/routeConfig/routeConfig'
+import { memo, useState } from 'react'
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import { LangSwitcher } from 'widgets/LangSwitcher'
-import MainPageIcon from 'shared/assets/icons/main-20-20.svg'
-import AboutPageIcon from 'shared/assets/icons/about-20-20.svg'
+import { SidebarItemsList } from '../../model/items'
+import { SidebarItem } from '../SidebarItem/SidebarItem'
 
 interface SidebarProps {
   className?: string
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
-  const { t } = useTranslation()
+export const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false)
   const onToggle = () => {
     setCollapsed((prev) => !prev)
@@ -27,27 +23,10 @@ export const Sidebar = ({ className }: SidebarProps) => {
         className
       ])}
     >
-      <div className={classNames(cls.items)}>
-        <AppLink
-          className={classNames(cls.item)}
-          theme={AppLinkTheme.INVERTED}
-          to={routePath.main}
-        >
-          <div>
-            <MainPageIcon className={cls.icon} />
-          </div>
-          <span className={cls.link}>{t('Главная')}</span>
-        </AppLink>
-        <AppLink
-          className={classNames(cls.item)}
-          theme={AppLinkTheme.INVERTED}
-          to={routePath.about}
-        >
-          <div>
-            <AboutPageIcon className={cls.icon} />
-          </div>
-          <span className={cls.link}>{t('О сайте')}</span>
-        </AppLink>
+      <div className={cls.items}>
+        {SidebarItemsList.map((item) => (
+          <SidebarItem key={item.path} item={item} collapsed={collapsed} />
+        ))}
       </div>
       <Button
         className={cls.collapseBtn}
@@ -65,4 +44,4 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </div>
     </div>
   )
-}
+})

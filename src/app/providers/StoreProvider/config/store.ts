@@ -29,4 +29,6 @@ export function createReduxStore(
   return store
 }
 
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
+
 /** Для тестов, сторибуков понадобится инициализировать store для того, чтобы инициализировать нужные данные. Эти данные можно принимать аргументом как initialState*/

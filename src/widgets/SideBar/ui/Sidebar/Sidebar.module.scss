@@ -13,28 +13,6 @@
   margin-left: 30px;
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-
-  &:not(:last-child) {
-    margin-bottom: 15px;
-  }
-}
-
-.link {
-  white-space: nowrap;
-  margin-left: 10px;
-  opacity: 1;
-  transition: 0.2s opacity;
-}
-
-.icon {
-  display: block;
-  fill: var(--inverted-primary-color);
-}
-
 .collapseBtn {
   position: absolute;
   bottom: 32px;
@@ -55,12 +33,6 @@
 
 .collapsed {
   width: var(--sidebar-width-collapsed);
-
-  .link {
-    width: 0;
-    opacity: 0;
-    transition: 0.2s opacity;
-  }
 
   .switchers {
     flex-direction: column;
