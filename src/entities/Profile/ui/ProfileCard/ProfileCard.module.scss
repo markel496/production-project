@@ -1,0 +1,19 @@
+.ProfileCard {
+  padding: 20px;
+  border: 2px solid var(--inverted-bg-color);
+}
+
+.header {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.editBtn {
+  margin-left: auto;
+}
+
+.input {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}

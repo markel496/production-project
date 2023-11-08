@@ -7,6 +7,7 @@
     "downlevelIteration": true,
     "jsx": "react-jsx",
     "allowJs": true,
+    "strict": true,
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
@@ -21,5 +22,10 @@
       "module": "CommonJS"
     }
   },
-  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./config/jest/setupTests.ts"]
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./config/jest/setupTests.ts",
+    "src/entities/Profile/model/selectors/getProfileError"
+  ]
 }
