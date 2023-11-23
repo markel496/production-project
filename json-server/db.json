@@ -1,19 +1,43 @@
 {
   "posts": [
-    { "id": "1", "title": "json-server1", "author": "typicode" },
-    { "id": "2", "title": "json-server2", "author": "typicode" },
-    { "id": "3", "title": "json-server3", "author": "typicode" }
+    {
+      "id": "1",
+      "title": "json-server1",
+      "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "json-server2",
+      "author": "typicode"
+    },
+    {
+      "id": "3",
+      "title": "json-server3",
+      "author": "typicode"
+    }
   ],
-  "comments": [{ "id": "1", "body": "some comment", "postId": "1" }],
-  "users": [{ "id": "1", "username": "admin", "password": "12345" }],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "12345"
+    }
+  ],
   "profile": {
     "first": "Иван",
     "lastname": "Маркелов",
-    "age": 26,
+    "age": "26",
     "currency": "RUB",
     "country": "Russia",
     "city": "Saint-Petersberg",
     "username": "admin",
-    "avatar": "https://images.squarespace-cdn.com/content/v1/5437aff1e4b0bc578243529c/1576157141012-TUDPBRZW4IDVYRUF6GQB/1.jpg"
+    "avatar": "https://proprikol.ru/wp-content/uploads/2020/02/kartinki-na-avatarku-dlya-parnej-i-muzhchin-1-1.jpg"
   }
 }
