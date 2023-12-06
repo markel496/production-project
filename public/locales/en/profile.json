@@ -10,5 +10,13 @@
   "Ссылка на аватарку": "Avatar link",
   "Произошла ошибка при загрузке профиля": "An error occurred while loading a profile",
   "Отменить": "Cancel",
-  "Сохранить": "Save"
+  "Сохранить": "Save",
+  "Укажите ваше имя": "Enter your name",
+  "Укажите вашу фамилию": "Enter your last name",
+  "Укажите ваш возраст": "Enter your age",
+  "Укажите ваш город": "Enter your city",
+  "Укажите ваш логин": "Enter your username",
+  "Неккоректная ссылка на аватар": "Incorrect avatar link",
+  "Ошибка сервера": "Server error",
+  "Нет данных": "No data available"
 }

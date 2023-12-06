@@ -16,10 +16,11 @@ interface ProfilePageHeaderProps {
   className?: string
   isUpdated?: boolean
   isLoading?: boolean
+  error?: string
 }
 
 export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
-  const { className, isLoading, isUpdated } = props
+  const { className, isLoading, isUpdated, error } = props
   const { t } = useTranslation('profile')
 
   const readonly = useSelector(getProfileReadonly)
@@ -36,6 +37,14 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
   const onSave = useCallback(() => {
     dispatch(updateProfileData())
   }, [dispatch])
+
+  if (error) {
+    return (
+      <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <Text title={t('Профиль')} />
+      </div>
+    )
+  }
 
   return (
     <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
