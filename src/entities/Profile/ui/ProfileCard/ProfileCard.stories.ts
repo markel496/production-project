@@ -5,6 +5,7 @@ import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
+import { Profile } from '../../model/types/profile'
 
 const meta: Meta<typeof ProfileCard> = {
   title: 'Entities/ProfileCard',
@@ -19,7 +20,7 @@ const meta: Meta<typeof ProfileCard> = {
 export default meta
 type Story = StoryObj<typeof ProfileCard>
 
-const data = {
+const data: Profile = {
   first: 'Ivan',
   lastname: 'Markelov',
   age: '26',
@@ -44,7 +45,7 @@ export const Dark: Story = {
   decorators: [ThemeDecorator(Theme.DARK)]
 }
 
-export const IsLoading: Story = {
+export const Loading: Story = {
   args: {
     isLoading: true
   }

@@ -5,25 +5,20 @@ import { useTranslation } from 'react-i18next'
 import { Text } from 'shared/ui/Text/Text'
 import { useCallback } from 'react'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import {
-  getProfileReadonly,
-  profileActions,
-  updateProfileData
-} from 'entities/Profile'
-import { useSelector } from 'react-redux'
+import { profileActions, updateProfileData } from 'entities/Profile'
 
 interface ProfilePageHeaderProps {
   className?: string
   isUpdated?: boolean
   isLoading?: boolean
   error?: string
+  readonly?: boolean
 }
 
 export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
-  const { className, isLoading, isUpdated, error } = props
+  const { className, isLoading, isUpdated, error, readonly } = props
   const { t } = useTranslation('profile')
 
-  const readonly = useSelector(getProfileReadonly)
   const dispatch = useAppDispatch()
 
   const onEdit = useCallback(() => {

@@ -2,13 +2,15 @@
 /* eslint-disable indent */
 import { Decorator } from '@storybook/react'
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider'
-import { profileReducer } from 'entities/Profile'
+import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice'
+import { profileReducer } from 'entities/Profile/model/slice/profileSlice'
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
 import { ReducersList } from 'shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
-  profile: profileReducer
+  profile: profileReducer,
+  articleDetails: articleDetailsReducer
 }
 
 export const StoreDecorator =

@@ -5,27 +5,11 @@ import { Theme } from 'app/providers/ThemeProvider'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
+import { Profile } from 'entities/Profile'
 
 const meta: Meta<typeof ProfilePage> = {
   title: 'Pages/ProfilePage',
   component: ProfilePage,
-  decorators: [
-    StoreDecorator({
-      profile: {
-        data: {
-          first: 'Ivan',
-          lastname: 'Markelov',
-          age: '26',
-          country: Country.Russia,
-          city: 'Saint-P',
-          username: 'admin',
-          currency: Currency.EUR,
-          avatar:
-            'https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg'
-        }
-      }
-    })
-  ],
   parameters: {
     layout: 'fullscreen'
   },
@@ -36,11 +20,60 @@ const meta: Meta<typeof ProfilePage> = {
 export default meta
 type Story = StoryObj<typeof ProfilePage>
 
+const profile: Profile = {
+  first: 'Ivan',
+  lastname: 'Markelov',
+  age: '26',
+  country: Country.Russia,
+  city: 'Saint-P',
+  username: 'admin',
+  currency: Currency.EUR,
+  avatar:
+    'https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg'
+}
+
 export const Light: Story = {
-  args: {}
+  args: {},
+  decorators: [
+    StoreDecorator({
+      profile: {
+        data: profile
+      }
+    })
+  ]
 }
 
 export const Dark: Story = {
   args: {},
-  decorators: [ThemeDecorator(Theme.DARK)]
+  decorators: [
+    StoreDecorator({
+      profile: {
+        data: profile
+      }
+    }),
+    ThemeDecorator(Theme.DARK)
+  ]
+}
+
+export const Loading: Story = {
+  args: {},
+  decorators: [
+    StoreDecorator({
+      profile: {
+        isLoading: true,
+        readonly: true
+      }
+    })
+  ]
+}
+
+export const Error: Story = {
+  args: {},
+  decorators: [
+    StoreDecorator({
+      profile: {
+        error: 'error'
+      }
+    })
+  ]
 }

@@ -2,6 +2,15 @@
   cursor: pointer;
   color: var(--primary-color);
   padding: 6px 15px;
+
+  @media (min-width: 992px) {
+    // hhv snippet
+    &:hover {
+      opacity: 0.8;
+      fill-opacity: 0.8;
+      stroke-opacity: 0.8;
+    }
+  }
 }
 
 .clear,
@@ -76,4 +85,12 @@
 .disabled {
   opacity: 0.5;
   cursor: auto;
+
+  @media (min-width: 992px) {
+    &:hover {
+      opacity: 0.5;
+      fill-opacity: 0.5;
+      stroke-opacity: 0.5;
+    }
+  }
 }

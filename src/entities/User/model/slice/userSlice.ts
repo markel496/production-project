@@ -14,7 +14,7 @@ export const userSlice = createSlice({
     setAuthData: (state, action: PayloadAction<User>) => {
       state.authData = action.payload
       $api.defaults.headers.common['Authorization'] = JSON.stringify(
-        JSON.stringify(action.payload)
+        action.payload
       )
     },
     initAuthData: (state) => {

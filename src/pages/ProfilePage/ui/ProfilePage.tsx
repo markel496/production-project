@@ -150,6 +150,7 @@ const ProfilePage = (props: ProfilePageProps) => {
           error={error}
           isUpdated={isUpdated}
           isLoading={isLoading}
+          readonly={readonly}
         />
         {validateErrors?.length &&
           validateErrors.map((err) => (
