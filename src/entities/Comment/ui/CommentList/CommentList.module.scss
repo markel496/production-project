@@ -1,0 +1,9 @@
+.CommentList {
+  margin-top: 14px;
+}
+
+.comment {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}

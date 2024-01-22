@@ -14,7 +14,7 @@ export const Skeleton = (props: SkeletonProps) => {
 
   // Использовать useMemo особого смысла нет, потому что его перерисовки не так страшны и он отображается только на этапе загрузки
   const styles: CSSProperties = {
-    width: border ? width : width && String(Number(width) - 10 + 'px'), // Чтобы было видно тень
+    width,
     height,
     borderRadius: border
   }

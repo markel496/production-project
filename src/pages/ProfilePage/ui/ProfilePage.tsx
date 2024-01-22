@@ -25,6 +25,7 @@ import { Currency } from 'entities/Currency'
 import { Country } from 'entities/Country'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 
 const initialReducers: ReducersList = {
   profile: profileReducer
@@ -133,11 +134,9 @@ const ProfilePage = (props: ProfilePageProps) => {
     [dispatch]
   )
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData())
-    }
-  }, [dispatch])
+  useInitialEffect(() => {
+    dispatch(fetchProfileData())
+  })
 
   useEffect(() => {
     setIsUpdated(JSON.stringify(data) !== JSON.stringify(initialData))

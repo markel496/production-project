@@ -24,9 +24,7 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -92,16 +90,27 @@
   "comments": [
     {
       "id": "1",
-      "body": "some comment",
-      "postId": "1",
+      "text": "Комментарий 1",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "Комментарий 2",
+      "articleId": "1",
+      "userId": "2"
     }
   ],
   "users": [
     {
       "id": "1",
       "username": "admin",
+      "password": "12345",
+      "avatar": "https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg"
+    },
+    {
+      "id": "2",
+      "username": "Vanya",
       "password": "12345"
     }
   ],
