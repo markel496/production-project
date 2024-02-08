@@ -6,9 +6,49 @@
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 12px;
 }
 
-.username {
-  margin-left: 10px;
+.profile {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  @media (min-width: 992px) {
+    // hhv snippet
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.avatar {
+  margin-right: 10px;
+}
+
+.buttonsContainer {
+  display: flex;
+}
+
+.editBtn {
+  margin-right: 10px;
+}
+
+.loading {
+  border: none;
+
+  .header {
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .createdAt {
+    margin-bottom: 15px;
+  }
 }

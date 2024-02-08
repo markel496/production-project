@@ -14,6 +14,7 @@ import {
 } from 'entities/Profile'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import {
   DynamicModuleLoader,
   ReducersList
@@ -39,6 +40,7 @@ const ProfilePage = (props: ProfilePageProps) => {
   const { t } = useTranslation('profile')
   const { className } = props
   const [isUpdated, setIsUpdated] = useState(false)
+  const { id } = useParams<{ id: string }>()
 
   const dispatch = useAppDispatch()
 
@@ -135,7 +137,7 @@ const ProfilePage = (props: ProfilePageProps) => {
   )
 
   useInitialEffect(() => {
-    dispatch(fetchProfileData())
+    dispatch(fetchProfileData(id))
   })
 
   useEffect(() => {

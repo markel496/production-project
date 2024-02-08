@@ -33,7 +33,14 @@ const articleDetailsCommentsSlice = createSlice({
         entities: {}
       }
     ),
-  reducers: {},
+  reducers: {
+    // deleteArticleDetailsComment: (
+    //   state,
+    //   { payload: id }: PayloadAction<string>
+    // ) => {
+    //   articleDetailsCommentsAdapter.removeOne(state, id)
+    // }
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchCommentsByArticleId.pending, (state) => {
       state.error = undefined
@@ -52,6 +59,9 @@ const articleDetailsCommentsSlice = createSlice({
     })
   }
 })
+
+// export const { actions: articleDetailsCommentsActions } =
+//   articleDetailsCommentsSlice
 
 export const { reducer: articleDetailsCommentsReducer } =
   articleDetailsCommentsSlice

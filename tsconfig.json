@@ -22,10 +22,5 @@
       "module": "CommonJS"
     }
   },
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./config/jest/setupTests.ts",
-    "src/entities/Profile/model/selectors/getProfileError"
-  ]
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./config/jest/setupTests.ts"]
 }

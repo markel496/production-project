@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ProfilePageHeader.module.scss'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
@@ -6,6 +7,7 @@ import { Text } from 'shared/ui/Text/Text'
 import { useCallback } from 'react'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { profileActions, updateProfileData } from 'entities/Profile'
+import { getCanEditProfile } from '../../model/selectors/getCanEditProfile/getCanEditProfile'
 
 interface ProfilePageHeaderProps {
   className?: string
@@ -20,6 +22,8 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
   const { t } = useTranslation('profile')
 
   const dispatch = useAppDispatch()
+
+  const canEdit = useSelector(getCanEditProfile)
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly(false))
@@ -45,14 +49,16 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
       <Text title={t('Профиль')} />
       {readonly ? (
-        <Button
-          className={cls.editBtn}
-          theme={ButtonTheme.OUTLINE}
-          onClick={onEdit}
-          disabled={isLoading}
-        >
-          {t('Редактировать')}
-        </Button>
+        canEdit && (
+          <Button
+            className={cls.editBtn}
+            theme={ButtonTheme.OUTLINE}
+            onClick={onEdit}
+            disabled={isLoading}
+          >
+            {t('Редактировать')}
+          </Button>
+        )
       ) : (
         <>
           <Button

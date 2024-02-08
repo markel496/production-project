@@ -14,7 +14,6 @@
   outline: none;
   color: transparent;
   text-shadow: 0 0 0 var(--primary-color);
-  text-overflow: ellipsis;
 
   &:focus {
     outline: none;
@@ -24,6 +23,8 @@
 .caretWrapper {
   flex-grow: 1;
   position: relative;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 
 .caret {

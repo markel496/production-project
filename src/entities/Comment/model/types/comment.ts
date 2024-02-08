@@ -4,4 +4,6 @@ export interface Comment {
   id: string
   user: User
   text: string
+  createdAt: string
+  edited: boolean
 }

@@ -19,6 +19,7 @@ interface InputProps extends HTMLInputProps {
   className?: string
   onChange?: (value: string) => void
   readonly?: boolean
+  clearError?: () => void
 }
 
 export const Input = memo((props: InputProps) => {
@@ -30,6 +31,7 @@ export const Input = memo((props: InputProps) => {
     placeholder,
     autoFocus,
     readonly,
+    clearError,
     ...otherProps
   } = props
 
@@ -48,6 +50,7 @@ export const Input = memo((props: InputProps) => {
   }
 
   const onFocus = () => {
+    clearError?.()
     setIsFocused(true)
   }
 
@@ -76,6 +79,7 @@ export const Input = memo((props: InputProps) => {
       )}
       <div className={cls.caretWrapper}>
         <input
+          className={cls.input}
           ref={ref}
           type={type}
           value={value}
@@ -84,7 +88,6 @@ export const Input = memo((props: InputProps) => {
           onBlur={onBlur}
           onSelect={onSelect}
           autoFocus={autoFocus}
-          className={cls.input}
           readOnly={readonly}
           {...otherProps}
         />
