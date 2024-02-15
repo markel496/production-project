@@ -24,6 +24,12 @@ type Story = StoryObj<typeof ArticleDetails>
 
 const article: Article = {
   id: '1',
+  user: {
+    id: '1',
+    username: 'Markel',
+    avatar:
+      'https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg'
+  },
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',

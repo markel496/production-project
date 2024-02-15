@@ -11,6 +11,7 @@
     "custom-property-empty-line-before": null,
     "selector-class-pattern": null,
     "length-zero-no-unit": null,
-    "declaration-colon-newline-after": null
+    "declaration-colon-newline-after": null,
+    "color-function-notation": null
   }
 }

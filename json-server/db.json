@@ -19,6 +19,7 @@
   "articles": [
     {
       "id": "1",
+      "userId": "1",
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
@@ -121,6 +122,14 @@
       "articleId": "1",
       "userId": "2",
       "edited": true
+    },
+    {
+      "id": "rodxr0g0rbe",
+      "text": "Сделал 2 варианта списка статей, скелетоны, переходы",
+      "createdAt": "12.02.2024 в 22:09",
+      "articleId": "1",
+      "userId": "1",
+      "edited": false
     }
   ],
   "users": [

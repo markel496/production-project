@@ -3,7 +3,7 @@ import cls from './ArticleDetailsPage.module.scss'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
 import { ArticleDetails } from 'entities/Article'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { CommentList } from 'entities/Comment'
 import {
@@ -27,6 +27,8 @@ import { addNewCommentForArticle } from '../model/services/addCommentForArticle/
 import { deleteArticleComment } from '../model/services/deleteArticleComment/deleteArticleComment'
 import { EditCommentArgs } from 'features/editComment'
 import { editArticleComment } from '../model/services/editArticleComment/editArticleComment'
+import { Button } from 'shared/ui/Button/Button'
+import { routePath } from 'shared/config/routeConfig/routeConfig'
 
 const initialReducers: ReducersList = {
   articleDetailsComments: articleDetailsCommentsReducer
@@ -44,6 +46,11 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
   const commentsError = useSelector(getArticleCommentsError)
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+
+  const onBackToList = useCallback(() => {
+    navigate(routePath.articles)
+  }, [navigate])
 
   const onSendComment = useCallback(
     (commentData: AddNewCommentArgs) => {
@@ -81,6 +88,9 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={initialReducers}>
       <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        <Button className={cls.backBtn} onClick={onBackToList}>
+          {t('Назад к списку')}
+        </Button>
         <ArticleDetails id={id} />
         <Text title={t('Комментарии')} className={cls.commentsTitle} />
         <AddNewComment

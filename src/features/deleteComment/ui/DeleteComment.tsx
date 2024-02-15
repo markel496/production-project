@@ -3,6 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './DeleteComment.module.scss'
 import RemoveIcon from 'shared/assets/icons/trash.svg'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+import { Icon } from 'shared/ui/Icon/Icon'
 
 interface DeleteCommentProps {
   className?: string
@@ -22,7 +23,7 @@ export const DeleteComment = memo((props: DeleteCommentProps) => {
       theme={ButtonTheme.CLEAR}
       onClick={onDeleteHandler}
     >
-      <RemoveIcon />
+      <Icon Svg={RemoveIcon} className={cls.icon} />
     </Button>
   )
 })
