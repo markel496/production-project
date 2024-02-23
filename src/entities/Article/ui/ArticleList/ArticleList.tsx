@@ -4,12 +4,14 @@ import cls from './ArticleList.module.scss'
 import { Article, ArticleView } from '../../model/types/article'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
+import { TFunction } from 'react-i18next'
 
 interface ArticleListProps {
   className?: string
   articles: Article[]
   isLoading?: boolean
-  view?: ArticleView
+  view: ArticleView
+  t: TFunction<'articles', undefined>
 }
 
 const getSkeletons = (view: ArticleView) =>
@@ -18,7 +20,7 @@ const getSkeletons = (view: ArticleView) =>
   ))
 
 export const ArticleList = memo((props: ArticleListProps) => {
-  const { className, articles, isLoading, view = ArticleView.BIG } = props
+  const { className, articles, isLoading, view, t } = props
 
   if (isLoading) {
     return (
@@ -29,7 +31,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
   }
 
   const renderArticle = (article: Article) => {
-    return <ArticleListItem key={article.id} article={article} view={view} />
+    return (
+      <ArticleListItem key={article.id} article={article} view={view} t={t} />
+    )
   }
 
   return (

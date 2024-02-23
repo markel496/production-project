@@ -1,0 +1,22 @@
+.ViewSelector {
+  display: flex;
+}
+
+.button {
+  display: flex;
+
+  &:first-child {
+    margin-right: 3px;
+  }
+}
+
+.selected {
+  opacity: 0.4;
+
+  @media (min-width: 992px) {
+    // hhv snippet
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}

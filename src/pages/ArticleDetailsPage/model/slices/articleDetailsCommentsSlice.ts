@@ -6,8 +6,8 @@ import {
 import { StateSchema } from 'app/providers/StoreProvider'
 
 import { Comment } from 'entities/Comment'
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+import { ArticleDetailsCommentsSchema } from '../types/articleDetailsCommentsSchema'
 
 const articleDetailsCommentsAdapter = createEntityAdapter<Comment>({
   // Assume IDs are stored in a field other than `book.id`
