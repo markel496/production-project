@@ -9,7 +9,7 @@ import { PageLoader } from 'widgets/PageLoader'
 
 const AppRouter = () => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
-    const element = <div className="page-wrapper">{route.element}</div>
+    const element = <>{route.element}</>
 
     return (
       <Route

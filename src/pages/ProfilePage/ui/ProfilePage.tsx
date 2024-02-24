@@ -27,6 +27,7 @@ import { Country } from 'entities/Country'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { Page } from 'shared/ui/Page/Page'
 
 const initialReducers: ReducersList = {
   profile: profileReducer
@@ -146,7 +147,7 @@ const ProfilePage = (props: ProfilePageProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={classNames('', {}, [className])}>
+      <Page className={classNames('', {}, [className])}>
         <ProfilePageHeader
           error={error}
           isUpdated={isUpdated}
@@ -175,7 +176,7 @@ const ProfilePage = (props: ProfilePageProps) => {
           isLoading={isLoading}
           error={error}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }

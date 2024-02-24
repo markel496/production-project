@@ -21,6 +21,8 @@ import {
 } from '../model/selectors/articlesPageSelectors'
 import { useTranslation } from 'react-i18next'
 import { ViewSelector } from 'features/viewSelector'
+import { Page } from 'shared/ui/Page/Page'
+import { fetchNextArticles } from '../model/services/fetchNextArticles/fetchNextArticles'
 
 const initialReducers: ReducersList = {
   articles: articlesPageReducer
@@ -48,14 +50,21 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     [dispatch]
   )
 
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticles())
+  }, [dispatch])
+
   useInitialEffect(() => {
-    dispatch(fetchArticles())
     dispatch(articlesPageActions.initView())
+    dispatch(fetchArticles({ page: 1 }))
   })
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={classNames(cls.ArticlesPage, {}, [className])}>
+      <Page
+        onScrollEnd={onLoadNextPart}
+        className={classNames(cls.ArticlesPage, {}, [className])}
+      >
         <ViewSelector
           className={cls.viewSelector}
           view={view}
@@ -67,7 +76,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
           view={view}
           isLoading={isLoading}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }

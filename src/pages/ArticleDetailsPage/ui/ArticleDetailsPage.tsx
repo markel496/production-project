@@ -29,6 +29,7 @@ import { EditCommentArgs } from 'features/editComment'
 import { editArticleComment } from '../model/services/editArticleComment/editArticleComment'
 import { Button } from 'shared/ui/Button/Button'
 import { routePath } from 'shared/config/routeConfig/routeConfig'
+import { Page } from 'shared/ui/Page/Page'
 
 const initialReducers: ReducersList = {
   articleDetailsComments: articleDetailsCommentsReducer
@@ -87,7 +88,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <Button className={cls.backBtn} onClick={onBackToList}>
           {t('Назад к списку')}
         </Button>
@@ -105,7 +106,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
           onDeleteArticleComment={onDeleteComment}
           onEditArticleComment={onEditComment}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }
