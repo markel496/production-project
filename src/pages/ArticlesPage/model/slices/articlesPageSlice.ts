@@ -21,7 +21,7 @@ export const getArticles = articlesAdapter.getSelectors<StateSchema>(
 )
 
 const articlesPageSlice = createSlice({
-  name: 'articles',
+  name: 'articlesPage',
   initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
     isLoading: false,
     error: undefined,
@@ -29,7 +29,8 @@ const articlesPageSlice = createSlice({
     page: 1,
     hasMore: true,
     ids: [],
-    entities: {}
+    entities: {},
+    _inited: false
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
@@ -45,6 +46,7 @@ const articlesPageSlice = createSlice({
       ) as ArticleView
       state.view = view
       state.limit = view === ArticleView.SMALL ? 9 : 4
+      state._inited = true
     }
   },
 

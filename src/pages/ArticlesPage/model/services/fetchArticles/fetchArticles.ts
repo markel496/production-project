@@ -11,7 +11,7 @@ export const fetchArticles = createAsyncThunk<
   Article[],
   FetchArticlesProps,
   ThunkConfig<string>
->('article/fetchArticles', async (props, thunkAPI) => {
+>('articlesPage/fetchArticles', async (props, thunkAPI) => {
   const { page = 1 } = props
   const { extra, rejectWithValue, getState } = thunkAPI
 

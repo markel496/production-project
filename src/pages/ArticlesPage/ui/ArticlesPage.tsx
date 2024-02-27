@@ -13,7 +13,6 @@ import {
 } from '../model/slices/articlesPageSlice'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { fetchArticles } from '../model/services/fetchArticles/fetchArticles'
 import { useSelector } from 'react-redux'
 import {
   getArticlesPageIsLoading,
@@ -23,6 +22,7 @@ import { useTranslation } from 'react-i18next'
 import { ViewSelector } from 'features/viewSelector'
 import { Page } from 'shared/ui/Page/Page'
 import { fetchNextArticles } from '../model/services/fetchNextArticles/fetchNextArticles'
+import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage'
 
 const initialReducers: ReducersList = {
   articles: articlesPageReducer
@@ -55,12 +55,11 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   }, [dispatch])
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initView())
-    dispatch(fetchArticles({ page: 1 }))
+    dispatch(initArticlesPage())
   })
 
   return (
-    <DynamicModuleLoader reducers={initialReducers}>
+    <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={false}>
       <Page
         onScrollEnd={onLoadNextPart}
         className={classNames(cls.ArticlesPage, {}, [className])}

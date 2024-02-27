@@ -9,13 +9,11 @@ import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
 import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
-import { To, NavigateOptions } from 'react-router-dom'
 
 //Так можно будет отдельно создавать store для jest или storybook
 export function createReduxStore(
   initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>,
-  navigate?: (to: To, options?: NavigateOptions) => void
+  asyncReducers?: ReducersMapObject<StateSchema>
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
@@ -26,8 +24,7 @@ export function createReduxStore(
   const reducerManager = createReducerManager(rootReducers)
 
   const extraArg: ThunkExtraArg = {
-    api: $api,
-    navigate
+    api: $api
   }
 
   const store = configureStore({
