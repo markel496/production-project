@@ -20,7 +20,7 @@ import {
 } from '../model/selectors/articlesPageSelectors'
 import { useTranslation } from 'react-i18next'
 import { ViewSelector } from 'features/viewSelector'
-import { Page } from 'shared/ui/Page/Page'
+import { Page } from 'widgets/Page'
 import { fetchNextArticles } from '../model/services/fetchNextArticles/fetchNextArticles'
 import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage'
 
@@ -61,8 +61,9 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={false}>
       <Page
-        onScrollEnd={onLoadNextPart}
         className={classNames(cls.ArticlesPage, {}, [className])}
+        onScrollEnd={onLoadNextPart}
+        isSaveScroll
       >
         <ViewSelector
           className={cls.viewSelector}

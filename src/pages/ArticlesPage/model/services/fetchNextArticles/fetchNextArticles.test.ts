@@ -13,7 +13,8 @@ describe('fetchNextArticles.test', () => {
         hasMore: true,
         limit: 5,
         ids: [],
-        entities: {}
+        entities: {},
+        _inited: true
       }
     })
 
@@ -32,7 +33,8 @@ describe('fetchNextArticles.test', () => {
         hasMore: false,
         limit: 5,
         ids: [],
-        entities: {}
+        entities: {},
+        _inited: true
       }
     })
 
@@ -50,7 +52,8 @@ describe('fetchNextArticles.test', () => {
         hasMore: true,
         limit: 5,
         ids: [],
-        entities: {}
+        entities: {},
+        _inited: true
       }
     })
 

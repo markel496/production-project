@@ -9,6 +9,7 @@ import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
 import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
+import { saveScrollReducer } from 'widgets/Page'
 
 //Так можно будет отдельно создавать store для jest или storybook
 export function createReduxStore(
@@ -18,7 +19,8 @@ export function createReduxStore(
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
-    user: userReducer
+    user: userReducer,
+    scrollPosition: saveScrollReducer
   }
 
   const reducerManager = createReducerManager(rootReducers)

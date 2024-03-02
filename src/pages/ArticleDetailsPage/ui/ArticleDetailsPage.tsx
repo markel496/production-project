@@ -29,7 +29,7 @@ import { EditCommentArgs } from 'features/editComment'
 import { editArticleComment } from '../model/services/editArticleComment/editArticleComment'
 import { Button } from 'shared/ui/Button/Button'
 import { routePath } from 'shared/config/routeConfig/routeConfig'
-import { Page } from 'shared/ui/Page/Page'
+import { Page } from 'widgets/Page'
 
 const initialReducers: ReducersList = {
   articleDetailsComments: articleDetailsCommentsReducer
