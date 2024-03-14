@@ -5,6 +5,7 @@ import { Article, ArticleView } from '../../model/types/article'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 import { TFunction } from 'react-i18next'
+import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text'
 
 interface ArticleListProps {
   className?: string
@@ -28,8 +29,20 @@ export const ArticleList = memo((props: ArticleListProps) => {
     )
   }
 
+  if (!isLoading && !articles.length) {
+    return (
+      <div className={classNames(cls.ArticleList, {}, [className])}>
+        <Text
+          title={t('Статьи не найдены')}
+          size={TextSize.L}
+          theme={TextTheme.ERROR}
+        />
+      </div>
+    )
+  }
+
   return (
-    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+    <div className={classNames(cls.ArticleList, {}, [className])}>
       {articles.length > 0 ? articles.map(renderArticle) : null}
       {isLoading && getSkeletons(view)}
     </div>

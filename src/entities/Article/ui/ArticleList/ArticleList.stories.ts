@@ -10,7 +10,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 
 const meta: Meta<typeof ArticleList> = {
-  title: 'Entities/ArticleList',
+  title: 'Entities/Article/ArticleList',
   component: ArticleList,
   parameters: {
     layout: 'padded'
@@ -70,7 +70,7 @@ export const PrimaryBig: Story = {
 
 export const PrimarySkeletonSmall: Story = {
   args: {
-    articles,
+    articles: [],
     view: ArticleView.SMALL,
     isLoading: true
   }
@@ -104,7 +104,7 @@ export const DarkBig: Story = {
 
 export const DarkSkeletonSmall: Story = {
   args: {
-    articles,
+    articles: [],
     view: ArticleView.SMALL,
     isLoading: true
   },
@@ -140,7 +140,7 @@ export const GreenBig: Story = {
 
 export const GreenSkeletonSmall: Story = {
   args: {
-    articles,
+    articles: [],
     view: ArticleView.SMALL,
     isLoading: true
   },

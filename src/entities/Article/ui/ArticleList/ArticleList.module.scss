@@ -1,8 +1,6 @@
 .ArticleList {
   display: flex;
   flex-wrap: wrap;
-}
-
-.SMALL {
-  margin-right: -20px;
+  row-gap: 30px;
+  column-gap: 20px;
 }

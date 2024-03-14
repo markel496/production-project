@@ -25,9 +25,7 @@
       "views": 1022,
       "createdAt": "15.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -94,12 +92,10 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://certref.com/cdn/cache/400x225/image/2019/05/23/7eec8bea58c7f444750956de9af8f90a.png",
-      "views": 1022,
-      "createdAt": "15.02.2024",
+      "views": 1000,
+      "createdAt": "15.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -164,14 +160,12 @@
     {
       "id": "3",
       "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в Kotlin за 2023 год?",
       "img": "https://res.cloudinary.com/practicaldev/image/fetch/s--pAtHR2Lf--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/5ifoj6xv3ne303x41irw.png",
-      "views": 1022,
-      "createdAt": "15.02.2024",
+      "views": 987,
+      "createdAt": "19.02.2023",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -239,11 +233,9 @@
       "subtitle": "Что нового за 2024 год?",
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
       "views": 10,
-      "createdAt": "24.02.2024",
+      "createdAt": "15.02.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -271,12 +263,10 @@
       "title": "Sport news",
       "subtitle": "Что нового за 2024 год?",
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
-      "views": 10,
-      "createdAt": "24.02.2024",
+      "views": 11,
+      "createdAt": "16.02.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -304,12 +294,10 @@
       "title": "Sport news",
       "subtitle": "Что нового за 2024 год?",
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
-      "views": 10,
-      "createdAt": "24.02.2024",
+      "views": 12,
+      "createdAt": "10.01.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -337,12 +325,10 @@
       "title": "Sport news",
       "subtitle": "Что нового за 2024 год?",
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
-      "views": 10,
-      "createdAt": "24.02.2024",
+      "views": 125,
+      "createdAt": "19.02.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -370,12 +356,10 @@
       "title": "Sport news",
       "subtitle": "Что нового за 2024 год?",
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
-      "views": 10,
-      "createdAt": "24.02.2024",
+      "views": 13,
+      "createdAt": "01.03.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -403,12 +387,10 @@
       "title": "Sport news",
       "subtitle": "Что нового за 2024 год?",
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
-      "views": 10,
-      "createdAt": "24.02.2024",
+      "views": 132,
+      "createdAt": "03.01.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -436,12 +418,10 @@
       "title": "Sport news",
       "subtitle": "Что нового за 2024 год?",
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
-      "views": 10,
-      "createdAt": "24.02.2024",
+      "views": 14,
+      "createdAt": "06.02.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -469,12 +449,10 @@
       "title": "Sport news",
       "subtitle": "Что нового за 2024 год?",
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
-      "views": 10,
-      "createdAt": "24.02.2024",
+      "views": 140,
+      "createdAt": "14.02.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -502,12 +480,10 @@
       "title": "Sport news",
       "subtitle": "Что нового за 2024 год?",
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
-      "views": 10,
-      "createdAt": "24.02.2024",
+      "views": 15,
+      "createdAt": "04.03.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -535,12 +511,10 @@
       "title": "Sport news",
       "subtitle": "Что нового за 2024 год?",
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
-      "views": 10,
-      "createdAt": "24.02.2024",
+      "views": 20,
+      "createdAt": "07.03.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -568,12 +542,10 @@
       "title": "Sport news",
       "subtitle": "Что нового за 2024 год?",
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
-      "views": 10,
-      "createdAt": "24.02.2024",
+      "views": 28,
+      "createdAt": "12.01.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -601,12 +573,10 @@
       "title": "Sport news",
       "subtitle": "Что нового за 2024 год?",
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
-      "views": 10,
-      "createdAt": "24.02.2024",
+      "views": 143,
+      "createdAt": "03.01.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -634,12 +604,10 @@
       "title": "Sport news",
       "subtitle": "Что нового за 2024 год?",
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
-      "views": 10,
-      "createdAt": "24.02.2024",
+      "views": 190,
+      "createdAt": "09.01.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -659,6 +627,50 @@
           "type": "IMAGE",
           "src": "https://i.pinimg.com/originals/e7/b6/14/e7b6146be8becb7558b0f671897e29ba.jpg",
           "title": "Рисунок 1 - Gangsta"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "title": "Экономическая статья - ИНФЛЯЦИЯ!",
+      "subtitle": "Экономика",
+      "img": "https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg",
+      "views": 1022,
+      "createdAt": "01.02.2022",
+      "userId": "1",
+      "type": ["ECONOMICS"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
+            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
+            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "title": "Научная статья - Биология",
+      "subtitle": "БиологиЯ",
+      "img": "https://assets2-my.umbc.edu/system/shared/thumbnails/news/000/089/276/3121d14bf9162733f1413a469138b40e/xxlarge.jpg?1576681568",
+      "views": 71,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": ["SCIENCE"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
+            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
+            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
+          ]
         }
       ]
     }

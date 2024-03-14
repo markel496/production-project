@@ -10,7 +10,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 
 const meta: Meta<typeof ArticleListItem> = {
-  title: 'Entities/ArticleListItem',
+  title: 'Entities/Article/ArticleListItem',
   component: ArticleListItem,
   parameters: {
     layout: 'padded'

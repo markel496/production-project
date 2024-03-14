@@ -6,5 +6,19 @@
   "Аватар": "Avatar",
   "Комментарии": "Comments",
   "Читать далее...": "Read more...",
-  "Назад к списку": "Back to list"
+  "Назад к списку": "Back to list",
+  "Сортировать": "Sort",
+  "По дате создания": "By creation date",
+  "По названию": "By title",
+  "По просмотрам": "By views",
+  "По возрастанию": "Ascending",
+  "По убыванию": "Descending",
+  "Поиск": "Search",
+  "Все": "All",
+  "Экономика": "Economics",
+  "Айти": "IT",
+  "Политика": "Politics",
+  "Наука": "Science",
+  "Спорт": "Sport",
+  "Статьи не найдены": "Articles not found"
 }
