@@ -2,16 +2,25 @@
   min-height: 100%;
 }
 
-.commentsTitle {
-  margin-top: 20px;
+.articleDetails,
+.recommended {
+  margin-bottom: 20px;
 }
 
-.commentList {
-  margin-top: 14px;
+.recommended {
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar-track {
+    background: transparent; /* цвет дорожки */
+  }
 }
 
+.recommendedTitle,
+.commentsTitle,
 .addNewComment {
-  margin-top: 14px;
+  margin-bottom: 14px;
 }
 
 .backBtn {

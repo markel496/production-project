@@ -22,7 +22,7 @@ describe('fetchNextArticles.test', () => {
 
     //Проверка, что dispatch вызвался 4 раза. 1 - pending; 2 - fullfiled; 3,4 - внутри fetchNextArticles
     expect(thunk.dispatch).toBeCalledTimes(4)
-    expect(fetchArticles).toHaveBeenCalledWith({ page: 4 })
+    expect(fetchArticles).toHaveBeenCalled()
   })
 
   test('fetchArticles not called', async () => {

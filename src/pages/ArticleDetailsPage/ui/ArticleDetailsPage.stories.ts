@@ -48,13 +48,19 @@ const articleDetailsComments: ArticleDetailsCommentsSchema = {
 
 export const Light: Story = {
   args: {},
-  decorators: [StoreDecorator({ articleDetailsComments })]
+  decorators: [
+    StoreDecorator({
+      articleDetailsPage: { comments: articleDetailsComments }
+    })
+  ]
 }
 
 export const Dark: Story = {
   args: {},
   decorators: [
     ThemeDecorator(Theme.DARK),
-    StoreDecorator({ articleDetailsComments })
+    StoreDecorator({
+      articleDetailsPage: { comments: articleDetailsComments }
+    })
   ]
 }

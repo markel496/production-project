@@ -2,13 +2,15 @@ import { FC, useEffect } from 'react'
 import { useStore } from 'react-redux'
 import {
   ReduxStoreWithManager,
+  StateSchema,
   StateSchemaKey
 } from 'app/providers/StoreProvider'
 import { Reducer } from '@reduxjs/toolkit'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 export type ReducersList = {
-  [name in StateSchemaKey]?: Reducer
+  //Указываю, что забираю поле у StateSchema в зависимости от названия редюсера. Т.е автоматически на основании этого динамически из StateSchema достается нужный кусок стейта
+  [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>
 }
 
 interface DynamicModuleLoaderProps {

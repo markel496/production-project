@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react'
+import { HTMLAttributeAnchorTarget, memo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleListItem.module.scss'
 import {
@@ -16,7 +16,6 @@ import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { TFunction } from 'react-i18next'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { Button } from 'shared/ui/Button/Button'
-import { useNavigate } from 'react-router-dom'
 import { routePath } from 'shared/config/routeConfig/routeConfig'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 
@@ -24,13 +23,13 @@ interface ArticleListItemProps {
   className?: string
   article: Article
   view: ArticleView
+  target?: HTMLAttributeAnchorTarget
   t: TFunction<'articles', undefined>
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const { className, article, view, t } = props
+  const { className, article, view, target, t } = props
   const [isHover, bindHover] = useHover()
-  const navigate = useNavigate()
 
   const createdAt = <Text className={cls.date} text={article.createdAt} />
   const types = <Text className={cls.types} text={article.type.join(', ')} />
@@ -38,10 +37,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     <img className={cls.img} src={article.img} alt={article.title} />
   )
   const views = <Text className={cls.views} text={String(article.views)} />
-
-  const onOpenArticle = useCallback(() => {
-    navigate(routePath.article_details + article.id)
-  }, [navigate, article.id])
 
   if (view === ArticleView.BIG) {
     const textBlock = article.blocks.find(
@@ -78,7 +73,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           />
         )}
         <div className={cls.footer}>
-          <Button onClick={onOpenArticle}>{t('Читать далее...')}</Button>
+          <AppLink to={routePath.article_details + article.id} target={target}>
+            <Button>{t('Читать далее...')}</Button>
+          </AppLink>
           {views}
           <Icon className={cls.icon} Svg={EyeIcon} />
         </div>
@@ -87,21 +84,24 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   }
 
   return (
-    <Card
-      onClick={onOpenArticle}
+    <AppLink
       className={classNames('', {}, [className, cls[view]])}
+      to={routePath.article_details + article.id}
+      target={target}
       {...bindHover}
     >
-      <div className={cls.imgWrapper}>
-        {image}
-        {isHover && createdAt}
-      </div>
-      <div className={cls.infoWrapper}>
-        {types}
-        {views}
-        <Icon className={cls.icon} Svg={EyeIcon} />
-      </div>
-      <Text className={cls.title} text={article.title} />
-    </Card>
+      <Card>
+        <div className={cls.imgWrapper}>
+          {image}
+          {isHover && createdAt}
+        </div>
+        <div className={cls.infoWrapper}>
+          {types}
+          {views}
+          <Icon className={cls.icon} Svg={EyeIcon} />
+        </div>
+        <Text className={cls.title} text={article.title} />
+      </Card>
+    </AppLink>
   )
 })
