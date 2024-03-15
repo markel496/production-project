@@ -3,34 +3,33 @@ import cls from './ArticleDetailsPage.module.scss'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
 import { ArticleDetails, ArticleList, ArticleView } from 'entities/Article'
-import { useNavigate, useParams } from 'react-router-dom'
-import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text'
+import { useParams } from 'react-router-dom'
+import { Text, TextSize } from 'shared/ui/Text/Text'
 import { CommentList } from 'entities/Comment'
 import {
   DynamicModuleLoader,
   ReducersList
 } from 'shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
-import { getArticleComments } from '../model/slices/articleDetailsCommentsSlice'
+import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice'
 import { useSelector } from 'react-redux'
 import {
   getArticleCommentsError,
   getArticleCommentsIsLoading
-} from '../model/selectors/comments'
+} from '../../model/selectors/comments'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { AddNewComment, AddNewCommentArgs } from 'features/addNewComment'
-import { addNewCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle'
-import { deleteArticleComment } from '../model/services/deleteArticleComment/deleteArticleComment'
+import { addNewCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
+import { deleteArticleComment } from '../../model/services/deleteArticleComment/deleteArticleComment'
 import { EditCommentArgs } from 'features/editComment'
-import { editArticleComment } from '../model/services/editArticleComment/editArticleComment'
-import { Button } from 'shared/ui/Button/Button'
-import { routePath } from 'shared/config/routeConfig/routeConfig'
+import { editArticleComment } from '../../model/services/editArticleComment/editArticleComment'
 import { Page } from 'widgets/Page'
-import { getArticleRecommendations } from '../model/slices/articleDetailsRecommendationsSlice'
-import { getArticleRecommendationsIsLoading } from '../model/selectors/recommendations'
-import { fetchRecommendedArticles } from '../model/services/fetchRecommendedArticles/fetchRecommendedArticles'
-import { articleDetailsPageReducer } from '../model/slices'
+import { getArticleRecommendations } from '../../model/slices/articleDetailsRecommendationsSlice'
+import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations'
+import { fetchRecommendedArticles } from '../../model/services/fetchRecommendedArticles/fetchRecommendedArticles'
+import { articleDetailsPageReducer } from '../../model/slices'
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 
 const initialReducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer
@@ -56,11 +55,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   // const recommendationsError = useSelector(getArticleRecommendationsError)
 
   const dispatch = useAppDispatch()
-  const navigate = useNavigate()
-
-  const onBackToList = useCallback(() => {
-    navigate(routePath.articles)
-  }, [navigate])
 
   const onSendComment = useCallback(
     (commentData: AddNewCommentArgs) => {
@@ -88,20 +82,10 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     dispatch(fetchRecommendedArticles())
   })
 
-  if (!id) {
-    return (
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <Text theme={TextTheme.ERROR} text={t('Статья не найдена')} />
-      </div>
-    )
-  }
-
   return (
     <DynamicModuleLoader reducers={initialReducers}>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <Button className={cls.backBtn} onClick={onBackToList}>
-          {t('Назад к списку')}
-        </Button>
+        <ArticleDetailsPageHeader id={id} />
         <ArticleDetails className={cls.articleDetails} id={id} />
         <Text
           className={cls.recommendedTitle}

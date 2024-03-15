@@ -8,6 +8,7 @@ import {
 } from '../../model/types/article'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
+import i18n from 'shared/config/i18n/i18n'
 
 const meta: Meta<typeof ArticleListItem> = {
   title: 'Entities/Article/ArticleListItem',
@@ -50,6 +51,8 @@ const article: Article = {
   ]
 }
 
+const t = i18n.t
+
 export const PrimarySmall: Story = {
   args: {
     article,
@@ -60,7 +63,8 @@ export const PrimarySmall: Story = {
 export const PrimaryBig: Story = {
   args: {
     article,
-    view: ArticleView.BIG
+    view: ArticleView.BIG,
+    t
   }
 }
 
@@ -77,7 +81,8 @@ export const DarkSmall: Story = {
 export const DarkBig: Story = {
   args: {
     article,
-    view: ArticleView.BIG
+    view: ArticleView.BIG,
+    t
   },
   decorators: [ThemeDecorator(Theme.DARK)]
 }
@@ -95,7 +100,8 @@ export const GreenSmall: Story = {
 export const GreenBig: Story = {
   args: {
     article,
-    view: ArticleView.BIG
+    view: ArticleView.BIG,
+    t
   },
   decorators: [ThemeDecorator(Theme.GREEN)]
 }

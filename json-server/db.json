@@ -1,21 +1,4 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "title": "json-server1",
-      "author": "typicode"
-    },
-    {
-      "id": "2",
-      "title": "json-server2",
-      "author": "typicode"
-    },
-    {
-      "id": "3",
-      "title": "json-server3",
-      "author": "typicode"
-    }
-  ],
   "articles": [
     {
       "id": "1",
@@ -25,9 +8,7 @@
       "views": 1022,
       "createdAt": "15.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -96,10 +77,8 @@
       "img": "https://certref.com/cdn/cache/400x225/image/2019/05/23/7eec8bea58c7f444750956de9af8f90a.png",
       "views": 1000,
       "createdAt": "15.02.2022",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "userId": "2",
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -169,9 +148,7 @@
       "views": 987,
       "createdAt": "19.02.2023",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -240,10 +217,8 @@
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
       "views": 10,
       "createdAt": "15.02.2024",
-      "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "userId": "2",
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -274,9 +249,7 @@
       "views": 11,
       "createdAt": "16.02.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -307,9 +280,7 @@
       "views": 12,
       "createdAt": "10.01.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -339,10 +310,8 @@
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
       "views": 125,
       "createdAt": "19.02.2024",
-      "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "userId": "2",
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -373,9 +342,7 @@
       "views": 13,
       "createdAt": "01.03.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -405,10 +372,8 @@
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
       "views": 132,
       "createdAt": "03.01.2024",
-      "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "userId": "2",
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -439,9 +404,7 @@
       "views": 14,
       "createdAt": "06.02.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -472,9 +435,7 @@
       "views": 140,
       "createdAt": "14.02.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -505,9 +466,7 @@
       "views": 15,
       "createdAt": "04.03.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -538,9 +497,7 @@
       "views": 20,
       "createdAt": "07.03.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -570,10 +527,8 @@
       "img": "https://www.davco.it/wp-content/uploads/2020/09/anteprima-sport-news-1.jpg",
       "views": 28,
       "createdAt": "12.01.2024",
-      "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "userId": "2",
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -604,9 +559,7 @@
       "views": 143,
       "createdAt": "03.01.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -637,9 +590,7 @@
       "views": 190,
       "createdAt": "09.01.2024",
       "userId": "1",
-      "type": [
-        "SPORT"
-      ],
+      "type": ["SPORT"],
       "blocks": [
         {
           "id": "1",
@@ -670,9 +621,7 @@
       "views": 1022,
       "createdAt": "01.02.2022",
       "userId": "1",
-      "type": [
-        "ECONOMICS"
-      ],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -694,9 +643,7 @@
       "views": 71,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "SCIENCE"
-      ],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",

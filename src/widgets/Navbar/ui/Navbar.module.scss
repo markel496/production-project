@@ -7,6 +7,10 @@
   padding: 20px;
 }
 
+.appName {
+  width: calc(var(--sidebar-width) - 20px);
+}
+
 .links {
   margin-left: auto;
 }

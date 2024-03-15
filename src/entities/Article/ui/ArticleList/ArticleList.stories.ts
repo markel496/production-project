@@ -8,6 +8,7 @@ import {
 } from '../../model/types/article'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
+import i18n from 'shared/config/i18n/i18n'
 
 const meta: Meta<typeof ArticleList> = {
   title: 'Entities/Article/ArticleList',
@@ -54,6 +55,8 @@ const articles = [...new Array(7)].map((_, idx) => {
   return { ...article, id: String(idx) }
 })
 
+const t = i18n.t
+
 export const PrimarySmall: Story = {
   args: {
     articles,
@@ -64,7 +67,8 @@ export const PrimarySmall: Story = {
 export const PrimaryBig: Story = {
   args: {
     articles,
-    view: ArticleView.BIG
+    view: ArticleView.BIG,
+    t
   }
 }
 
@@ -78,9 +82,10 @@ export const PrimarySkeletonSmall: Story = {
 
 export const PrimarySkeletonBig: Story = {
   args: {
-    articles,
+    articles: [],
     view: ArticleView.BIG,
-    isLoading: true
+    isLoading: true,
+    t
   }
 }
 
@@ -97,7 +102,8 @@ export const DarkSmall: Story = {
 export const DarkBig: Story = {
   args: {
     articles,
-    view: ArticleView.BIG
+    view: ArticleView.BIG,
+    t
   },
   decorators: [ThemeDecorator(Theme.DARK)]
 }
@@ -113,9 +119,10 @@ export const DarkSkeletonSmall: Story = {
 
 export const DarkSkeletonBig: Story = {
   args: {
-    articles,
+    articles: [],
     view: ArticleView.BIG,
-    isLoading: true
+    isLoading: true,
+    t
   },
   decorators: [ThemeDecorator(Theme.DARK)]
 }
@@ -133,7 +140,8 @@ export const GreenSmall: Story = {
 export const GreenBig: Story = {
   args: {
     articles,
-    view: ArticleView.BIG
+    view: ArticleView.BIG,
+    t
   },
   decorators: [ThemeDecorator(Theme.GREEN)]
 }
@@ -149,9 +157,10 @@ export const GreenSkeletonSmall: Story = {
 
 export const GreenSkeletonBig: Story = {
   args: {
-    articles,
+    articles: [],
     view: ArticleView.BIG,
-    isLoading: true
+    isLoading: true,
+    t
   },
   decorators: [ThemeDecorator(Theme.GREEN)]
 }

@@ -36,7 +36,7 @@ const initialReducers: ReducersList = {
 
 interface ArticleDetailsProps {
   className?: string
-  id: string
+  id?: string
 }
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
@@ -82,10 +82,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     }
   }, [])
 
-  useInitialEffect(() => {
-    dispatch(fetchArticleById(id))
-  })
-
   let content
 
   if (isLoading) {
@@ -105,11 +101,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     )
   } else if (error) {
     content = (
-      <Text
-        theme={TextTheme.ERROR}
-        title={t('Произошла ошибка при загрузке статьи')}
-        align={TextAlign.CENTER}
-      />
+      <Text theme={TextTheme.ERROR} title={t(error)} align={TextAlign.CENTER} />
     )
   } else {
     content = (
@@ -140,6 +132,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       </>
     )
   }
+
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id))
+  })
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>

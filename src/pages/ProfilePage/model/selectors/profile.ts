@@ -5,6 +5,10 @@ import { getProfileInitialData } from 'entities/Profile'
 export const getCanEditProfile = createSelector(
   getUserAuthData,
   getProfileInitialData,
-  (userAuthData, profileInitialData) =>
-    userAuthData?.id === profileInitialData?.id
+  (userAuthData, profileInitialData) => {
+    if (!userAuthData || !profileInitialData) {
+      return false
+    }
+    return userAuthData.id === profileInitialData.id
+  }
 )

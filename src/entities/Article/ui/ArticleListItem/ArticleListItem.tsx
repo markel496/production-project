@@ -53,12 +53,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             className={cls.user}
             to={routePath.profile + article.user.id}
           >
-            <Avatar
-              className={cls.avatar}
-              size={50}
-              src={article.user.avatar}
-              alt={t('Аватар')}
-            />
+            {article.user.avatar && (
+              <Avatar
+                className={cls.avatar}
+                size={50}
+                src={article.user.avatar}
+                alt={t('Аватар')}
+              />
+            )}
             <Text size={TextSize.L} text={article.user.username} />
           </AppLink>
           {createdAt}

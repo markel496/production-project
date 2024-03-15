@@ -14,6 +14,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useSelector } from 'react-redux'
 import {
+  getArticlesPageInited,
   getArticlesPageIsLoading,
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
@@ -40,6 +41,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const articles = useSelector(getArticles.selectAll)
   const isLoading = useSelector(getArticlesPageIsLoading)
   const view = useSelector(getArticlesPageView)
+  const inited = useSelector(getArticlesPageInited)
   // const error = useSelector(getArticlesError)
 
   const onLoadNextPart = useCallback(() => {
@@ -58,12 +60,14 @@ const ArticlesPage = (props: ArticlesPageProps) => {
         isSaveScroll
       >
         <ArticlesPageFilters className={cls.filters} view={view} />
-        <ArticleList
-          t={t}
-          articles={articles}
-          view={view}
-          isLoading={isLoading}
-        />
+        {inited && (
+          <ArticleList
+            t={t}
+            articles={articles}
+            view={view}
+            isLoading={isLoading}
+          />
+        )}
       </Page>
     </DynamicModuleLoader>
   )

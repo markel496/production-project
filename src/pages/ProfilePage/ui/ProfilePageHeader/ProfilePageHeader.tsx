@@ -7,7 +7,7 @@ import { Text } from 'shared/ui/Text/Text'
 import { useCallback } from 'react'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { profileActions, updateProfileData } from 'entities/Profile'
-import { getCanEditProfile } from '../../model/selectors/getCanEditProfile/getCanEditProfile'
+import { getCanEditProfile } from '../../model/selectors/profile'
 
 interface ProfilePageHeaderProps {
   className?: string

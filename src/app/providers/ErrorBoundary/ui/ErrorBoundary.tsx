@@ -33,7 +33,6 @@ class ErrorBoundary extends React.Component<
     const { hasError } = this.state
     if (hasError) {
       // You can render any custom fallback UI
-      // eslint-disable-next-line i18next/no-literal-string
       return (
         <Suspense fallback="">
           <PageError />
