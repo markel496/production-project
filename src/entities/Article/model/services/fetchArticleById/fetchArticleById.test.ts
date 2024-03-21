@@ -31,6 +31,6 @@ describe('fetchArticleById.test', () => {
 
     expect(thunk.api.get).toHaveBeenCalled()
     expect(result.meta.requestStatus).toBe('rejected')
-    expect(result.payload).toBe('error')
+    expect(result.payload).toBe('Статья не найдена')
   })
 })
