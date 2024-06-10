@@ -17,16 +17,16 @@ export default meta
 type Story = StoryObj<typeof EditComment>
 
 const comment: Comment = {
-  id: '1',
+  _id: '1',
   user: {
-    id: '1',
+    _id: '1',
     username: 'Commentator',
     avatar:
       'https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg'
   },
   text: 'HOLLA420',
-  createdAt: '05.02.2023 в 23:27',
-  edited: true
+  createdAt: '2024-06-06T17:35:45.931Z',
+  updatedAt: '2024-06-06T17:35:45.931Z'
 }
 
 export const Primary: Story = {

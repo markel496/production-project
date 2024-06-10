@@ -19,6 +19,9 @@ import { Button } from 'shared/ui/Button/Button'
 import { routePath } from 'shared/config/routeConfig/routeConfig'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 
+import moment from 'moment'
+import 'moment/locale/ru'
+
 interface ArticleListItemProps {
   className?: string
   article: Article
@@ -31,7 +34,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const { className, article, view, target, t } = props
   const [isHover, bindHover] = useHover()
 
-  const createdAt = <Text className={cls.date} text={article.createdAt} />
+  const createdAt = (
+    <Text
+      className={cls.date}
+      text={moment(article.createdAt).format('L, LT')}
+    />
+  )
   const types = <Text className={cls.types} text={article.type.join(', ')} />
   const image = (
     <img className={cls.img} src={article.img} alt={article.title} />
@@ -51,7 +59,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         <div className={cls.header}>
           <AppLink
             className={cls.user}
-            to={routePath.profile + article.user.id}
+            to={routePath.profile + article.user._id}
           >
             {article.user.avatar && (
               <Avatar
@@ -75,7 +83,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           />
         )}
         <div className={cls.footer}>
-          <AppLink to={routePath.article_details + article.id} target={target}>
+          <AppLink to={routePath.article_details + article._id} target={target}>
             <Button>{t('Читать далее...')}</Button>
           </AppLink>
           {views}
@@ -88,7 +96,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   return (
     <AppLink
       className={classNames('', {}, [className, cls[view]])}
-      to={routePath.article_details + article.id}
+      to={routePath.article_details + article._id}
       target={target}
       {...bindHover}
     >

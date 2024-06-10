@@ -18,7 +18,7 @@ export const EditComment = memo((props: EditCommentProps) => {
   const { t } = useTranslation('comments')
   const { className, onCancelEditing, onEditComment, comment } = props
 
-  const { id, text: commentText } = comment
+  const { _id, text: commentText } = comment
 
   const [text, setText] = useState(commentText)
 
@@ -32,8 +32,8 @@ export const EditComment = memo((props: EditCommentProps) => {
   }, [commentText, text])
 
   const onEditHandler = useCallback(() => {
-    onEditComment({ id, text, edited: true })
-  }, [id, onEditComment, text])
+    onEditComment({ _id, text })
+  }, [_id, onEditComment, text])
 
   return (
     <div className={classNames(cls.EditComment, {}, [className])}>

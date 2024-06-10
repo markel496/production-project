@@ -12,7 +12,7 @@ interface CommentListProps {
   comments?: Comment[]
   isLoading?: boolean
   error?: string
-  onDeleteArticleComment?: (id: string) => void
+  onDeleteArticleComment?: (_id: string) => void
   onEditArticleComment?: (commentData: EditCommentArgs) => void
 }
 
@@ -50,7 +50,7 @@ export const CommentList = memo((props: CommentListProps) => {
         comments.map((comment) => (
           <CommentCard
             className={cls.comment}
-            key={comment.id}
+            key={comment._id}
             comment={comment}
             onDeleteArticleComment={onDeleteArticleComment}
             onEditArticleComment={onEditArticleComment}

@@ -24,9 +24,9 @@ export default meta
 type Story = StoryObj<typeof ArticleListItem>
 
 const article: Article = {
-  id: '1',
+  _id: '1',
   user: {
-    id: '1',
+    _id: '1',
     username: 'Markel',
     avatar:
       'https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg'
@@ -35,11 +35,11 @@ const article: Article = {
   subtitle: 'Что нового в JS за 2022 год?',
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
-  createdAt: '26.02.2022',
+  createdAt: '2024-06-06T17:35:45.931Z',
   type: [ArticleType.IT],
   blocks: [
     {
-      id: '1',
+      _id: '1',
       type: ArticleBlockType.TEXT,
       title: 'Заголовок этого блока',
       paragraphs: [

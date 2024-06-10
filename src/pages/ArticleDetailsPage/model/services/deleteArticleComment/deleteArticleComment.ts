@@ -25,7 +25,7 @@ export const deleteArticleComment = createAsyncThunk<
       throw new Error()
     }
 
-    dispatch(fetchCommentsByArticleId(article.id))
+    dispatch(fetchCommentsByArticleId(article._id))
 
     return response.data
   } catch (e) {

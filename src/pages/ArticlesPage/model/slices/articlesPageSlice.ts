@@ -18,7 +18,7 @@ import { SortOrder } from 'shared/types/sort'
 
 const articlesAdapter = createEntityAdapter<Article>({
   // Assume IDs are stored in a field other than `book.id`
-  selectId: (article) => article.id
+  selectId: (article) => article._id
 })
 
 //Создаю селектор, с помощью которого буду получать статьи
@@ -36,7 +36,7 @@ const articlesPageSlice = createSlice({
     hasMore: true,
     limit: 9,
     order: 'asc',
-    sort: ArticleSortField.VIEWS,
+    sort: ArticleSortField.CREATED,
     search: '',
     type: ArticleType.ALL,
     ids: [],
@@ -84,12 +84,14 @@ const articlesPageSlice = createSlice({
     })
     builder.addCase(fetchArticles.fulfilled, (state, action) => {
       state.isLoading = false
-      state.hasMore = action.payload.length >= state.limit
+      state.hasMore =
+        action.payload.articles.length >= state.limit &&
+        action.payload.articlesTotalCount > state.limit * state.page
 
       if (action.meta.arg.replace) {
-        articlesAdapter.setAll(state, action.payload)
+        articlesAdapter.setAll(state, action.payload.articles)
       } else {
-        articlesAdapter.setMany(state, action.payload)
+        articlesAdapter.setMany(state, action.payload.articles)
       }
     })
     builder.addCase(fetchArticles.rejected, (state, action) => {

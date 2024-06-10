@@ -22,14 +22,14 @@ export const editArticleComment = createAsyncThunk<
 
   try {
     const response = await extra.api.patch<Comment>(
-      `/comments/${commentData.id}`,
+      `/comments/${commentData._id}`,
       commentData
     )
     if (!response.data) {
       throw new Error()
     }
 
-    dispatch(fetchCommentsByArticleId(article.id))
+    dispatch(fetchCommentsByArticleId(article._id))
 
     return response.data
   } catch (e) {

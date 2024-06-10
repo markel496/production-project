@@ -9,6 +9,6 @@ export const getCanEditProfile = createSelector(
     if (!userAuthData || !profileInitialData) {
       return false
     }
-    return userAuthData.id === profileInitialData.id
+    return userAuthData._id === profileInitialData.id
   }
 )

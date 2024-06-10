@@ -5,7 +5,7 @@ import { Article } from 'entities/Article'
 import { fetchRecommendedArticles } from '../services/fetchRecommendedArticles/fetchRecommendedArticles'
 
 const articleDetailsRecommendationsAdapter = createEntityAdapter<Article>({
-  selectId: (article: Article) => article.id
+  selectId: (article: Article) => article._id
 })
 
 export const getArticleRecommendations =
@@ -23,10 +23,16 @@ const articleDetailsRecommendationsSlice = createSlice({
         isLoading: false,
         error: undefined,
         ids: [],
-        entities: {}
+        entities: {},
+        _inited: false
       }
     ),
-  reducers: {},
+  reducers: {
+    //Для того, чтобы не было надписи "статьи не найдены" при первом рендере
+    initRecommendations: (state) => {
+      state._inited = true
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchRecommendedArticles.pending, (state) => {
       state.error = undefined
@@ -45,5 +51,7 @@ const articleDetailsRecommendationsSlice = createSlice({
   }
 })
 
-export const { reducer: articleDetailsRecommendationsReducer } =
-  articleDetailsRecommendationsSlice
+export const {
+  reducer: articleDetailsRecommendationsReducer,
+  actions: articleDetailsRecommendationsActions
+} = articleDetailsRecommendationsSlice

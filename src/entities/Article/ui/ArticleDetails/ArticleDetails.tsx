@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleDetails.module.scss'
 import {
@@ -30,6 +31,9 @@ import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/Articl
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 
+import moment from 'moment'
+import 'moment/locale/ru'
+
 const initialReducers: ReducersList = {
   articleDetails: articleDetailsReducer
 }
@@ -40,7 +44,7 @@ interface ArticleDetailsProps {
 }
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
-  const { t } = useTranslation('articles')
+  const { t, i18n } = useTranslation('articles')
   const { className, id } = props
   const dispatch = useAppDispatch()
 
@@ -54,7 +58,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         return (
           <ArticleCodeBlockComponent
             className={cls.block}
-            key={block.id}
+            key={block._id}
             block={block}
           />
         )
@@ -63,7 +67,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         return (
           <ArticleImageBlockComponent
             className={cls.block}
-            key={block.id}
+            key={block._id}
             block={block}
           />
         )
@@ -72,7 +76,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         return (
           <ArticleTextBlockComponent
             className={cls.block}
-            key={block.id}
+            key={block._id}
             block={block}
           />
         )
@@ -126,7 +130,15 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         </div>
         <div className={cls.articleInfo}>
           <Icon Svg={CalendarIcon} className={cls.icon} />
-          <Text text={article?.createdAt} />
+          <Text
+            text={
+              __PROJECT__ !== 'storybook'
+                ? moment(article?.createdAt)
+                    .locale(i18n?.language)
+                    .format(i18n?.language === 'ru' ? 'll в LT' : 'LLL')
+                : article?.createdAt
+            }
+          />
         </div>
         {article?.blocks.map(renderBlock)}
       </>

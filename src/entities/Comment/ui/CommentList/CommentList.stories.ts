@@ -12,7 +12,7 @@ const meta: Meta<typeof CommentList> = {
     layout: 'padded'
   },
   tags: ['autodocs'],
-  decorators: [StoreDecorator({ user: { authData: { id: '1' } } })],
+  decorators: [StoreDecorator({ user: { authData: { _id: '1' } } })],
   argTypes: {}
 }
 
@@ -21,36 +21,36 @@ type Story = StoryObj<typeof CommentList>
 
 const comments: Comment[] = [
   {
-    id: '1',
+    _id: '1',
     user: {
-      id: '1',
+      _id: '1',
       username: 'Commentator'
     },
     text: 'Comment1',
-    createdAt: '01.01.1996',
-    edited: false
+    createdAt: '2024-06-06T17:35:45.931Z',
+    updatedAt: '2024-06-06T17:35:45.931Z'
   },
   {
-    id: '2',
+    _id: '2',
     user: {
-      id: '2',
+      _id: '2',
       username: 'Vanya',
       avatar:
         'https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg'
     },
     text: 'Comment2',
-    createdAt: '01.01.1996',
-    edited: true
+    createdAt: '2024-06-06T17:35:45.931Z',
+    updatedAt: '2024-06-06T17:35:45.931Z'
   },
   {
-    id: '3',
+    _id: '3',
     user: {
-      id: '1',
+      _id: '1',
       username: 'Commentator'
     },
     text: 'Comment10',
-    createdAt: '01.01.1996',
-    edited: true
+    createdAt: '2024-06-06T17:35:45.931Z',
+    updatedAt: '2024-06-06T17:35:45.931Z'
   }
 ]
 

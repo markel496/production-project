@@ -37,8 +37,11 @@ export const Light: Story = {
   decorators: [
     StoreDecorator({
       profile: {
-        data: profile
-      }
+        data: profile,
+        initialData: { id: '1' },
+        readonly: true
+      },
+      user: { authData: { _id: '1' } }
     })
   ]
 }
@@ -48,7 +51,8 @@ export const Dark: Story = {
   decorators: [
     StoreDecorator({
       profile: {
-        data: profile
+        data: profile,
+        readonly: true
       }
     }),
     ThemeDecorator(Theme.DARK)

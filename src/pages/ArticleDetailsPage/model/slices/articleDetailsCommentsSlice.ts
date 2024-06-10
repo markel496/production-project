@@ -10,8 +10,8 @@ import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/f
 import { ArticleDetailsCommentsSchema } from '../types/articleDetailsCommentsSchema'
 
 const articleDetailsCommentsAdapter = createEntityAdapter<Comment>({
-  // Assume IDs are stored in a field other than `book.id`
-  selectId: (comment: Comment) => comment.id
+  // Assume IDs are stored in a field other than `book._id`
+  selectId: (comment: Comment) => comment._id
 })
 
 //Создаю селектор, с помощью которого буду получать комментарии
@@ -36,9 +36,9 @@ const articleDetailsCommentsSlice = createSlice({
   reducers: {
     // deleteArticleDetailsComment: (
     //   state,
-    //   { payload: id }: PayloadAction<string>
+    //   { payload: _id }: PayloadAction<string>
     // ) => {
-    //   articleDetailsCommentsAdapter.removeOne(state, id)
+    //   articleDetailsCommentsAdapter.removeOne(state, _id)
     // }
   },
   extraReducers: (builder) => {

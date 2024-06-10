@@ -4,24 +4,31 @@ import { Article } from 'entities/Article'
 
 export const fetchRecommendedArticles = createAsyncThunk<
   Article[],
-  void,
+  string | undefined,
   ThunkConfig<string>
->('articleDetailsPage/fetchRecommendedArticles', async (_, thunkAPI) => {
-  const { extra, rejectWithValue } = thunkAPI
+>(
+  'articleDetailsPage/fetchRecommendedArticles',
+  async (currentArticleDetailsId, thunkAPI) => {
+    const { extra, rejectWithValue } = thunkAPI
 
-  try {
-    const response = await extra.api.get<Article[]>('/articles', {
-      params: {
-        _limit: 4
+    try {
+      const response = await extra.api.get<Article[]>(
+        // Передаю id текущей открытой статьи, чтобы в рекомендациях ее не было
+        `/articles/${currentArticleDetailsId}/recommended`,
+        {
+          params: {
+            limit: 4
+          }
+        }
+      )
+
+      if (!response.data) {
+        throw new Error()
       }
-    })
 
-    if (!response.data) {
-      throw new Error()
+      return response.data
+    } catch (e) {
+      return rejectWithValue('error')
     }
-
-    return response.data
-  } catch (e) {
-    return rejectWithValue('error')
   }
-})
+)

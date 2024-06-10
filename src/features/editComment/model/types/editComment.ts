@@ -1,5 +1,4 @@
 export interface EditCommentArgs {
-  id: string
+  _id: string
   text: string
-  edited: boolean
 }

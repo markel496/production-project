@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
+import { Theme } from 'app/providers/ThemeProvider'
 import { ArticleDetails } from './ArticleDetails'
 import {
   Article,
   ArticleBlockType,
   ArticleType
 } from '../../model/types/article'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
 
 const meta: Meta<typeof ArticleDetails> = {
   title: 'Entities/Article/ArticleDetails',
@@ -23,9 +23,9 @@ export default meta
 type Story = StoryObj<typeof ArticleDetails>
 
 const article: Article = {
-  id: '1',
+  _id: '1',
   user: {
-    id: '1',
+    _id: '1',
     username: 'Markel',
     avatar:
       'https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg'
@@ -34,11 +34,11 @@ const article: Article = {
   subtitle: 'Что нового в JS за 2022 год?',
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
-  createdAt: '26.02.2022',
+  createdAt: '06.06.2024, 22:07',
   type: [ArticleType.IT],
   blocks: [
     {
-      id: '1',
+      _id: '1',
       type: ArticleBlockType.TEXT,
       title: 'Заголовок этого блока',
       paragraphs: [
@@ -48,12 +48,12 @@ const article: Article = {
       ]
     },
     {
-      id: '4',
+      _id: '4',
       type: ArticleBlockType.CODE,
       code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;'
     },
     {
-      id: '5',
+      _id: '5',
       type: ArticleBlockType.TEXT,
       title: 'Заголовок этого блока',
       paragraphs: [
@@ -62,19 +62,19 @@ const article: Article = {
       ]
     },
     {
-      id: '2',
+      _id: '2',
       type: ArticleBlockType.IMAGE,
       src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
       title: 'Рисунок 1 - скриншот сайта'
     },
     {
-      id: '3',
+      _id: '3',
       type: ArticleBlockType.CODE,
       // eslint-disable-next-line quotes
       code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
     },
     {
-      id: '7',
+      _id: '7',
       type: ArticleBlockType.TEXT,
       title: 'Заголовок этого блока',
       paragraphs: [
@@ -83,13 +83,13 @@ const article: Article = {
       ]
     },
     {
-      id: '8',
+      _id: '8',
       type: ArticleBlockType.IMAGE,
       src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
       title: 'Рисунок 1 - скриншот сайта'
     },
     {
-      id: '9',
+      _id: '9',
       type: ArticleBlockType.TEXT,
       title: 'Заголовок этого блока',
       paragraphs: [

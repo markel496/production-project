@@ -18,10 +18,6 @@ import {
   DynamicModuleLoader,
   ReducersList
 } from 'shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
-import { AddNewCommentArgs } from '../../model/types/addNewComment'
-
-import moment from 'moment'
-import 'moment/locale/ru'
 
 const initialReducers: ReducersList = {
   addNewComment: addNewCommentReducer
@@ -29,7 +25,7 @@ const initialReducers: ReducersList = {
 
 export interface AddNewCommentProps {
   className?: string
-  onSendComment: (commentData: AddNewCommentArgs) => void
+  onSendComment: (comment: string) => void
 }
 
 const AddNewComment = memo((props: AddNewCommentProps) => {
@@ -57,8 +53,7 @@ const AddNewComment = memo((props: AddNewCommentProps) => {
       onCommentTextChange('')
       return
     }
-    const createdAt = moment().format('L в LT')
-    onSendComment({ text, createdAt })
+    onSendComment(text)
     onCommentTextChange('')
   }, [dispatch, text, onSendComment, onCommentTextChange])
 

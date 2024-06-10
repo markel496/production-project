@@ -13,11 +13,7 @@ export const fetchArticleById = createAsyncThunk<
     return rejectWithValue('Произошла ошибка при загрузке статьи')
   }
   try {
-    const response = await extra.api.get<Article>(`/articles/${articleId}`, {
-      params: {
-        _expand: 'user'
-      }
-    })
+    const response = await extra.api.get<Article>(`/articles/${articleId}`)
 
     if (!response.data) {
       throw new Error()

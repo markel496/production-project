@@ -4,7 +4,7 @@ import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk'
 
 describe('loginByUsername.test', () => {
   test('success login', async () => {
-    const userValue = { id: '1', username: 'Vanya' }
+    const userValue = { _id: '1', username: 'Vanya' }
     const thunk = new TestAsyncThunk(loginByUsername)
     thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }))
     const result = await thunk.callThunk({
@@ -57,7 +57,7 @@ describe('loginByUsername.test', () => {
 //   })
 
 //   test('success login', async () => {
-//     const userValue = { id: '1', username: 'Vanya' }
+//     const userValue = { _id: '1', username: 'Vanya' }
 //     mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }))
 //     const action = loginByUsername({ username: 'Vanya', password: '12345' })
 //     const result = await action(dispatch, getState, undefined)

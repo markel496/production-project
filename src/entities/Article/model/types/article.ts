@@ -27,7 +27,7 @@ export enum ArticleSortField {
 }
 
 export interface ArticleBlockBase {
-  id: string
+  _id: string
   type: ArticleBlockType
 }
 
@@ -54,7 +54,7 @@ export type ArticleBlock =
   | ArticleImageBlock
 
 export interface Article {
-  id: string
+  _id: string
   title: string
   subtitle: string
   img: string

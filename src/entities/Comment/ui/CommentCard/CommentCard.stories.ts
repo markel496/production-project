@@ -12,7 +12,7 @@ const meta: Meta<typeof CommentCard> = {
     layout: 'padded'
   },
   tags: ['autodocs'],
-  decorators: [StoreDecorator({ user: { authData: { id: '1' } } })],
+  decorators: [StoreDecorator({ user: { authData: { _id: '1' } } })],
   argTypes: {}
 }
 
@@ -20,16 +20,16 @@ export default meta
 type Story = StoryObj<typeof CommentCard>
 
 const comment: Comment = {
-  id: '1',
+  _id: '1',
   user: {
-    id: '1',
+    _id: '1',
     username: 'Commentator',
     avatar:
       'https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg'
   },
   text: 'HOLLA420',
-  createdAt: '01.01.1996',
-  edited: true
+  createdAt: '2020-04-20T16:20:00.931Z',
+  updatedAt: '2024-06-06T4:00:00.931Z'
 }
 
 export const Primary: Story = {

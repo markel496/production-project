@@ -19,14 +19,20 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { AddNewComment, AddNewCommentArgs } from 'features/addNewComment'
+import { AddNewComment } from 'features/addNewComment'
 import { addNewCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { deleteArticleComment } from '../../model/services/deleteArticleComment/deleteArticleComment'
 import { EditCommentArgs } from 'features/editComment'
 import { editArticleComment } from '../../model/services/editArticleComment/editArticleComment'
 import { Page } from 'widgets/Page'
-import { getArticleRecommendations } from '../../model/slices/articleDetailsRecommendationsSlice'
-import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations'
+import {
+  getArticleRecommendations,
+  articleDetailsRecommendationsActions
+} from '../../model/slices/articleDetailsRecommendationsSlice'
+import {
+  getArticleRecommendationsInited,
+  getArticleRecommendationsIsLoading
+} from '../../model/selectors/recommendations'
 import { fetchRecommendedArticles } from '../../model/services/fetchRecommendedArticles/fetchRecommendedArticles'
 import { articleDetailsPageReducer } from '../../model/slices'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
@@ -52,13 +58,14 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const recommendationsIsLoading = useSelector(
     getArticleRecommendationsIsLoading
   )
+  const recommendationsInited = useSelector(getArticleRecommendationsInited)
   // const recommendationsError = useSelector(getArticleRecommendationsError)
 
   const dispatch = useAppDispatch()
 
   const onSendComment = useCallback(
-    (commentData: AddNewCommentArgs) => {
-      dispatch(addNewCommentForArticle(commentData))
+    (comment: string) => {
+      dispatch(addNewCommentForArticle(comment))
     },
     [dispatch]
   )
@@ -78,8 +85,9 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   )
 
   useInitialEffect(() => {
+    dispatch(articleDetailsRecommendationsActions.initRecommendations())
+    dispatch(fetchRecommendedArticles(id))
     dispatch(fetchCommentsByArticleId(id))
-    dispatch(fetchRecommendedArticles())
   })
 
   return (
@@ -92,14 +100,17 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
           title={t('Рекомендуем')}
           size={TextSize.L}
         />
-        <ArticleList
-          className={cls.recommended}
-          t={t}
-          articles={recommmendations}
-          view={ArticleView.SMALL}
-          isLoading={recommendationsIsLoading}
-          target="_blank"
-        />
+        {recommendationsInited && (
+          <ArticleList
+            className={cls.recommended}
+            t={t}
+            articles={recommmendations}
+            view={ArticleView.SMALL}
+            isLoading={recommendationsIsLoading}
+            target="_blank"
+          />
+        )}
+
         <Text
           className={cls.commentsTitle}
           title={t('Комментарии')}

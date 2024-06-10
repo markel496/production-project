@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { memo, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -17,16 +18,19 @@ import {
   EditCommentBtn
 } from 'features/editComment'
 
+import moment from 'moment'
+import 'moment/locale/ru'
+
 interface CommentCardProps {
   className?: string
   comment?: Comment
   isLoading?: boolean
-  onDeleteArticleComment?: (id: string) => void
+  onDeleteArticleComment?: (_id: string) => void
   onEditArticleComment?: (commentData: EditCommentArgs) => void
 }
 
 export const CommentCard = memo((props: CommentCardProps) => {
-  const { t } = useTranslation('comments')
+  const { t, i18n } = useTranslation('comments')
   const {
     className,
     comment,
@@ -38,23 +42,20 @@ export const CommentCard = memo((props: CommentCardProps) => {
   const [isEditing, setIsEditing] = useState(false)
 
   const authData = useSelector(getUserAuthData)
-  const canEdit = comment?.user.id === authData?.id
+  const canEdit = comment?.user._id === authData?._id
 
   const onDeleteComment = useCallback(() => {
     if (!comment) {
       return
     }
-    onDeleteArticleComment?.(comment.id)
+    onDeleteArticleComment?.(comment._id)
   }, [comment, onDeleteArticleComment])
 
   const onEditComment = useCallback(
     (commentData: EditCommentArgs) => {
-      if (!comment) {
-        return
-      }
       onEditArticleComment?.(commentData)
     },
-    [comment, onEditArticleComment]
+    [onEditArticleComment]
   )
 
   const onChangeComment = useCallback(() => {
@@ -93,7 +94,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
         <div className={cls.container}>
           <AppLink
             className={cls.profile}
-            to={`${routePath.profile}${comment.user.id}`}
+            to={`${routePath.profile}${comment.user._id}`}
           >
             {comment.user.avatar && (
               <Avatar
@@ -109,9 +110,16 @@ export const CommentCard = memo((props: CommentCardProps) => {
           <Text
             size={TextSize.S}
             text={
-              !comment.edited
-                ? comment.createdAt
-                : comment.createdAt + t(' (ред.)')
+              __PROJECT__ !== 'storybook'
+                ? comment.createdAt === comment.updatedAt
+                  ? moment(comment.createdAt)
+                      .locale(i18n.language)
+                      .format(i18n.language === 'ru' ? 'll в LT' : 'LLL')
+                  : moment(comment.createdAt)
+                      .locale(i18n.language)
+                      .format(i18n.language === 'ru' ? 'll в LT' : 'LLL') +
+                    t(' (ред.)')
+                : comment.createdAt
             }
           />
         </div>

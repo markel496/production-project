@@ -9,6 +9,6 @@ export const getCanEditArticle = createSelector(
     if (!user || !articleDetails) {
       return false
     }
-    return user.id === articleDetails.user.id
+    return user._id === articleDetails.user._id
   }
 )
