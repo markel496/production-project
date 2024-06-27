@@ -6,6 +6,8 @@ import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 import { TFunction } from 'react-i18next'
 import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text'
+import { Virtuoso, VirtuosoGrid } from 'react-virtuoso'
+import { PAGE_ID } from 'widgets/Page/ui/Page'
 
 interface ArticleListProps {
   className?: string
@@ -13,6 +15,7 @@ interface ArticleListProps {
   isLoading?: boolean
   view: ArticleView
   target?: HTMLAttributeAnchorTarget
+  virtualized?: boolean
   t: TFunction<'articles', undefined>
 }
 
@@ -22,7 +25,47 @@ const getSkeletons = (view: ArticleView) =>
   ))
 
 export const ArticleList = memo((props: ArticleListProps) => {
-  const { className, articles, isLoading, view, target, t } = props
+  const { className, articles, isLoading, view, target, virtualized, t } = props
+
+  const renderVirtualized = (articleView: ArticleView) => {
+    if (articleView === ArticleView.BIG) {
+      return (
+        <Virtuoso
+          useWindowScroll
+          customScrollParent={document.getElementById(PAGE_ID) as HTMLElement}
+          data={articles}
+          itemContent={(_, article) => (
+            <ArticleListItem
+              key={article._id}
+              article={article}
+              view={view}
+              target={target}
+              t={t}
+            />
+          )}
+        />
+      )
+    } else {
+      return (
+        <VirtuosoGrid
+          style={{ width: '100%' }}
+          useWindowScroll
+          listClassName={cls.ArticleList}
+          customScrollParent={document.getElementById(PAGE_ID) as HTMLElement}
+          data={articles}
+          itemContent={(_, article: Article) => (
+            <ArticleListItem
+              key={article._id}
+              article={article}
+              view={view}
+              target={target}
+              t={t}
+            />
+          )}
+        />
+      )
+    }
+  }
 
   const renderArticle = (article: Article) => {
     return (
@@ -48,9 +91,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
     )
   }
 
+  if (!articles.length) return null
+
   return (
-    <div className={classNames(cls.ArticleList, {}, [className])}>
-      {articles.length > 0 ? articles.map(renderArticle) : null}
+    <div className={classNames('', {}, [className])}>
+      {virtualized ? renderVirtualized(view) : articles.map(renderArticle)}
+
       {isLoading && getSkeletons(view)}
     </div>
   )

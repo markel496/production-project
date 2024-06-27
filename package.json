@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --env port=4200",
-    "start:dev:server": "node ./json-server/index.js",
-    "start:dev": "concurrently \"npm start\" \"npm run start:dev:server\"",
     "build:prod": "webpack --env mode=production apiUrl=https://express-server-navy.vercel.app",
     "build:dev": "webpack --env mode=development",
     "lint:ts": "npx eslint \"**/*.{ts,tsx}\"",
@@ -96,7 +94,8 @@
     "react-dom": "^17.0.2",
     "react-i18next": "^11.15.5",
     "react-redux": "^7.2.6",
-    "react-router-dom": "^6.2.1"
+    "react-router-dom": "^6.2.1",
+    "react-virtuoso": "^4.7.11"
   },
   "overrides": {
     "loki": {

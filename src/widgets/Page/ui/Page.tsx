@@ -17,6 +17,8 @@ interface PageProps {
   isSaveScroll?: boolean
 }
 
+export const PAGE_ID = 'PAGE_ID'
+
 export const Page = memo((props: PageProps) => {
   const { className, children, onScrollEnd, isSaveScroll = false } = props
   const dispatch = useAppDispatch()
@@ -47,6 +49,7 @@ export const Page = memo((props: PageProps) => {
 
   return (
     <section
+      id={PAGE_ID}
       ref={wrapperRef}
       className={classNames(cls.Page, {}, [className])}
       onScroll={onScrollHandler}

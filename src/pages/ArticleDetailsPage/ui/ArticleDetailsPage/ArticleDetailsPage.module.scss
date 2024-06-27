@@ -8,7 +8,8 @@
 }
 
 .recommended {
-  flex-wrap: nowrap !important;
+  display: flex;
+  column-gap: 20px;
   overflow-x: auto;
   overflow-y: hidden;
 
