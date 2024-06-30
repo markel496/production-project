@@ -9,7 +9,7 @@ import {
   useCallback,
   MutableRefObject
 } from 'react'
-import { Portal } from 'shared/ui/Portal/Portal'
+import { Portal } from '../Portal/Portal'
 
 interface ModalProps {
   className?: string

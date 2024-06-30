@@ -6,7 +6,7 @@ import {
   StateSchemaKey
 } from 'app/providers/StoreProvider'
 import { Reducer } from '@reduxjs/toolkit'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from '../../hooks/useAppDispatch/useAppDispatch'
 
 export type ReducersList = {
   //Указываю, что забираю поле у StateSchema в зависимости от названия редюсера. Т.е автоматически на основании этого динамически из StateSchema достается нужный кусок стейта

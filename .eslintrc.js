@@ -27,7 +27,13 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['@typescript-eslint', 'react', 'i18next', 'react-hooks'],
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'i18next',
+    'react-hooks',
+    'markel-plugin'
+  ],
   settings: {
     react: {
       version: 'detect'
@@ -54,6 +60,7 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
-    'react/display-name': 'off'
+    'react/display-name': 'off',
+    'markel-plugin/path-checker': 'error'
   }
 }

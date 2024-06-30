@@ -17,7 +17,7 @@ import {
   getArticlesPageType
 } from '../../model/selectors/articlesPageSelectors'
 import { SortOrder } from 'shared/types/sort'
-import { fetchArticles } from 'pages/ArticlesPage/model/services/fetchArticles/fetchArticles'
+import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles'
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce'
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs'
 
