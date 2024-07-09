@@ -31,8 +31,6 @@
   }
 
   .infoWrapper {
-    display: flex;
-    align-items: center;
     margin-top: 10px;
   }
 
@@ -65,11 +63,10 @@
 
 .BIG {
   width: 100%;
-  margin-bottom: 20px;
+
+  // margin-bottom: 20px;
 
   .header {
-    display: flex;
-    align-items: center;
     margin-bottom: 20px;
   }
 
@@ -145,8 +142,6 @@
   }
 
   .footer {
-    display: flex;
-    align-items: center;
     margin-top: 15px;
   }
 

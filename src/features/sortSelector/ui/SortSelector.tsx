@@ -1,10 +1,10 @@
 import { memo, useMemo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import cls from './SortSelector.module.scss'
 import { Select, SelectOption } from 'shared/ui/Select/Select'
 import { useTranslation } from 'react-i18next'
 import { ArticleSortField } from 'entities/Article'
 import { SortOrder } from 'shared/types/sort'
+import { HStack } from 'shared/ui/Stack'
 
 interface SortSelectorProps {
   className?: string
@@ -36,15 +36,14 @@ export const SortSelector = memo((props: SortSelectorProps) => {
   )
 
   return (
-    <div className={classNames(cls.SortSelector, {}, [className])}>
+    <HStack className={classNames('', {}, [className])} gap="5">
       <Select<ArticleSortField>
-        className={cls.sort}
         label={t('Сортировать')}
         value={sort}
         onChange={onChangeSort}
         options={sortFieldOptions}
       />
       <Select value={order} onChange={onChangeOrder} options={orderOptions} />
-    </div>
+    </HStack>
   )
 })

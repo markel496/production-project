@@ -20,6 +20,7 @@ import { SortOrder } from 'shared/types/sort'
 import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles'
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce'
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs'
+import { HStack } from 'shared/ui/Stack'
 
 interface ArticlesPageFiltersProps {
   className?: string
@@ -100,7 +101,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
 
   return (
     <div className={classNames('', {}, [className])}>
-      <div className={cls.sortWrapper}>
+      <HStack className={cls.sortWrapper} justify="between">
         <SortSelector
           sort={sort}
           order={order}
@@ -108,7 +109,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
           onChangeOrder={onChangeOrder}
         />
         <ViewSelector view={view} onViewClick={onChangeView} />
-      </div>
+      </HStack>
       <Card className={cls.search}>
         <Input
           value={search}

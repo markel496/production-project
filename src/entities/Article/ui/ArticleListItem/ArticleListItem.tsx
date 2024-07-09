@@ -21,6 +21,7 @@ import { AppLink } from 'shared/ui/AppLink/AppLink'
 
 import moment from 'moment'
 import 'moment/locale/ru'
+import { HStack } from 'shared/ui/Stack'
 
 interface ArticleListItemProps {
   className?: string
@@ -56,7 +57,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         {...bindHover}
         className={classNames('', {}, [className, cls[view]])}
       >
-        <div className={cls.header}>
+        <HStack className={cls.header}>
           <AppLink
             className={cls.user}
             to={routePath.profile + article.user._id}
@@ -72,7 +73,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <Text size={TextSize.L} text={article.user.username} />
           </AppLink>
           {createdAt}
-        </div>
+        </HStack>
         <Text className={cls.title} title={article.title} />
         {types}
         {image}
@@ -82,13 +83,13 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             block={textBlock}
           />
         )}
-        <div className={cls.footer}>
+        <HStack className={cls.footer}>
           <AppLink to={routePath.article_details + article._id} target={target}>
             <Button>{t('Читать далее...')}</Button>
           </AppLink>
           {views}
           <Icon className={cls.icon} Svg={EyeIcon} />
-        </div>
+        </HStack>
       </Card>
     )
   }
@@ -105,11 +106,11 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           {image}
           {isHover && createdAt}
         </div>
-        <div className={cls.infoWrapper}>
+        <HStack className={cls.infoWrapper}>
           {types}
           {views}
           <Icon className={cls.icon} Svg={EyeIcon} />
-        </div>
+        </HStack>
         <Text className={cls.title} text={article.title} />
       </Card>
     </AppLink>

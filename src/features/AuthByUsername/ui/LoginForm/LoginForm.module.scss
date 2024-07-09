@@ -1,16 +1,8 @@
 .LoginForm {
-  display: flex;
-  flex-direction: column;
   width: 400px;
 }
 
-.input {
-  &:not(:first-child) {
-    margin-top: 10px;
-  }
-}
-
 .formBtn {
-  margin-top: 15px;
+  margin-top: 5px;
   margin-left: auto;
 }

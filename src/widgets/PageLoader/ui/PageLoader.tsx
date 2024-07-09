@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './PageLoader.module.scss'
 import { Loader } from 'shared/ui/Loader/Loader'
+import { HStack } from 'shared/ui/Stack'
 
 interface PageLoaderProps {
   className?: string
@@ -8,8 +9,12 @@ interface PageLoaderProps {
 
 export const PageLoader = ({ className }: PageLoaderProps) => {
   return (
-    <div className={classNames(cls.PageLoader, {}, [className])}>
+    <HStack
+      className={classNames(cls.PageLoader, {}, [className])}
+      justify="center"
+      max
+    >
       <Loader />
-    </div>
+    </HStack>
   )
 }

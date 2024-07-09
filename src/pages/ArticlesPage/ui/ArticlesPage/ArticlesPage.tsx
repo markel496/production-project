@@ -43,6 +43,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const view = useSelector(getArticlesPageView)
 
   const inited = useSelector(getArticlesPageInited)
+
   // const error = useSelector(getArticlesError)
 
   const onLoadNextPart = useCallback(() => {
@@ -54,10 +55,11 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   })
 
   return (
-    <DynamicModuleLoader reducers={initialReducers}>
+    <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={false}>
       <Page
         className={classNames(cls.ArticlesPage, {}, [className])}
         onScrollEnd={onLoadNextPart}
+        isSaveScroll
       >
         <ArticlesPageFilters className={cls.filters} view={view} />
         {inited && (
@@ -66,7 +68,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
             articles={articles}
             view={view}
             isLoading={isLoading}
-            virtualized
+            // virtualized
           />
         )}
       </Page>

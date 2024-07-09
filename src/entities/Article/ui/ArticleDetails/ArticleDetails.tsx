@@ -30,6 +30,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 
 import moment from 'moment'
 import 'moment/locale/ru'
+import { HStack, VStack } from 'shared/ui/Stack'
 
 const initialReducers: ReducersList = {
   articleDetails: articleDetailsReducer
@@ -52,31 +53,13 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.CODE:
-        return (
-          <ArticleCodeBlockComponent
-            className={cls.block}
-            key={block._id}
-            block={block}
-          />
-        )
+        return <ArticleCodeBlockComponent key={block._id} block={block} />
 
       case ArticleBlockType.IMAGE:
-        return (
-          <ArticleImageBlockComponent
-            className={cls.block}
-            key={block._id}
-            block={block}
-          />
-        )
+        return <ArticleImageBlockComponent key={block._id} block={block} />
 
       case ArticleBlockType.TEXT:
-        return (
-          <ArticleTextBlockComponent
-            className={cls.block}
-            key={block._id}
-            block={block}
-          />
-        )
+        return <ArticleTextBlockComponent key={block._id} block={block} />
 
       default:
         return null
@@ -107,25 +90,25 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   } else {
     content = (
       <>
-        <div className={cls.avatarWrapper}>
+        <HStack>
           <Avatar
             className={cls.avatar}
             src={article?.img}
             alt={t('Аватар')}
             size={200}
           />
-        </div>
+        </HStack>
         <Text
           title={article?.title}
           text={article?.subtitle}
           size={TextSize.L}
           className={cls.title}
         />
-        <div className={cls.articleInfo}>
-          <Icon Svg={EyeIcon} className={cls.icon} />
+        <HStack gap="8">
+          <Icon Svg={EyeIcon} />
           <Text text={String(article?.views)} />
-        </div>
-        <div className={cls.articleInfo}>
+        </HStack>
+        <HStack gap="8">
           <Icon Svg={CalendarIcon} className={cls.icon} />
           <Text
             text={
@@ -136,8 +119,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 : article?.createdAt
             }
           />
-        </div>
-        {article?.blocks.map(renderBlock)}
+        </HStack>
+        <VStack className={cls.blocks} gap="20">
+          {article?.blocks.map(renderBlock)}
+        </VStack>
       </>
     )
   }

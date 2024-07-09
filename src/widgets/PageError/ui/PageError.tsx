@@ -2,6 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './PageError.module.scss'
 import { useTranslation } from 'react-i18next'
 import { Button } from 'shared/ui/Button/Button'
+import { VStack } from 'shared/ui/Stack'
 
 interface PageErrorProps {
   className?: string
@@ -15,9 +16,14 @@ export const PageError = ({ className }: PageErrorProps) => {
   }
 
   return (
-    <div className={classNames(cls.PageError, {}, [className])}>
+    <VStack
+      className={classNames(cls.PageError, {}, [className])}
+      align="center"
+      justify="center"
+      max
+    >
       <p>{t('Произошла непредвиденная ошибка')}</p>
       <Button onClick={reloadPage}>{t('Обновить страницу')}</Button>
-    </div>
+    </VStack>
   )
 }

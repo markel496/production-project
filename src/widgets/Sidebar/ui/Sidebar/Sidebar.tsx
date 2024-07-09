@@ -7,6 +7,7 @@ import { LangSwitcher } from 'widgets/LangSwitcher'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 import { useSelector } from 'react-redux'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
+import { VStack } from 'shared/ui/Stack'
 
 interface SidebarProps {
   className?: string
@@ -21,17 +22,17 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   const sidebarItemsList = useSelector(getSidebarItems)
 
   return (
-    <menu
+    <aside
       data-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
         className
       ])}
     >
-      <div className={cls.items}>
+      <VStack role="navigation" className={cls.items} gap={'16'}>
         {sidebarItemsList.map((item) => (
           <SidebarItem key={item.path} item={item} collapsed={collapsed} />
         ))}
-      </div>
+      </VStack>
       <Button
         className={cls.collapseBtn}
         data-testid="sidebar-toggle"
@@ -46,6 +47,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         <ThemeSwitcher />
         <LangSwitcher short={collapsed} className={cls.lang} />
       </div>
-    </menu>
+    </aside>
   )
 })

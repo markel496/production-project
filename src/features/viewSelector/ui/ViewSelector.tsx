@@ -6,6 +6,7 @@ import TiledIcon from 'shared/assets/icons/tiled-24-24.svg'
 import { ArticleView } from 'entities/Article'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { Icon } from 'shared/ui/Icon/Icon'
+import { HStack } from 'shared/ui/Stack'
 
 const viewTypes = [
   {
@@ -31,7 +32,7 @@ export const ViewSelector = memo((props: ViewSelectorProps) => {
   const onClick = (viewType: ArticleView) => () => onViewClick(viewType)
 
   return (
-    <div className={classNames(cls.ViewSelector, {}, [className])}>
+    <HStack className={classNames('', {}, [className])}>
       {viewTypes.map((viewType) => (
         <Button
           className={classNames(
@@ -47,6 +48,6 @@ export const ViewSelector = memo((props: ViewSelectorProps) => {
           <Icon Svg={viewType.icon} />
         </Button>
       ))}
-    </div>
+    </HStack>
   )
 })

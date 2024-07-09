@@ -7,6 +7,7 @@ import { Button } from 'shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { getCanEditArticle } from '../../model/selectors/article'
+import { HStack } from 'shared/ui/Stack'
 
 interface ArticleDetailsPageHeaderProps {
   className?: string
@@ -31,7 +32,7 @@ export const ArticleDetailsPageHeader = memo(
     }, [navigate, id])
 
     return (
-      <div
+      <HStack
         className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}
       >
         <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
@@ -40,7 +41,7 @@ export const ArticleDetailsPageHeader = memo(
             {t('Редактировать')}
           </Button>
         )}
-      </div>
+      </HStack>
     )
   }
 )

@@ -6,6 +6,7 @@ import { Button, ButtonSize } from 'shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
 import { EditCommentArgs } from '../../model/types/editComment'
 import { Comment } from 'entities/Comment'
+import { HStack } from 'shared/ui/Stack'
 
 interface EditCommentProps {
   className?: string
@@ -44,9 +45,8 @@ export const EditComment = memo((props: EditCommentProps) => {
         placeholder=" "
         autoFocus
       />
-      <div className={cls.buttons}>
+      <HStack gap="5">
         <Button
-          className={cls.changeBtn}
           size={ButtonSize.S}
           disabled={disabledChangeBtn()}
           onClick={onEditHandler}
@@ -56,7 +56,7 @@ export const EditComment = memo((props: EditCommentProps) => {
         <Button size={ButtonSize.S} onClick={onCancelEditing}>
           {t('Отмена')}
         </Button>
-      </div>
+      </HStack>
     </div>
   )
 })

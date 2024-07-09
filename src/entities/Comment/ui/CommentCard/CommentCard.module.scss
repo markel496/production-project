@@ -1,17 +1,10 @@
 .CommentCard {
+  width: 100%;
   padding: 10px;
   border: 1px solid var(--primary-color);
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 12px;
 }
 
@@ -31,23 +24,10 @@
   margin-right: 10px;
 }
 
-.buttonsContainer {
-  display: flex;
-}
-
-.editBtn {
-  margin-right: 10px;
-}
-
 .loading {
   border: none;
+}
 
-  .header {
-    justify-content: flex-start;
-    margin-bottom: 10px;
-  }
-
-  .createdAt {
-    margin-bottom: 15px;
-  }
+.createdAtSkeleton {
+  margin-bottom: 20px;
 }

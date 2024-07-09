@@ -8,6 +8,7 @@ import {
   useRef,
   useState
 } from 'react'
+import { HStack } from '../Stack'
 
 /**Omit забирает все пропсы у InputHTMLAttributes<HTMLInputElement>, но исключает 'onChange' и readOnly */
 type HTMLInputProps = Omit<
@@ -73,10 +74,8 @@ export const Input = memo((props: InputProps) => {
   }, [autoFocus])
 
   return (
-    <div className={classNames(cls.InputWrapper, mods, [className])}>
-      {placeholder && (
-        <div className={cls.placeholder}>{`${placeholder}>`}</div>
-      )}
+    <HStack className={classNames('', mods, [className])} gap="5">
+      {placeholder && <div>{`${placeholder}>`}</div>}
       <div className={cls.caretWrapper}>
         <input
           className={cls.input}
@@ -98,6 +97,6 @@ export const Input = memo((props: InputProps) => {
           />
         )}
       </div>
-    </div>
+    </HStack>
   )
 })

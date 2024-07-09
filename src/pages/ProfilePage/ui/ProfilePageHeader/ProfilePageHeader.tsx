@@ -8,6 +8,7 @@ import { useCallback } from 'react'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { profileActions, updateProfileData } from 'entities/Profile'
 import { getCanEditProfile } from '../../model/selectors/profile'
+import { HStack } from 'shared/ui/Stack'
 
 interface ProfilePageHeaderProps {
   className?: string
@@ -46,7 +47,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
   }
 
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+    <HStack className={classNames(cls.ProfilePageHeader, {}, [className])}>
       <Text title={t('Профиль')} />
       {readonly ? (
         canEdit && (
@@ -80,6 +81,6 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
           )}
         </>
       )}
-    </div>
+    </HStack>
   )
 }

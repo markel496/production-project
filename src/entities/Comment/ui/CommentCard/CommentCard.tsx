@@ -20,6 +20,7 @@ import {
 
 import moment from 'moment'
 import 'moment/locale/ru'
+import { HStack, VStack } from 'shared/ui/Stack'
 
 interface CommentCardProps {
   className?: string
@@ -71,16 +72,11 @@ export const CommentCard = memo((props: CommentCardProps) => {
       <div
         className={classNames(cls.CommentCard, {}, [className, cls.loading])}
       >
-        <div className={cls.header}>
-          <Skeleton
-            className={cls.avatar}
-            width={30}
-            height={30}
-            border="50%"
-          />
+        <HStack className={cls.header} justify="start" gap="10">
+          <Skeleton width={30} height={30} border="50%" />
           <Skeleton width="30%" height={20} />
-        </div>
-        <Skeleton className={cls.createdAt} width={120} height={15} />
+        </HStack>
+        <Skeleton className={cls.createdAtSkeleton} width={120} height={15} />
         <Skeleton height={40} />
       </div>
     )
@@ -90,8 +86,8 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
   return (
     <div className={classNames(cls.CommentCard, {}, [className])}>
-      <div className={cls.header}>
-        <div className={cls.container}>
+      <HStack className={cls.header} justify="between">
+        <VStack>
           <AppLink
             className={cls.profile}
             to={`${routePath.profile}${comment.user._id}`}
@@ -122,20 +118,15 @@ export const CommentCard = memo((props: CommentCardProps) => {
                 : comment.createdAt
             }
           />
-        </div>
+        </VStack>
         {canEdit && (
-          <div className={cls.buttonsContainer}>
-            {!isEditing && (
-              <EditCommentBtn
-                className={cls.editBtn}
-                onChangeComment={onChangeComment}
-              />
-            )}
+          <HStack gap="10">
+            {!isEditing && <EditCommentBtn onChangeComment={onChangeComment} />}
 
             <DeleteComment onDeleteComment={onDeleteComment} />
-          </div>
+          </HStack>
         )}
-      </div>
+      </HStack>
       {!isEditing ? (
         <Text text={comment.text} />
       ) : (

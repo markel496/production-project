@@ -17,6 +17,7 @@ import {
   ReducersList
 } from 'shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { VStack } from 'shared/ui/Stack'
 
 /**Можно было бы сразу передать в reducers объект напрямую, но в том случае на каждый рендер компонета внутри reducers создавался бы новый объект, новая ссылка. В данном случае объект будет всегда постоянный и ссылка на него меняться не будет  */
 const initialReducers: ReducersList = {
@@ -62,20 +63,18 @@ const LoginForm = memo((props: LoginFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={classNames(cls.LoginForm, {}, [className])}>
+      <VStack className={classNames(cls.LoginForm, {}, [className])} gap="10">
         <Text title={t('Форма авторизации')} />
         {error && (
           <Text text={t('Неверный логин или пароль')} theme={TextTheme.ERROR} />
         )}
         <Input
-          className={cls.input}
           placeholder={t('Пользователь')}
           onChange={onChangeUsername}
           value={username}
           autoFocus
         />
         <Input
-          className={cls.input}
           placeholder={t('Пароль')}
           value={password}
           onChange={onChangePassword}
@@ -88,7 +87,7 @@ const LoginForm = memo((props: LoginFormProps) => {
         >
           {t('Войти')}
         </Button>
-      </div>
+      </VStack>
     </DynamicModuleLoader>
   )
 })

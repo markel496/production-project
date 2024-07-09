@@ -18,6 +18,7 @@ import {
   DynamicModuleLoader,
   ReducersList
 } from 'shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
+import { HStack } from 'shared/ui/Stack'
 
 const initialReducers: ReducersList = {
   addNewComment: addNewCommentReducer
@@ -59,10 +60,12 @@ const AddNewComment = memo((props: AddNewCommentProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div
+      <HStack
         className={classNames(cls.AddNewComment, { [cls.error]: error }, [
           className
         ])}
+        justify="between"
+        gap="20"
       >
         <Input
           className={cls.input}
@@ -72,7 +75,7 @@ const AddNewComment = memo((props: AddNewCommentProps) => {
           clearError={clearError}
         />
         <Button onClick={onSendHandler}>{t('Отправить')}</Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   )
 })
