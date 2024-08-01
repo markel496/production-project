@@ -74,7 +74,7 @@ export const Input = memo((props: InputProps) => {
   }, [autoFocus])
 
   return (
-    <HStack className={classNames('', mods, [className])} gap="5">
+    <HStack className={classNames(cls.inputWrapper, mods, [className])} gap="5">
       {placeholder && <div>{`${placeholder}>`}</div>}
       <div className={cls.caretWrapper}>
         <input

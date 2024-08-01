@@ -111,6 +111,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         readonly={readonly}
       />
       <Input
+        className={cls.avatarInput}
         value={data?.avatar}
         placeholder={t('Ссылка на аватарку')}
         onChange={onChangeAvatar}
