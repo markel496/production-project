@@ -5,7 +5,7 @@ import { CSSProperties, memo, useMemo } from 'react'
 interface AvatarProps {
   className?: string
   src?: string
-  alt: string
+  alt?: string
   size?: number
 }
 
@@ -18,6 +18,15 @@ export const Avatar = memo((props: AvatarProps) => {
       height: size
     }
   }, [size])
+
+  if (!src) {
+    return (
+      <div
+        className={classNames(cls.Avatar, {}, [className])}
+        style={styles}
+      ></div>
+    )
+  }
 
   return (
     <img

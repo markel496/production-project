@@ -11,6 +11,11 @@
   width: calc(var(--sidebar-width) - 20px);
 }
 
-.links {
+.links,
+.dropdown {
   margin-left: auto;
+}
+
+.noAvatar {
+  background: var(--bg-color);
 }
