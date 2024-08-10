@@ -20,6 +20,16 @@ module.exports = {
       parserOptions: {
         sourceType: 'script'
       }
+    },
+    {
+      files: ['scripts/*.js'],
+      parserOptions: {
+        sourceType: 'script'
+      },
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+        'no-undef': off
+      }
     }
   ],
   parser: '@typescript-eslint/parser',
