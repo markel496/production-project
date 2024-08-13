@@ -16,19 +16,12 @@ module.exports = {
       env: {
         node: true
       },
-      files: ['.eslintrc.{js,cjs}', 'loki.config.js'],
-      parserOptions: {
-        sourceType: 'script'
-      }
-    },
-    {
-      files: ['scripts/*.js'],
+      files: ['.eslintrc.{js,cjs}', 'loki.config.js', 'scripts/**/*.js'],
       parserOptions: {
         sourceType: 'script'
       },
       rules: {
-        '@typescript-eslint/no-var-requires': 'off',
-        'no-undef': off
+        '@typescript-eslint/no-var-requires': 'off'
       }
     }
   ],

@@ -1,5 +1,4 @@
 const createTemplate = require('./templates/createTemplate')
-const firstCharUpperCase = require('./firstCharUpperCase')
 const getDirectories = require('./getDirectories')
 
 const layer = process.argv[2]
@@ -15,12 +14,10 @@ if (!sliceName) {
   throw new Error('Укажите название слайса')
 }
 
-const slice = firstCharUpperCase(sliceName)
-
-const isExistSlice = getDirectories(layer).includes(slice)
+const isExistSlice = getDirectories(layer).includes(sliceName)
 
 if (isExistSlice) {
-  throw new Error(`Слайс с именем ${slice} уже существует`)
+  throw new Error(`Слайс с именем ${sliceName} уже существует`)
 }
 
-createTemplate(layer, slice)
+createTemplate(layer, sliceName)

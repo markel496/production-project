@@ -1,12 +1,11 @@
-module.exports = (layer, componentName) =>
-  `import type { Meta, StoryObj } from '@storybook/react'
-import { ${componentName} } from './${componentName}'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Test } from './Test'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 
-const meta: Meta<typeof ${componentName}> = {
-  title: '${layer}/${componentName}',
-  component: ${componentName},
+const meta: Meta<typeof Test> = {
+  title: 'features/Test',
+  component: Test,
   parameters: {
     layout: 'padded'
   },
@@ -15,7 +14,7 @@ const meta: Meta<typeof ${componentName}> = {
 }
 
 export default meta
-type Story = StoryObj<typeof ${componentName}>
+type Story = StoryObj<typeof Test>
 
 export const Primary: Story = {
   args: {}
@@ -24,4 +23,4 @@ export const Primary: Story = {
 export const Dark: Story = {
   args: {},
   decorators: [ThemeDecorator(Theme.DARK)]
-}`.replace(/\n/g, '\r\n')
+}
