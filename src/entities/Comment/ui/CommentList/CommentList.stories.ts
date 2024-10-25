@@ -4,6 +4,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import { Comment } from '../../model/types/comment'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
+import avatar from 'shared/assets/tests/avatar.jpg'
 
 const meta: Meta<typeof CommentList> = {
   title: 'Entities/Comment/CommentList',
@@ -27,20 +28,19 @@ const comments: Comment[] = [
       username: 'Commentator'
     },
     text: 'Comment1',
-    createdAt: '2024-06-06T17:35:45.931Z',
-    updatedAt: '2024-06-06T17:35:45.931Z'
+    createdAt: '24 окт. 2024 г. в 21:30',
+    updatedAt: '24 окт. 2024 г. в 21:30'
   },
   {
     _id: '2',
     user: {
       _id: '2',
       username: 'Vanya',
-      avatar:
-        'https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg'
+      avatar
     },
     text: 'Comment2',
-    createdAt: '2024-06-06T17:35:45.931Z',
-    updatedAt: '2024-06-06T17:35:45.931Z'
+    createdAt: '24 окт. 2024 г. в 21:30',
+    updatedAt: '24 окт. 2024 г. в 21:34'
   },
   {
     _id: '3',
@@ -49,8 +49,8 @@ const comments: Comment[] = [
       username: 'Commentator'
     },
     text: 'Comment10',
-    createdAt: '2024-06-06T17:35:45.931Z',
-    updatedAt: '2024-06-06T17:35:45.931Z'
+    createdAt: '24 окт. 2024 г. в 21:35',
+    updatedAt: '24 окт. 2024 г. в 21:35'
   }
 ]
 
@@ -67,6 +67,13 @@ export const Dark: Story = {
   decorators: [ThemeDecorator(Theme.DARK)]
 }
 
+export const Green: Story = {
+  args: {
+    comments
+  },
+  decorators: [ThemeDecorator(Theme.GREEN)]
+}
+
 export const Loading: Story = {
   args: {
     isLoading: true
@@ -78,6 +85,13 @@ export const LoadingDark: Story = {
     isLoading: true
   },
   decorators: [ThemeDecorator(Theme.DARK)]
+}
+
+export const LoadingGreen: Story = {
+  args: {
+    isLoading: true
+  },
+  decorators: [ThemeDecorator(Theme.GREEN)]
 }
 
 export const Error: Story = {

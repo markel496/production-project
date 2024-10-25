@@ -7,3 +7,8 @@ export interface Comment {
   createdAt: string
   updatedAt: string
 }
+
+export interface EditCommentArgs {
+  _id: string
+  text: string
+}

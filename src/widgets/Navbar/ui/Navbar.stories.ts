@@ -27,7 +27,28 @@ export const Dark: Story = {
   decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})]
 }
 
+export const Green: Story = {
+  args: {},
+  decorators: [ThemeDecorator(Theme.GREEN), StoreDecorator({})]
+}
+
 export const AuthNavbar: Story = {
   args: {},
   decorators: [StoreDecorator({ user: { authData: {} } })]
+}
+
+export const AuthNavbarDark: Story = {
+  args: {},
+  decorators: [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({ user: { authData: {} } })
+  ]
+}
+
+export const AuthNavbarGreen: Story = {
+  args: {},
+  decorators: [
+    ThemeDecorator(Theme.GREEN),
+    StoreDecorator({ user: { authData: {} } })
+  ]
 }

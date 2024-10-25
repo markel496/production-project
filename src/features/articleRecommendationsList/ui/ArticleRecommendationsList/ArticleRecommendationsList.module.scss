@@ -1,0 +1,13 @@
+.recommendedTitle {
+  margin-bottom: 14px;
+}
+
+.recommended {
+  flex-wrap: nowrap !important; // !important для storybook
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar-track {
+    background: transparent; /* цвет дорожки */
+  }
+}

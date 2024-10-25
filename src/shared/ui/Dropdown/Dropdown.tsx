@@ -32,7 +32,7 @@ export const Dropdown = memo((props: DropdownProps) => {
 
   return (
     <Menu className={classNames(cls.Dropdown, {}, [className])} as={'div'}>
-      <Menu.Button className={cls.btn} as="div">
+      <Menu.Button className={cls.btn} as="button">
         {trigger}
       </Menu.Button>
       <Menu.Items

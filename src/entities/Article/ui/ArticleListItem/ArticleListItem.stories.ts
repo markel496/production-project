@@ -9,6 +9,7 @@ import {
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import i18n from 'shared/config/i18n/i18n'
+import avatar from 'shared/assets/tests/avatar.jpg'
 
 const meta: Meta<typeof ArticleListItem> = {
   title: 'Entities/Article/ArticleListItem',
@@ -28,8 +29,7 @@ const article: Article = {
   user: {
     _id: '1',
     username: 'Markel',
-    avatar:
-      'https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg'
+    avatar
   },
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',

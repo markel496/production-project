@@ -7,10 +7,10 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
 const meta: Meta<typeof LoginForm> = {
   title: 'Features/LoginForm',
   component: LoginForm,
-  decorators: [ThemeDecorator(Theme.DARK)],
   parameters: {
     layout: 'padded'
   },
+  decorators: [ThemeDecorator(Theme.DARK)],
   tags: ['autodocs']
 }
 
@@ -25,6 +25,11 @@ export const Light: Story = {
 export const Dark: Story = {
   args: {},
   decorators: [StoreDecorator({})]
+}
+
+export const Green: Story = {
+  args: {},
+  decorators: [StoreDecorator({}), ThemeDecorator(Theme.GREEN)]
 }
 
 export const WithError: Story = {

@@ -3,13 +3,14 @@ import ArticleDetailsPage from './ArticleDetailsPage'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
-import { ArticleDetailsCommentsSchema } from '../../model/types/articleDetailsCommentsSchema'
 import {
   Article,
   ArticleBlockType,
   ArticleType
 } from 'entities/Article/model/types/article'
-import { ArticleDetailsRecommendationsSchema } from '../../model/types/ArticleDetailsRecommendationsSchema'
+import { ArticleCommentsSchema } from 'features/articleComments'
+import avatar from 'shared/assets/tests/avatar.jpg'
+import { QueryStatus } from '@reduxjs/toolkit/dist/query'
 
 const meta: Meta<typeof ArticleDetailsPage> = {
   title: 'Pages/ArticleDetailsPage',
@@ -29,8 +30,7 @@ const article: Article = {
   user: {
     _id: '1',
     username: 'Markel',
-    avatar:
-      'https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg'
+    avatar
   },
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
@@ -101,18 +101,11 @@ const article: Article = {
   ]
 }
 
-const recommendations: ArticleDetailsRecommendationsSchema = {
-  ids: ['1', '2', '3', '4'],
-  entities: {
-    '1': article,
-    '2': { ...article, _id: '2' },
-    '3': { ...article, _id: '3' },
-    '4': { ...article, _id: '4' }
-  },
-  _inited: true
-}
+const articles = [...new Array(4)].map((_, idx) => {
+  return { ...article, _id: String(idx) }
+})
 
-const articleDetailsComments: ArticleDetailsCommentsSchema = {
+const articleDetailsComments: ArticleCommentsSchema = {
   ids: ['1', '2'],
   entities: {
     '1': {
@@ -121,11 +114,10 @@ const articleDetailsComments: ArticleDetailsCommentsSchema = {
       user: {
         _id: '1',
         username: 'User',
-        avatar:
-          'https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg'
+        avatar
       },
       createdAt: '07.06.2024, 15:23',
-      updatedAt: '2024-06-06T17:35:45.931Z'
+      updatedAt: '07.06.2024, 15:23'
     },
     '2': {
       _id: '2',
@@ -135,7 +127,7 @@ const articleDetailsComments: ArticleDetailsCommentsSchema = {
         username: 'User 2'
       },
       createdAt: '07.06.2024, 15:23',
-      updatedAt: '2024-06-06T17:35:45.931Z'
+      updatedAt: 'test'
     }
   }
 }
@@ -144,11 +136,15 @@ export const Light: Story = {
   args: {},
   decorators: [
     StoreDecorator({
-      articleDetailsPage: {
-        comments: articleDetailsComments,
-        recommendations
-      },
-      articleDetails: { data: article }
+      articleComments: articleDetailsComments,
+      articleDetails: { data: article },
+      api: {
+        queries: {
+          'getArticleRecommendations({"limit":4})': {
+            data: articles
+          }
+        }
+      }
     })
   ]
 }
@@ -158,11 +154,101 @@ export const Dark: Story = {
   decorators: [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
-      articleDetailsPage: {
-        comments: articleDetailsComments,
-        recommendations
-      },
-      articleDetails: { data: article }
+      articleComments: articleDetailsComments,
+      articleDetails: { data: article },
+      api: {
+        queries: {
+          'getArticleRecommendations({"limit":4})': {
+            data: articles
+          }
+        }
+      }
+    })
+  ]
+}
+
+export const Green: Story = {
+  args: {},
+  decorators: [
+    ThemeDecorator(Theme.GREEN),
+    StoreDecorator({
+      articleComments: articleDetailsComments,
+      articleDetails: { data: article },
+      api: {
+        queries: {
+          'getArticleRecommendations({"limit":4})': {
+            data: articles
+          }
+        }
+      }
+    })
+  ]
+}
+
+export const Loading: Story = {
+  args: {},
+  decorators: [
+    StoreDecorator({
+      articleComments: { ids: [], entities: {}, isLoading: true },
+      articleDetails: { isLoading: true },
+      api: {
+        queries: {
+          'getArticleRecommendations({"limit":4})': {
+            status: QueryStatus.pending
+          }
+        }
+      }
+    })
+  ]
+}
+export const LoadingDark: Story = {
+  args: {},
+  decorators: [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+      articleComments: { ids: [], entities: {}, isLoading: true },
+      articleDetails: { isLoading: true },
+      api: {
+        queries: {
+          'getArticleRecommendations({"limit":4})': {
+            status: QueryStatus.pending
+          }
+        }
+      }
+    })
+  ]
+}
+export const LoadingGreen: Story = {
+  args: {},
+  decorators: [
+    ThemeDecorator(Theme.GREEN),
+    StoreDecorator({
+      articleComments: { ids: [], entities: {}, isLoading: true },
+      articleDetails: { isLoading: true },
+      api: {
+        queries: {
+          'getArticleRecommendations({"limit":4})': {
+            status: QueryStatus.pending
+          }
+        }
+      }
+    })
+  ]
+}
+
+export const Error: Story = {
+  args: {},
+  decorators: [
+    StoreDecorator({
+      articleComments: { ids: [], entities: {}, error: 'error' },
+      articleDetails: { error: 'error' },
+      api: {
+        queries: {
+          'getArticleRecommendations({"limit":4})': {
+            status: QueryStatus.rejected
+          }
+        }
+      }
     })
   ]
 }

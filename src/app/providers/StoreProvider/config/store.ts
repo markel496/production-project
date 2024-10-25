@@ -10,6 +10,7 @@ import { userReducer } from 'entities/User'
 import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
 import { saveScrollReducer } from 'widgets/Page'
+import { rtkApi } from 'shared/api/rtkApi'
 
 //Так можно будет отдельно создавать store для jest или storybook
 export function createReduxStore(
@@ -18,6 +19,7 @@ export function createReduxStore(
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
+    [rtkApi.reducerPath]: rtkApi.reducer,
     counter: counterReducer,
     user: userReducer,
     scrollPosition: saveScrollReducer
@@ -38,7 +40,7 @@ export function createReduxStore(
         thunk: {
           extraArgument: extraArg
         }
-      })
+      }).concat(rtkApi.middleware)
   })
 
   //@ts-ignore

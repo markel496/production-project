@@ -27,8 +27,7 @@ const article: Article = {
   user: {
     _id: '1',
     username: 'Markel',
-    avatar:
-      'https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg'
+    avatar: 'test'
   },
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
@@ -112,6 +111,14 @@ export const Dark: Story = {
   ]
 }
 
+export const Green: Story = {
+  args: {},
+  decorators: [
+    StoreDecorator({ articleDetails: { data: article } }),
+    ThemeDecorator(Theme.GREEN)
+  ]
+}
+
 export const Loading: Story = {
   args: {},
   decorators: [StoreDecorator({ articleDetails: { isLoading: true } })]
@@ -122,6 +129,14 @@ export const LoadingDark: Story = {
   decorators: [
     StoreDecorator({ articleDetails: { isLoading: true } }),
     ThemeDecorator(Theme.DARK)
+  ]
+}
+
+export const LoadingGreen: Story = {
+  args: {},
+  decorators: [
+    StoreDecorator({ articleDetails: { isLoading: true } }),
+    ThemeDecorator(Theme.GREEN)
   ]
 }
 

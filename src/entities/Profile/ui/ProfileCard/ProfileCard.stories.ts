@@ -45,10 +45,31 @@ export const Dark: Story = {
   decorators: [ThemeDecorator(Theme.DARK)]
 }
 
+export const Green: Story = {
+  args: {
+    data
+  },
+  decorators: [ThemeDecorator(Theme.GREEN)]
+}
+
 export const Loading: Story = {
   args: {
     isLoading: true
   }
+}
+
+export const LoadingDark: Story = {
+  args: {
+    isLoading: true
+  },
+  decorators: [ThemeDecorator(Theme.DARK)]
+}
+
+export const LoadingGreen: Story = {
+  args: {
+    isLoading: true
+  },
+  decorators: [ThemeDecorator(Theme.GREEN)]
 }
 
 export const Error: Story = {

@@ -29,3 +29,11 @@ export const Dark: Story = {
   },
   decorators: [ThemeDecorator(Theme.DARK)]
 }
+
+export const Green: Story = {
+  args: {
+    placeholder: 'Введите текст',
+    autoFocus: true
+  },
+  decorators: [ThemeDecorator(Theme.GREEN)]
+}

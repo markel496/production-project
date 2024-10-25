@@ -1,0 +1,23 @@
+.CommentDeleteBtn {
+  display: flex;
+  padding: 5px;
+  cursor: pointer;
+  background: 0 0;
+  transition: 0.2s ease-in;
+
+  @media (min-width: 992px) {
+    &:hover {
+      transform: scale(1.2);
+
+      .icon {
+        fill: var(--red-light);
+      }
+    }
+  }
+}
+
+.icon {
+  fill: var(--primary-color);
+  width: 20px;
+  height: 20px;
+}

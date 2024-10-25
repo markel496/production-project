@@ -7,17 +7,6 @@
   margin-bottom: 20px;
 }
 
-.recommended {
-  display: flex;
-  column-gap: 20px;
-  overflow-x: auto;
-  overflow-y: hidden;
-
-  &::-webkit-scrollbar-track {
-    background: transparent; /* цвет дорожки */
-  }
-}
-
 .recommendedTitle,
 .commentsTitle,
 .addNewComment {

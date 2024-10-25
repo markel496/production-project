@@ -8,26 +8,26 @@ import {
 import { AxiosInstance } from 'axios'
 import { ArticleDetailsSchema } from 'entities/Article'
 import { CounterSchema } from 'entities/Counter'
-import { ProfileSchema } from 'entities/Profile'
+import { EditableProfileCardSchema } from 'features/editableProfileCard'
 import { UserSchema } from 'entities/User'
 import { LoginSchema } from 'features/AuthByUsername'
-import { AddNewCommentSchema } from 'features/addNewComment'
-import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage'
+import { ArticleCommentsSchema } from 'features/articleComments'
 import { ArticlesPageSchema } from 'pages/ArticlesPage'
+import { rtkApi } from 'shared/api/rtkApi'
 import { SaveScrollSchema } from 'widgets/Page'
 
 export interface StateSchema {
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
   counter: CounterSchema
   user: UserSchema
   scrollPosition: SaveScrollSchema
 
   //Async reducers
   loginForm?: LoginSchema
-  profile?: ProfileSchema
+  profile?: EditableProfileCardSchema
   articleDetails?: ArticleDetailsSchema
-  articleDetailsPage?: ArticleDetailsPageSchema
-  addNewComment?: AddNewCommentSchema
   articles?: ArticlesPageSchema
+  articleComments?: ArticleCommentsSchema
 }
 
 export interface ReducerManager {

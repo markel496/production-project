@@ -6,6 +6,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 import { Profile } from 'entities/Profile'
+import avatar from 'shared/assets/tests/avatar.jpg'
 
 const meta: Meta<typeof ProfilePage> = {
   title: 'Pages/ProfilePage',
@@ -28,8 +29,7 @@ const profile: Profile = {
   city: 'Saint-P',
   username: 'admin',
   currency: Currency.EUR,
-  avatar:
-    'https://proprikol.ru/wp-content/uploads/2019/08/krutye-kartinki-dlya-vk-43.jpg'
+  avatar
 }
 
 export const Light: Story = {
@@ -38,7 +38,7 @@ export const Light: Story = {
     StoreDecorator({
       profile: {
         data: profile,
-        initialData: { id: '1' },
+        initialData: { id: '1', ...profile },
         readonly: true
       },
       user: { authData: { _id: '1' } }

@@ -46,3 +46,20 @@ export const CircleDark: Story = {
   },
   decorators: [ThemeDecorator(Theme.DARK)]
 }
+
+export const PrimaryGreen: Story = {
+  args: {
+    width: '100%',
+    height: 200
+  },
+  decorators: [ThemeDecorator(Theme.GREEN)]
+}
+
+export const CircleGreen: Story = {
+  args: {
+    width: 100,
+    height: 100,
+    border: '50%'
+  },
+  decorators: [ThemeDecorator(Theme.GREEN)]
+}

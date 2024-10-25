@@ -6,7 +6,7 @@ import { routePath } from 'shared/config/routeConfig/routeConfig'
 import { Button } from 'shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { getCanEditArticle } from '../../model/selectors/article'
+import { getCanEditArticle } from '../../model/selectors/getCanEditArticle'
 import { HStack } from 'shared/ui/Stack'
 
 interface ArticleDetailsPageHeaderProps {

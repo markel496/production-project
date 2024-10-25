@@ -51,6 +51,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   )
 
   const fetchData = useCallback(() => {
+    if (__PROJECT__ === 'storybook') return
+
     dispatch(fetchArticles({ replace: true }))
   }, [dispatch])
 
