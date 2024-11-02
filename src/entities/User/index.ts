@@ -1,5 +1,11 @@
 export { userActions, userReducer } from './model/slice/userSlice'
-export { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthData'
-export { getUserInited } from './model/selectors/getUserInited/getUserInited'
+export { getUserAuthData } from './model/selectors/getUserAuthData'
+export { getUserInited } from './model/selectors/getUserInited'
+export {
+  getUserRoles,
+  isUserAdmin,
+  isUserManager
+} from './model/selectors/roleSelectors'
 
-export { User, UserSchema } from './model/types/user'
+export type { User, UserSchema } from './model/types/user'
+export { UserRole } from './model/types/user'

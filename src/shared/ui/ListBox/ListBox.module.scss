@@ -4,7 +4,7 @@
 
 .options {
   min-width: 100%;
-  z-index: 10000;
+  z-index: var(--listbox-z-index);
   position: absolute;
   background: var(--listbox-bg);
   box-shadow: 3px 2px 5px var(--listbox-bg);

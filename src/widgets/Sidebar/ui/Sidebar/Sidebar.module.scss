@@ -4,7 +4,9 @@
   width: var(--sidebar-width);
   min-width: var(--sidebar-width);
   position: relative;
-  transition: width 0.3s, min-width 0.3s;
+  transition:
+    width 0.3s,
+    min-width 0.3s;
 }
 
 .items {
@@ -16,7 +18,7 @@
   position: absolute;
   bottom: 32px;
   right: -32px;
-  z-index: 100;
+  z-index: var(--sidebar-collaps-btn-z-index);
 }
 
 .switchers {

@@ -16,7 +16,7 @@
 .menu {
   margin-top: 5px;
   position: absolute;
-  z-index: 10000;
+  z-index: var(--dropdown-z-index);
   border-radius: 8px;
   background: var(--card-bg);
   border: 1px solid var(--primary-color);

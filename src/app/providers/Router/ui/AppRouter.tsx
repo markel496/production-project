@@ -1,6 +1,7 @@
 import { Suspense, memo, useCallback } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { RequireAuth } from 'shared/config/routeConfig/RequireAuth'
+import { RequireRoles } from 'shared/config/routeConfig/RequireRoles'
 import {
   AppRoutesProps,
   routeConfig
@@ -16,7 +17,13 @@ const AppRouter = () => {
         key={route.path}
         path={route.path}
         element={
-          route.authOnly ? <RequireAuth>{element}</RequireAuth> : element
+          route.authOnly ? (
+            <RequireAuth>
+              <RequireRoles roles={route.roles}>{element}</RequireRoles>
+            </RequireAuth>
+          ) : (
+            element
+          )
         }
       />
     )
