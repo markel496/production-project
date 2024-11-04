@@ -1,8 +1,9 @@
 .recommendedTitle {
-  margin-bottom: 14px;
+  margin-bottom: 9px;
 }
 
 .recommended {
+  padding: 5px;
   flex-wrap: nowrap !important; // !important для storybook
   overflow-x: auto;
   overflow-y: hidden;

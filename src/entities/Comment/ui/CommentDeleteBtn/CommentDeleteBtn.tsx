@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react'
+import { memo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './CommentDeleteBtn.module.scss'
 import RemoveIcon from 'shared/assets/icons/trash.svg'
@@ -7,24 +7,17 @@ import { Icon } from 'shared/ui/Icon/Icon'
 
 interface CommentDeleteBtnProps {
   className?: string
-  onDeleteComment?: (_id: string) => void
+  onDeleteComment?: () => void
 }
 
 export const CommentDeleteBtn = memo((props: CommentDeleteBtnProps) => {
   const { className, onDeleteComment } = props
 
-  const onDeleteHandler = useCallback(
-    (id) => {
-      onDeleteComment?.(id)
-    },
-    [onDeleteComment]
-  )
-
   return (
     <Button
       className={classNames(cls.CommentDeleteBtn, {}, [className])}
       theme={ButtonTheme.CLEAR}
-      onClick={onDeleteHandler}
+      onClick={onDeleteComment}
     >
       <Icon Svg={RemoveIcon} className={cls.icon} />
     </Button>

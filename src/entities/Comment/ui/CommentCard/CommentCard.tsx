@@ -24,7 +24,7 @@ interface CommentCardProps {
   className?: string
   comment?: Comment
   isLoading?: boolean
-  onDeleteComment?: (_id: string) => void
+  onDeleteComment?: () => void
   onEditComment?: (commentData: EditCommentArgs) => void
 }
 

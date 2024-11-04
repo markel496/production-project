@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Comment, EditCommentArgs } from '../../model/types/comment'
@@ -11,7 +11,7 @@ interface CommentListProps {
   comments?: Comment[]
   isLoading?: boolean
   error?: string
-  onDeleteComment?: (_id: string) => void
+  onDeleteComment?: (id: string) => void
   onEditComment?: (commentData: EditCommentArgs) => void
 }
 
@@ -25,13 +25,6 @@ export const CommentList = memo((props: CommentListProps) => {
     onDeleteComment,
     onEditComment
   } = props
-
-  const onDeleteCommentHandler = useCallback(
-    (commentId: string) => {
-      onDeleteComment?.(commentId)
-    },
-    [onDeleteComment]
-  )
 
   if (error) {
     return (
@@ -57,7 +50,7 @@ export const CommentList = memo((props: CommentListProps) => {
           <CommentCard
             key={comment._id}
             comment={comment}
-            onDeleteComment={() => onDeleteCommentHandler(comment._id)}
+            onDeleteComment={() => onDeleteComment?.(comment._id)}
             onEditComment={onEditComment}
           />
         ))
