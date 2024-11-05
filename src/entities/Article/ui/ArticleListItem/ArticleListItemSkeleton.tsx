@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleListItem.module.scss'
-import { ArticleView } from '../../model/types/article'
+import { ArticleView } from '../../model/consts/articleConsts'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
 import { Card } from 'shared/ui/Card/Card'
 

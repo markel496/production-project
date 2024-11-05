@@ -22,7 +22,6 @@ import { useTranslation } from 'react-i18next'
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg'
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg'
 import { Icon } from 'shared/ui/Icon/Icon'
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
@@ -31,6 +30,8 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import moment from 'moment'
 import 'moment/locale/ru'
 import { HStack, VStack } from 'shared/ui/Stack'
+import { ArticleBlockType } from '../../model/consts/articleConsts'
+import { ArticleBlock } from '../../model/types/article'
 
 const initialReducers: ReducersList = {
   articleDetails: articleDetailsReducer

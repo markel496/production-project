@@ -17,7 +17,7 @@ import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/g
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError'
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors'
-import { ValidateProfileError } from '../../model/types/editableProfileCardSchema'
+import { ValidateProfileError } from '../../model/consts/editableProfileCardConsts'
 import { validateProfileAge } from '../../lib/validateProfileAge/validateProfileAge'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'

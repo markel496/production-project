@@ -1,4 +1,4 @@
-import { ValidateProfileError } from '../../model/types/editableProfileCardSchema'
+import { ValidateProfileError } from '../../model/consts/editableProfileCardConsts'
 import { Profile } from 'entities/Profile'
 import { validateProfileAge } from '../validateProfileAge/validateProfileAge'
 import { validateProfileAvatar } from '../validateProfileAvatar/validateProfileAvatar'

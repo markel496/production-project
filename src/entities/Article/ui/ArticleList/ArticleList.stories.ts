@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ArticleList } from './ArticleList'
+import { Article } from '../../model/types/article'
 import {
-  Article,
   ArticleBlockType,
   ArticleType,
   ArticleView
-} from '../../model/types/article'
+} from '../../model/consts/articleConsts'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import i18n from 'shared/config/i18n/i18n'

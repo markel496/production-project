@@ -7,7 +7,7 @@ import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 import avatar from 'shared/assets/tests/avatar.jpg'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
-import { ValidateProfileError } from '../../model/types/editableProfileCardSchema'
+import { ValidateProfileError } from '../../model/consts/editableProfileCardConsts'
 
 const meta: Meta<typeof EditableProfileCard> = {
   title: 'features/EditableProfileCard',

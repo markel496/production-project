@@ -13,4 +13,4 @@ export {
   ArticleSortField,
   ArticleBlockType,
   ArticleType
-} from './model/types/article'
+} from './model/consts/articleConsts'
