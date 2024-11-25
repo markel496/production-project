@@ -15,8 +15,9 @@ const config: StorybookConfig = {
     name: '@storybook/react-webpack5',
     options: {}
   },
+  staticDirs: ['../../public'],
   docs: {
-    autodocs: 'tag'
+    autodocs: false
   },
   async webpackFinal(config: webpack.Configuration) {
     const src: BuildPaths['src'] = path.resolve(__dirname, '..', '..', 'src')

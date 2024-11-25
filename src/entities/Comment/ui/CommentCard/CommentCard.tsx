@@ -19,6 +19,7 @@ import { HStack, VStack } from 'shared/ui/Stack'
 
 import moment from 'moment'
 import 'moment/locale/ru'
+import { Card, CardTheme } from 'shared/ui/Card/Card'
 
 interface CommentCardProps {
   className?: string
@@ -64,8 +65,9 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
   if (isLoading) {
     return (
-      <div
+      <Card
         className={classNames(cls.CommentCard, {}, [className, cls.loading])}
+        theme={CardTheme.OUTLINE}
       >
         <HStack className={cls.header} justify="start" gap="10">
           <Skeleton width={30} height={30} border="50%" />
@@ -73,14 +75,17 @@ export const CommentCard = memo((props: CommentCardProps) => {
         </HStack>
         <Skeleton className={cls.createdAtSkeleton} width={120} height={15} />
         <Skeleton height={40} />
-      </div>
+      </Card>
     )
   }
 
   if (!comment) return null
 
   return (
-    <div className={classNames(cls.CommentCard, {}, [className])}>
+    <Card
+      className={classNames(cls.CommentCard, {}, [className])}
+      theme={CardTheme.OUTLINE}
+    >
       <HStack className={cls.header} justify="between">
         <VStack>
           <AppLink
@@ -117,6 +122,6 @@ export const CommentCard = memo((props: CommentCardProps) => {
           comment={comment}
         />
       )}
-    </div>
+    </Card>
   )
 })

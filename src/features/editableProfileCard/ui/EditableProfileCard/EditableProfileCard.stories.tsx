@@ -35,12 +35,10 @@ const profile: Profile = {
 }
 
 export const PrimaryOnlyReadonly: Story = {
-  args: {},
   decorators: [StoreDecorator({ profile: { data: profile, readonly: true } })]
 }
 
 export const Dark: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
@@ -51,7 +49,6 @@ export const Dark: Story = {
 }
 
 export const Green: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.GREEN),
     StoreDecorator({
@@ -62,7 +59,6 @@ export const Green: Story = {
 }
 
 export const Loading: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.LIGHT),
     StoreDecorator({
@@ -71,7 +67,6 @@ export const Loading: Story = {
   ]
 }
 export const LoadingDark: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
@@ -80,7 +75,6 @@ export const LoadingDark: Story = {
   ]
 }
 export const LoadingGreen: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.GREEN),
     StoreDecorator({
@@ -90,7 +84,6 @@ export const LoadingGreen: Story = {
 }
 
 export const WithErrors: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({

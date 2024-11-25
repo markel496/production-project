@@ -22,11 +22,12 @@ const meta: Meta<typeof NotFoundPage> = {
 export default meta
 type Story = StoryObj<typeof NotFoundPage>
 
-export const Light: Story = {
-  args: {}
-}
+export const Light: Story = {}
 
 export const Dark: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.DARK)]
+}
+
+export const Green: Story = {
+  decorators: [ThemeDecorator(Theme.GREEN)]
 }

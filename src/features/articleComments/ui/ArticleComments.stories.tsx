@@ -4,7 +4,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import avatar from 'shared/assets/tests/avatar.jpg'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
-import { ArticleCommentsSchema } from '../../model/types/articleCommentsSchema'
+import { ArticleCommentsSchema } from '../model/types/articleCommentsSchema'
 
 const meta: Meta<typeof ArticleComments> = {
   title: 'features/ArticleComments',
@@ -47,7 +47,6 @@ const comments: ArticleCommentsSchema = {
 }
 
 export const Primary: Story = {
-  args: {},
   decorators: [
     StoreDecorator({
       articleComments: comments
@@ -56,7 +55,6 @@ export const Primary: Story = {
 }
 
 export const Dark: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
@@ -66,7 +64,6 @@ export const Dark: Story = {
 }
 
 export const Green: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.GREEN),
     StoreDecorator({
@@ -76,7 +73,6 @@ export const Green: Story = {
 }
 
 export const Loading: Story = {
-  args: {},
   decorators: [
     StoreDecorator({
       articleComments: { ids: [], entities: {}, isLoading: true }

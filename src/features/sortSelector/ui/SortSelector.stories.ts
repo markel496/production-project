@@ -16,16 +16,12 @@ const meta: Meta<typeof SortSelector> = {
 export default meta
 type Story = StoryObj<typeof SortSelector>
 
-export const Primary: Story = {
-  args: {}
-}
+export const Primary: Story = {}
 
 export const Dark: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.DARK)]
 }
 
 export const Green: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.GREEN)]
 }

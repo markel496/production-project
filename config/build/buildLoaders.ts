@@ -5,14 +5,15 @@ import { buildBabelLoader } from './loaders/buildBabelLoader'
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   // Вместо typescriptLoader - babelLoader
+
   // const typescriptLoader = {
   //   test: /\.tsx?$/,
   //   use: 'ts-loader',
   //   exclude: /node_modules/
   // }
 
-  const codeBabelLoader = buildBabelLoader(false)
-  const tsxCodeBabelLoader = buildBabelLoader(true)
+  const codeBabelLoader = buildBabelLoader({ isDev, isTsx: false })
+  const tsxCodeBabelLoader = buildBabelLoader({ isDev, isTsx: true })
 
   const svgLoader = {
     test: /\.svg$/,

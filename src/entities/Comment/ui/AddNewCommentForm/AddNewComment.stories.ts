@@ -17,15 +17,11 @@ export default meta
 type Story = StoryObj<typeof AddNewCommentForm>
 
 export const Light: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.LIGHT)]
 }
 
-export const Dark: Story = {
-  args: {}
-}
+export const Dark: Story = {}
 
 export const Green: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.GREEN)]
 }

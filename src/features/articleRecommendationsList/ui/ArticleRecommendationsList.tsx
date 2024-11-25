@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleRecommendationsList.module.scss'
 import { Text, TextSize } from 'shared/ui/Text/Text'
 import { ArticleList, ArticleView } from 'entities/Article'
-import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi'
+import { useArticleRecommendationsList } from '../api/articleRecommendationsApi'
 
 interface ArticleRecommendationsListProps {
   className?: string

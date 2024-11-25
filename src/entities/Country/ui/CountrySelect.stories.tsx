@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { CountrySelect } from './CountrySelect'
+import { WrapperDecorator } from 'shared/config/storybook/WrapperDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import { Country } from '../model/types/country'
@@ -13,13 +14,7 @@ const meta: Meta<typeof CountrySelect> = {
   args: {
     value: Country.Kazakhstan
   },
-  decorators: [
-    (Story) => (
-      <div style={{ paddingTop: 180 }}>
-        <Story />
-      </div>
-    )
-  ],
+  decorators: [WrapperDecorator({ paddingTop: 180 })],
   tags: ['autodocs'],
   argTypes: {}
 }
@@ -27,16 +22,12 @@ const meta: Meta<typeof CountrySelect> = {
 export default meta
 type Story = StoryObj<typeof CountrySelect>
 
-export const Primary: Story = {
-  args: {}
-}
+export const Primary: Story = {}
 
 export const Dark: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.DARK)]
 }
 
 export const Green: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.GREEN)]
 }

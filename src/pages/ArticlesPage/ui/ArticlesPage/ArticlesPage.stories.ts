@@ -97,12 +97,10 @@ const articlesPageErrorState = {
 }
 
 export const Light: Story = {
-  args: {},
   decorators: [StoreDecorator({ articles: articlesPageState })]
 }
 
 export const Dark: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({ articles: articlesPageState })
@@ -110,7 +108,6 @@ export const Dark: Story = {
 }
 
 export const Green: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.GREEN),
     StoreDecorator({ articles: articlesPageState })
@@ -118,18 +115,15 @@ export const Green: Story = {
 }
 
 export const Loading: Story = {
-  args: {},
   decorators: [StoreDecorator({ articles: articlesPageIsLoadingState })]
 }
 export const LoadingDark: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({ articles: articlesPageIsLoadingState })
   ]
 }
 export const LoadingGreen: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.GREEN),
     StoreDecorator({ articles: articlesPageIsLoadingState })
@@ -137,6 +131,5 @@ export const LoadingGreen: Story = {
 }
 
 export const Error: Story = {
-  args: {},
   decorators: [StoreDecorator({ articles: articlesPageErrorState })]
 }

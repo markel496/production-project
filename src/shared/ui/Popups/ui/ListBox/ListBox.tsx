@@ -2,9 +2,10 @@ import { Fragment, ReactNode } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ListBox.module.scss'
 import { Listbox } from '@headlessui/react'
-import { Button } from '../Button/Button'
-import { HStack } from '../Stack'
-import { DropdownPosition } from 'shared/types/ui'
+import { PopupPosition } from 'shared/types/ui'
+import { HStack } from '../../../Stack/HStack/HStack'
+import { Button } from '../../../Button/Button'
+import { mapPositionClasses } from '../../styles/consts'
 
 export interface ListBoxItem<T extends string> {
   value: T
@@ -20,14 +21,7 @@ interface ListBoxProps<T extends string> {
   onChange?: (value: T) => void
   readonly?: boolean
   label?: string
-  position?: DropdownPosition
-}
-
-const mapPositionClass: Record<DropdownPosition, string> = {
-  'bottom left': cls.bottomLeft,
-  'bottom right': cls.bottomRight,
-  'top left': cls.topLeft,
-  'top right': cls.topRight
+  position: PopupPosition
 }
 
 export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
@@ -39,7 +33,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
     onChange,
     readonly,
     label,
-    position = 'bottom left'
+    position = 'bottom right'
   } = props
 
   return (
@@ -58,7 +52,9 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
           </Button>
         </Listbox.Button>
         <Listbox.Options
-          className={classNames(cls.options, {}, [mapPositionClass[position]])}
+          className={classNames(cls.options, {}, [
+            mapPositionClasses[position]
+          ])}
         >
           {items?.map((item) => (
             <Listbox.Option

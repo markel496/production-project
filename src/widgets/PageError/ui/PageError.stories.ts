@@ -16,16 +16,12 @@ const meta: Meta<typeof PageError> = {
 export default meta
 type Story = StoryObj<typeof PageError>
 
-export const Light: Story = {
-  args: {}
-}
+export const Light: Story = {}
 
 export const Dark: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.DARK)]
 }
 
 export const Green: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.GREEN)]
 }

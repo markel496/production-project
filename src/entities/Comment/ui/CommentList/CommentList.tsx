@@ -26,20 +26,20 @@ export const CommentList = memo((props: CommentListProps) => {
     onEditComment
   } = props
 
-  if (error) {
-    return (
-      <div className={classNames('', {}, [className])}>
-        <Text text={error} theme={TextTheme.ERROR} />
-      </div>
-    )
-  }
-
   if (isLoading) {
     return (
       <VStack className={classNames('', {}, [className])} gap="10">
         <CommentCard isLoading />
         <CommentCard isLoading />
       </VStack>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className={classNames('', {}, [className])}>
+        <Text text={error} theme={TextTheme.ERROR} />
+      </div>
     )
   }
 

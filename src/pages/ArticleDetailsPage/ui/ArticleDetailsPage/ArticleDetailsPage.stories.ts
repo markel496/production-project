@@ -133,7 +133,6 @@ const articleDetailsComments: ArticleCommentsSchema = {
 }
 
 export const Light: Story = {
-  args: {},
   decorators: [
     StoreDecorator({
       articleComments: articleDetailsComments,
@@ -150,7 +149,6 @@ export const Light: Story = {
 }
 
 export const Dark: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
@@ -168,7 +166,6 @@ export const Dark: Story = {
 }
 
 export const Green: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.GREEN),
     StoreDecorator({
@@ -186,7 +183,6 @@ export const Green: Story = {
 }
 
 export const Loading: Story = {
-  args: {},
   decorators: [
     StoreDecorator({
       articleComments: { ids: [], entities: {}, isLoading: true },
@@ -202,7 +198,6 @@ export const Loading: Story = {
   ]
 }
 export const LoadingDark: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
@@ -219,7 +214,6 @@ export const LoadingDark: Story = {
   ]
 }
 export const LoadingGreen: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.GREEN),
     StoreDecorator({
@@ -237,7 +231,6 @@ export const LoadingGreen: Story = {
 }
 
 export const Error: Story = {
-  args: {},
   decorators: [
     StoreDecorator({
       articleComments: { ids: [], entities: {}, error: 'error' },

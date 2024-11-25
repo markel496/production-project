@@ -18,21 +18,16 @@ const meta: Meta<typeof Sidebar> = {
 export default meta
 type Story = StoryObj<typeof Sidebar>
 
-export const Light: Story = {
-  args: {}
-}
+export const Light: Story = {}
 
 export const Dark: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.DARK)]
 }
 
 export const Green: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.GREEN)]
 }
 
 export const NoAuth: Story = {
-  args: {},
   decorators: [StoreDecorator({ user: {} })]
 }

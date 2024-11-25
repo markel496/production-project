@@ -2,9 +2,11 @@
 import { memo, Fragment, ReactNode } from 'react'
 import { Menu } from '@headlessui/react'
 import { classNames } from 'shared/lib/classNames/classNames'
+import popupsCls from '../../styles/Popups.module.scss'
 import cls from './Dropdown.module.scss'
-import { DropdownPosition } from 'shared/types/ui'
-import { AppLink } from '../AppLink/AppLink'
+import { PopupPosition } from 'shared/types/ui'
+import { AppLink } from '../../../AppLink/AppLink'
+import { mapPositionClasses } from '../../styles/consts'
 
 interface DropdownItem {
   content?: ReactNode
@@ -17,26 +19,25 @@ interface DropdownProps {
   className?: string
   items: DropdownItem[]
   trigger: ReactNode
-  position?: DropdownPosition
-}
-
-const mapPositionClass: Record<DropdownPosition, string> = {
-  'bottom left': cls.bottomLeft,
-  'bottom right': cls.bottomRight,
-  'top left': cls.topLeft,
-  'top right': cls.topRight
+  position: PopupPosition
 }
 
 export const Dropdown = memo((props: DropdownProps) => {
-  const { className, items, trigger, position = 'bottom left' } = props
+  const { className, items, trigger, position = 'bottom right' } = props
 
   return (
-    <Menu className={classNames(cls.Dropdown, {}, [className])} as={'div'}>
-      <Menu.Button className={cls.btn} as="button">
+    <Menu
+      className={classNames(popupsCls.wrapper, {}, [cls.Dropdown, className])}
+      as={'div'}
+    >
+      <Menu.Button className={popupsCls.trigger} as="button">
         {trigger}
       </Menu.Button>
       <Menu.Items
-        className={classNames(cls.menu, {}, [mapPositionClass[position]])}
+        className={classNames(popupsCls.menu, {}, [
+          cls.panel,
+          mapPositionClasses[position]
+        ])}
       >
         {items.map((item, idx) => {
           const content = ({ active }: { active: boolean }) => (

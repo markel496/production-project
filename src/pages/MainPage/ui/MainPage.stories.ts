@@ -22,11 +22,12 @@ const meta: Meta<typeof MainPage> = {
 export default meta
 type Story = StoryObj<typeof MainPage>
 
-export const Light: Story = {
-  args: {}
-}
+export const Light: Story = {}
 
 export const Dark: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.DARK)]
+}
+
+export const Green: Story = {
+  decorators: [ThemeDecorator(Theme.GREEN)]
 }

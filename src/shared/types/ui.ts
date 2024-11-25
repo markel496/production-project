@@ -1,4 +1,4 @@
-export type DropdownPosition =
+export type PopupPosition =
   | 'top left'
   | 'top right'
   | 'bottom left'

@@ -1,0 +1,36 @@
+.panel {
+  width: 500px;
+  max-height: 400px;
+}
+
+.icon {
+  @media (min-width: 992px) {
+    // hhv snippet
+    &:hover {
+      animation-name: bell-ring;
+      animation-duration: 3s;
+      animation-timing-function: ease-in;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+@keyframes bell-ring {
+  5%,
+  15% {
+    transform: rotate(25deg);
+  }
+
+  10%,
+  20% {
+    transform: rotate(-25deg);
+  }
+
+  25% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}

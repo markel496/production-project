@@ -96,12 +96,10 @@ const article: Article = {
 }
 
 export const Primary: Story = {
-  args: {},
   decorators: [StoreDecorator({ articleDetails: { data: article } })]
 }
 
 export const Dark: Story = {
-  args: {},
   decorators: [
     StoreDecorator({ articleDetails: { data: article } }),
     ThemeDecorator(Theme.DARK)
@@ -109,7 +107,6 @@ export const Dark: Story = {
 }
 
 export const Green: Story = {
-  args: {},
   decorators: [
     StoreDecorator({ articleDetails: { data: article } }),
     ThemeDecorator(Theme.GREEN)
@@ -117,12 +114,10 @@ export const Green: Story = {
 }
 
 export const Loading: Story = {
-  args: {},
   decorators: [StoreDecorator({ articleDetails: { isLoading: true } })]
 }
 
 export const LoadingDark: Story = {
-  args: {},
   decorators: [
     StoreDecorator({ articleDetails: { isLoading: true } }),
     ThemeDecorator(Theme.DARK)
@@ -130,7 +125,6 @@ export const LoadingDark: Story = {
 }
 
 export const LoadingGreen: Story = {
-  args: {},
   decorators: [
     StoreDecorator({ articleDetails: { isLoading: true } }),
     ThemeDecorator(Theme.GREEN)
@@ -138,6 +132,5 @@ export const LoadingGreen: Story = {
 }
 
 export const Error: Story = {
-  args: {},
   decorators: [StoreDecorator({ articleDetails: { error: 'error' } })]
 }

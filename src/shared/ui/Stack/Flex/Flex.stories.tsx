@@ -22,9 +22,7 @@ const meta: Meta<typeof Flex> = {
 export default meta
 type Story = StoryObj<typeof Flex>
 
-export const FlexStart: Story = {
-  args: {}
-}
+export const FlexStart: Story = {}
 
 export const FlexCenter: Story = {
   args: {

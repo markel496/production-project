@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ListBox } from './ListBox'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
+import { WrapperDecorator } from 'shared/config/storybook/WrapperDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 
 const items = [
@@ -12,7 +13,7 @@ const items = [
 ]
 
 const meta: Meta<typeof ListBox> = {
-  title: 'Shared/ListBox',
+  title: 'Shared/Popups/ListBox',
   component: ListBox,
   parameters: {
     layout: 'padded'
@@ -27,47 +28,35 @@ const meta: Meta<typeof ListBox> = {
 export default meta
 type Story = StoryObj<typeof ListBox>
 
-export const LightBottomLeft: Story = {}
+export const LightBottomRight: Story = {}
 
-export const DarkBottomRight: Story = {
+export const DarkBottomLeft: Story = {
   args: {
-    position: 'bottom right'
+    position: 'bottom left'
   },
   decorators: [
-    (Story) => (
-      <div style={{ paddingLeft: 60 }}>
-        <Story />
-      </div>
-    ),
-    ThemeDecorator(Theme.DARK)
+    ThemeDecorator(Theme.DARK),
+    WrapperDecorator({ paddingLeft: 60 })
   ]
 }
 
-export const LightTopLeft: Story = {
-  args: {
-    position: 'top left'
-  },
-  decorators: [
-    (Story) => (
-      <div style={{ paddingTop: 300 }}>
-        <Story />
-      </div>
-    ),
-    ThemeDecorator(Theme.DARK)
-  ]
-}
-
-export const DarkTopRight: Story = {
+export const LightTopRight: Story = {
   args: {
     position: 'top right'
   },
   decorators: [
-    (Story) => (
-      <div style={{ paddingLeft: 60, paddingTop: 300 }}>
-        <Story />
-      </div>
-    ),
-    ThemeDecorator(Theme.DARK)
+    ThemeDecorator(Theme.DARK),
+    WrapperDecorator({ paddingTop: 300 })
+  ]
+}
+
+export const DarkTopLeft: Story = {
+  args: {
+    position: 'top left'
+  },
+  decorators: [
+    ThemeDecorator(Theme.DARK),
+    WrapperDecorator({ paddingLeft: 60, paddingTop: 300 })
   ]
 }
 

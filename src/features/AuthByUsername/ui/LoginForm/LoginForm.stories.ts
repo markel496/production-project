@@ -18,22 +18,18 @@ export default meta
 type Story = StoryObj<typeof LoginForm>
 
 export const Light: Story = {
-  args: {},
   decorators: [StoreDecorator({}), ThemeDecorator(Theme.LIGHT)]
 }
 
 export const Dark: Story = {
-  args: {},
   decorators: [StoreDecorator({})]
 }
 
 export const Green: Story = {
-  args: {},
   decorators: [StoreDecorator({}), ThemeDecorator(Theme.GREEN)]
 }
 
 export const WithError: Story = {
-  args: {},
   decorators: [
     StoreDecorator({
       loginForm: {
@@ -44,7 +40,6 @@ export const WithError: Story = {
 }
 
 export const WithLoading: Story = {
-  args: {},
   decorators: [
     StoreDecorator({
       loginForm: {

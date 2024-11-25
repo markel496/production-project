@@ -2,11 +2,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Dropdown } from './Dropdown'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
+import { WrapperDecorator } from 'shared/config/storybook/WrapperDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
-import { Button } from '../Button/Button'
+import { Button } from '../../../Button/Button'
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'Shared/Dropdown',
+  title: 'Shared/Popups/Dropdown',
   component: Dropdown,
   parameters: {
     layout: 'padded'
@@ -33,55 +34,33 @@ const meta: Meta<typeof Dropdown> = {
 export default meta
 type Story = StoryObj<typeof Dropdown>
 
-export const Light: Story = {
-  args: {}
-}
+export const Light: Story = {}
 
 export const Dark: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.DARK)]
 }
 
 export const Green: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.GREEN)]
 }
 
-export const BottomRight: Story = {
+export const BottomLeft: Story = {
   args: {
-    position: 'bottom right'
+    position: 'bottom left'
   },
-  decorators: [
-    (Story) => (
-      <div style={{ paddingLeft: 40 }}>
-        <Story />
-      </div>
-    )
-  ]
-}
-
-export const TopRight: Story = {
-  args: {
-    position: 'top right'
-  },
-  decorators: [
-    (Story) => (
-      <div style={{ paddingLeft: 40, paddingTop: 135 }}>
-        <Story />
-      </div>
-    )
-  ]
+  decorators: [WrapperDecorator({ paddingLeft: 40 })]
 }
 
 export const TopLeft: Story = {
   args: {
     position: 'top left'
   },
-  decorators: [
-    (Story) => (
-      <div style={{ paddingTop: 135 }}>
-        <Story />
-      </div>
-    )
-  ]
+  decorators: [WrapperDecorator({ paddingLeft: 40, paddingTop: 140 })]
+}
+
+export const TopRight: Story = {
+  args: {
+    position: 'top right'
+  },
+  decorators: [WrapperDecorator({ paddingTop: 140 })]
 }

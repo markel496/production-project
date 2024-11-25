@@ -7,17 +7,17 @@ import { AddNewCommentForm, CommentList } from 'entities/Comment'
 import {
   articleCommentsReducer,
   getArticleComments
-} from '../../model/slices/articleCommentsSlice'
+} from '../model/slices/articleCommentsSlice'
 import {
   getArticleCommentsError,
   getArticleCommentsIsLoading
-} from '../../model/selectors/articleComments'
+} from '../model/selectors/articleComments'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { addNewCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
-import { deleteArticleComment } from '../../model/services/deleteArticleComment/deleteArticleComment'
-import { editArticleComment } from '../../model/services/editArticleComment/editArticleComment'
+import { addNewCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle'
+import { deleteArticleComment } from '../model/services/deleteArticleComment/deleteArticleComment'
+import { editArticleComment } from '../model/services/editArticleComment/editArticleComment'
 import { EditCommentArgs } from 'entities/Comment'
 import {
   DynamicModuleLoader,
