@@ -5,11 +5,11 @@ import {
   useEffect,
   useRef,
   useState,
-  MouseEvent,
   useCallback,
   MutableRefObject
 } from 'react'
 import { Portal } from '../Portal/Portal'
+import { Overlay } from '../Overlay/Overlay'
 
 interface ModalProps {
   className?: string
@@ -44,10 +44,6 @@ export const Modal = (props: ModalProps) => {
     }
   }, [onClose])
 
-  const onContentClick = (e: MouseEvent) => {
-    e.stopPropagation()
-  }
-
   /*На каждый перерендер компонента функция создаются заново (у каждой из таких функций будет новая ссылка). По хорошему нужно сохранять ссылку на функцию. Для этого исользуется useCallback - он мемоизирует значение функции, запоминает его и всегда возвращает ссылку на одну и ту же функцию, если в массиве зависимостей ничего не изменилось*/
 
   const onKeyDown = useCallback(
@@ -77,11 +73,8 @@ export const Modal = (props: ModalProps) => {
   return (
     <Portal>
       <div className={classNames(cls.Modal, mods, [className])}>
-        <div className={cls.overlay} onClick={closeHandler}>
-          <div className={cls.content} onClick={onContentClick}>
-            {children}
-          </div>
-        </div>
+        <Overlay onClick={closeHandler} />
+        <div className={cls.content}>{children}</div>
       </div>
     </Portal>
   )

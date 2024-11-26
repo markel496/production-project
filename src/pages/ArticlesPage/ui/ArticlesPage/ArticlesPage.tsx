@@ -31,7 +31,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const dispatch = useAppDispatch()
 
   const onLoadNextPart = useCallback(() => {
-    console.log('first')
     dispatch(fetchNextArticles())
   }, [dispatch])
 
