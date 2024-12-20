@@ -12,10 +12,11 @@ import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
 
 interface NotificationListProps {
   className?: string
+  onCloseDrawer?: () => void
 }
 
 export const NotificationList = memo((props: NotificationListProps) => {
-  const { className } = props
+  const { className, onCloseDrawer } = props
   const { t } = useTranslation()
   const userId = useSelector(getUserId)
 
@@ -59,6 +60,7 @@ export const NotificationList = memo((props: NotificationListProps) => {
           <NotificationCard
             key={notification._id}
             notification={notification}
+            onCloseDrawer={onCloseDrawer}
           />
         ))
       ) : (

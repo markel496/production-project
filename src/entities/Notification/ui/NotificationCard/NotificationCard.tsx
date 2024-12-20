@@ -12,10 +12,11 @@ import 'moment/locale/ru'
 interface NotificationCardProps {
   className?: string
   notification?: Notification
+  onCloseDrawer?: () => void
 }
 
 export const NotificationCard = (props: NotificationCardProps) => {
-  const { className, notification } = props
+  const { className, notification, onCloseDrawer } = props
 
   if (!notification) return null
 
@@ -36,6 +37,7 @@ export const NotificationCard = (props: NotificationCardProps) => {
       <AppLink
         className={classNames(cls.NotificationCard, {}, [className])}
         to={href}
+        onClick={onCloseDrawer}
       >
         <Card theme={CardTheme.OUTLINE}>{content}</Card>
       </AppLink>
