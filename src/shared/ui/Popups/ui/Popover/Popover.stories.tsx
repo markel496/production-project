@@ -1,14 +1,14 @@
 /* eslint-disable i18next/no-literal-string */
 import type { Meta, StoryObj } from '@storybook/react'
 import { Popover } from './Popover'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
 import { Icon } from '../../../Icon/Icon'
-import NotificationIcon from 'shared/assets/icons/notification-20-20.svg'
+import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg'
 import { Text } from '../../../Text/Text'
 import { VStack } from '../../../Stack'
 import cls from './Popover.module.scss'
-import { WrapperDecorator } from 'shared/config/storybook/WrapperDecorator'
+import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
 import { Button } from '../../../../ui/Button/Button'
 
 const meta: Meta<typeof Popover> = {

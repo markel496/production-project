@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import ArticleDetailsPage from './ArticleDetailsPage'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
-import { Article } from 'entities/Article/model/types/article'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
+import { Article } from '@/entities/Article/model/types/article'
 import {
   ArticleBlockType,
   ArticleType
-} from 'entities/Article/model/consts/articleConsts'
-import { ArticleCommentsSchema } from 'features/articleComments'
-import avatar from 'shared/assets/tests/avatar.jpg'
+} from '@/entities/Article/model/consts/articleConsts'
+import { ArticleCommentsSchema } from '@/features/articleComments'
+import avatar from '@/shared/assets/tests/avatar.jpg'
 import { QueryStatus } from '@reduxjs/toolkit/dist/query'
 
 const meta: Meta<typeof ArticleDetailsPage> = {

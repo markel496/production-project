@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import ArticlesPage from './ArticlesPage'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import {
   Article,
   ArticleBlockType,
   ArticleSortField,
   ArticleType,
   ArticleView
-} from 'entities/Article'
-import avatar from 'shared/assets/tests/avatar.jpg'
+} from '@/entities/Article'
+import avatar from '@/shared/assets/tests/avatar.jpg'
 import { ArticlesPageSchema } from '../../model/types/articlesPageSchema'
 
 const meta: Meta<typeof ArticlesPage> = {

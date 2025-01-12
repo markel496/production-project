@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData'
 import { updateProfileData } from '../services/updateProfileData/updateProfileData'
-import { Profile } from 'entities/Profile'
+import { Profile } from '@/entities/Profile'
 import { EditableProfileCardSchema } from '../types/editableProfileCardSchema'
 
 const initialState: EditableProfileCardSchema = {

@@ -5,7 +5,9 @@ export function buildResolvers({ paths }: BuildOptions): ResolveOptions {
   return {
     extensions: ['.tsx', '.ts', '.js'],
     preferAbsolute: true, //абсолютные пути в приоритете
-    alias: {},
+    alias: {
+      '@': paths.src
+    },
     mainFiles: ['index'],
     modules: [paths.src, 'node_modules']
   }

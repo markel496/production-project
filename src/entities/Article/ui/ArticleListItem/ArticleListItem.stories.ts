@@ -6,10 +6,10 @@ import {
   ArticleType,
   ArticleView
 } from '../../model/consts/articleConsts'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
-import i18n from 'shared/config/i18n/i18n'
-import avatar from 'shared/assets/tests/avatar.jpg'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
+import i18n from '@/shared/config/i18n/i18n'
+import avatar from '@/shared/assets/tests/avatar.jpg'
 
 const meta: Meta<typeof ArticleListItem> = {
   title: 'Entities/Article/ArticleListItem',

@@ -1,25 +1,25 @@
 /* eslint-disable indent */
 import { memo, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './CommentCard.module.scss'
 import { Comment, EditCommentArgs } from '../../model/types/comment'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { Text, TextSize } from 'shared/ui/Text/Text'
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
-import { AppLink } from 'shared/ui/AppLink/AppLink'
-import { routePath } from 'shared/config/routeConfig/routeConfig'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Text, TextSize } from '@/shared/ui/Text/Text'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { AppLink } from '@/shared/ui/AppLink/AppLink'
+import { routePath } from '@/shared/config/routeConfig/routeConfig'
 import { CommentDeleteBtn } from '../CommentDeleteBtn/CommentDeleteBtn'
 import { CommentEditBtn } from '../CommentEditBtn/CommentEditBtn'
 import { EditCommentForm } from '../EditCommentForm/EditCommentForm'
-import { getUserAuthData } from 'entities/User'
+import { getUserAuthData } from '@/entities/User'
 import { useSelector } from 'react-redux'
 
-import { HStack, VStack } from 'shared/ui/Stack'
+import { HStack, VStack } from '@/shared/ui/Stack'
 
 import moment from 'moment'
 import 'moment/locale/ru'
-import { Card, CardTheme } from 'shared/ui/Card/Card'
+import { Card, CardTheme } from '@/shared/ui/Card/Card'
 
 interface CommentCardProps {
   className?: string

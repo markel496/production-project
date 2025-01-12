@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { CountrySelect } from './CountrySelect'
-import { WrapperDecorator } from 'shared/config/storybook/WrapperDecorator'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
+import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
 import { Country } from '../model/types/country'
 
 const meta: Meta<typeof CountrySelect> = {

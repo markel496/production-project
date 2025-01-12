@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ArticleRecommendationsList } from './ArticleRecommendationsList'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
-import { ArticleType } from 'entities/Article'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
+import { ArticleType } from '@/entities/Article'
 import { mswLoader } from 'msw-storybook-addon'
 import { http, HttpResponse, delay } from 'msw'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 
 const meta: Meta<typeof ArticleRecommendationsList> = {
   title: 'features/ArticleRecommendationsList',

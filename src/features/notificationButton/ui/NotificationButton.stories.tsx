@@ -1,12 +1,12 @@
 /* eslint-disable indent */
 import type { Decorator, Meta, StoryObj } from '@storybook/react'
 import { NotificationButton } from './NotificationButton'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
-import { WrapperDecorator } from 'shared/config/storybook/WrapperDecorator'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
+import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
 import { mswLoader } from 'msw-storybook-addon'
-import { Notification } from 'entities/Notification'
+import { Notification } from '@/entities/Notification'
 import { http, HttpResponse, delay } from 'msw'
 
 const meta: Meta<typeof NotificationButton> = {

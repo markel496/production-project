@@ -1,12 +1,12 @@
 import { memo } from 'react'
 import { useParams } from 'react-router-dom'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleDetailsPage.module.scss'
-import { ArticleDetails } from 'entities/Article'
-import { Page } from 'widgets/Page'
+import { ArticleDetails } from '@/entities/Article'
+import { Page } from '@/widgets/Page'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
-import { ArticleRecommendationsList } from 'features/articleRecommendationsList'
-import { ArticleComments } from 'features/articleComments'
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList'
+import { ArticleComments } from '@/features/articleComments'
 
 interface ArticleDetailsPageProps {
   className?: string

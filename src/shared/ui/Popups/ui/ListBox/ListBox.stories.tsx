@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ListBox } from './ListBox'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
-import { WrapperDecorator } from 'shared/config/storybook/WrapperDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
 
 const items = [
   { value: '1', content: 'Durward Reynolds' },

@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react'
 import { Counter } from './Counter'
-import { componentRender } from 'shared/lib/tests/componentRender'
+import { componentRender } from '@/shared/lib/tests/componentRender'
 
 describe('Counter', () => {
   test('render', () => {

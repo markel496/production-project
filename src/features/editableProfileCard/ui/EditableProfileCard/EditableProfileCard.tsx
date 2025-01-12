@@ -5,12 +5,12 @@ import { EditableProfileCardHeader } from '../EditableProfileCardHeader/Editable
 import {
   DynamicModuleLoader,
   ReducersList
-} from 'shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
+} from '@/shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
 import {
   editableProfileCardActions,
   editableProfileCardReducer
 } from '../../model/slices/editableProfileCardSlice'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
 import { getProfileInitialData } from '../../model/selectors/getProfileInitialData/getProfileInitialData'
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading'
@@ -19,12 +19,12 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 import { ValidateProfileError } from '../../model/consts/editableProfileCardConsts'
 import { validateProfileAge } from '../../lib/validateProfileAge/validateProfileAge'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
-import { Text, TextTheme } from 'shared/ui/Text/Text'
-import { ProfileCard } from 'entities/Profile'
-import { Currency } from 'entities/Currency'
-import { Country } from 'entities/Country'
+import { Text, TextTheme } from '@/shared/ui/Text/Text'
+import { ProfileCard } from '@/entities/Profile'
+import { Currency } from '@/entities/Currency'
+import { Country } from '@/entities/Country'
 
 const initialReducers: ReducersList = {
   profile: editableProfileCardReducer

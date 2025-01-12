@@ -1,9 +1,9 @@
 /* eslint-disable i18next/no-literal-string */
 import type { Meta, StoryObj } from '@storybook/react'
 import { Dropdown } from './Dropdown'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
-import { WrapperDecorator } from 'shared/config/storybook/WrapperDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
 import { Button } from '../../../Button/Button'
 
 const meta: Meta<typeof Dropdown> = {

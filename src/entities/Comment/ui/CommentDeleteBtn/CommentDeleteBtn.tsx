@@ -1,9 +1,9 @@
 import { memo } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './CommentDeleteBtn.module.scss'
-import RemoveIcon from 'shared/assets/icons/trash.svg'
-import { Button, ButtonTheme } from 'shared/ui/Button/Button'
-import { Icon } from 'shared/ui/Icon/Icon'
+import RemoveIcon from '@/shared/assets/icons/trash.svg'
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
+import { Icon } from '@/shared/ui/Icon/Icon'
 
 interface CommentDeleteBtnProps {
   className?: string

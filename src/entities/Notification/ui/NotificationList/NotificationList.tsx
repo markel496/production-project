@@ -1,14 +1,14 @@
 import { memo } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './NotificationList.module.scss'
 import { useSelector } from 'react-redux'
-import { getUserId } from 'entities/User'
+import { getUserId } from '@/entities/User'
 import { useNotifications } from '../../api/notificationsApi'
 import { NotificationCard } from '../NotificationCard/NotificationCard'
 import { useTranslation } from 'react-i18next'
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text'
-import { VStack } from 'shared/ui/Stack'
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text'
+import { VStack } from '@/shared/ui/Stack'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
 
 interface NotificationListProps {
   className?: string

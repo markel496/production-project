@@ -1,12 +1,12 @@
 /* eslint-disable indent */
 import { Decorator } from '@storybook/react'
-import { StateSchema, StoreProvider } from 'app/providers/StoreProvider'
-import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice'
-import { editableProfileCardReducer } from 'features/editableProfileCard/model/slices/editableProfileCardSlice'
-import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
-import { articleCommentsReducer } from 'features/articleComments/model/slices/articleCommentsSlice'
-import { ReducersList } from 'shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
-import { articlesPageReducer } from 'pages/ArticlesPage/model/slices/articlesPageSlice'
+import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider'
+import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice'
+import { editableProfileCardReducer } from '@/features/editableProfileCard/model/slices/editableProfileCardSlice'
+import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice'
+import { articleCommentsReducer } from '@/features/articleComments/model/slices/articleCommentsSlice'
+import { ReducersList } from '@/shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
+import { articlesPageReducer } from '@/pages/ArticlesPage/model/slices/articlesPageSlice'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,

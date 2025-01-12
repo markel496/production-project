@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ViewSelector } from './ViewSelector'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
-import { ArticleView } from 'entities/Article'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
+import { ArticleView } from '@/entities/Article'
 
 const meta: Meta<typeof ViewSelector> = {
   title: 'Features/ViewSelector',
