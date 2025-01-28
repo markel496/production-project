@@ -1,7 +1,9 @@
 import {
   MutableRefObject,
+  RefObject,
   useCallback,
   useEffect,
+  useLayoutEffect,
   useRef,
   useState
 } from 'react'
@@ -13,21 +15,35 @@ interface UseModalOptions {
   isOpen?: boolean
   onClose?: () => void
   animationDelay?: number
+  closeButtonRef?: RefObject<HTMLButtonElement>
 }
 
 export function useModal({
   type,
   isOpen,
   onClose,
-  animationDelay
+  animationDelay,
+  closeButtonRef
 }: UseModalOptions) {
   const [isMounted, setIsMounted] = useState(false)
-  const [isOpening, setIsOpening] = useState(true) //Для анимации
+  const [isOpening, setIsOpening] = useState(true) //Для анимации первого рендера
   const [isClosing, setIsClosing] = useState(false)
 
   const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>
 
   /*На каждый перерендер компонента функция создаются заново (у каждой из таких функций будет новая ссылка). По хорошему нужно сохранять ссылку на функцию. Для этого исользуется useCallback - он мемоизирует значение функции, запоминает его и всегда возвращает ссылку на одну и ту же функцию, если в массиве зависимостей ничего не изменилось*/
+
+  const openHandler = useCallback(() => {
+    if (isMounted && isOpening) {
+      timerRef.current = setTimeout(() => {
+        setIsOpening(false)
+      })
+
+      return () => {
+        clearTimeout(timerRef.current)
+      }
+    }
+  }, [isMounted, isOpening])
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -48,13 +64,18 @@ export function useModal({
     [closeHandler, isOpen]
   )
 
-  useEffect(() => {
-    if (isMounted) setIsOpening(false)
-  }, [isMounted])
+  if (closeButtonRef) {
+    const closeButton = closeButtonRef.current
 
-  useEffect(() => {
-    if (isOpen) setIsMounted(true)
-  }, [isOpen])
+    if (closeButton) closeButton.onclick = closeHandler
+  }
+
+  useLayoutEffect(() => {
+    if (isOpen && !isMounted) {
+      setIsMounted(true)
+    }
+    openHandler()
+  }, [isOpen, isMounted, openHandler])
 
   useEffect(() => {
     if (type === 'modal') {

@@ -1,0 +1,36 @@
+.modalContent {
+  min-width: 450px;
+}
+
+.drawerWrapper {
+  height: 100%;
+}
+
+.textarea {
+  touch-action: none; // для корректной работы при свайпе
+  padding: 10px;
+  max-width: 100%;
+  min-width: 100%;
+  background: var(--inverted-bg-color);
+  color: var(--inverted-primary-color);
+  outline: none;
+
+  &::placeholder {
+    color: var(--inverted-secondary-color);
+  }
+
+  &:focus {
+    outline: 1px solid var(--inverted-primary-color);
+  }
+
+  &.modal {
+    height: 150px;
+    min-height: 50px;
+    max-height: calc(100vh - 200px);
+  }
+
+  &.drawer {
+    height: calc(100vh - 40%);
+    resize: none;
+  }
+}

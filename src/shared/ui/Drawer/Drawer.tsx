@@ -14,17 +14,18 @@ interface DrawerProps {
   children: ReactNode
   isOpen?: boolean
   onClose?: () => void
+  lazy?: boolean
 }
 
 const ANIMATION_DELAY = 300
 const height = window.innerHeight - 100
 
 const DrawerContent = (props: DrawerProps) => {
-  const { className, children, isOpen, onClose } = props
+  const { className, children, isOpen, onClose, lazy } = props
 
   const { Gesture, Spring } = useAnimationLibs()
 
-  const { isClosing, closeHandler } = useModal({
+  const { isMounted, isClosing, closeHandler } = useModal({
     type: 'drawer',
     isOpen,
     onClose,
@@ -79,6 +80,8 @@ const DrawerContent = (props: DrawerProps) => {
       rubberband: true
     }
   )
+
+  if (lazy && !isMounted) return null
 
   const display = y.to((py) => (py < height ? 'block' : 'none'))
 
