@@ -1,4 +1,3 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppRouter } from './providers/Router'
 import { Navbar } from '@/widgets/Navbar'
 import { Sidebar } from '@/widgets/Sidebar'
@@ -16,7 +15,7 @@ const App = () => {
   }, [dispatch])
 
   return (
-    <div className={classNames('app')}>
+    <div className="app">
       <Suspense fallback="">
         <Navbar />
         <div className="content-page">

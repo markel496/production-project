@@ -1,7 +1,6 @@
 /* eslint-disable indent */
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './AvatarDropdown.module.scss'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Dropdown } from '@/shared/ui/Popups'
@@ -31,7 +30,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
   return (
     <Dropdown
-      className={classNames('', {}, [className])}
+      className={className}
       items={[
         ...(isAdminPanelAvailable
           ? [

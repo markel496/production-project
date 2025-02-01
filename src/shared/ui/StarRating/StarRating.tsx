@@ -16,7 +16,7 @@ interface StarRatingProps {
 export const StarRating = memo((props: StarRatingProps) => {
   const { className, size = 30, selectedStars = 0, onSelect } = props
 
-  const [currentStarsCount, setCurrentStarsCount] = useState(0)
+  const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars)
   const [isSelected, setIsSelected] = useState(Boolean(selectedStars))
 
   // Поскольку итерируемся по массиву, для каждой звезды не получится указывать ее номер без замыкания
@@ -52,8 +52,13 @@ export const StarRating = memo((props: StarRatingProps) => {
     if (selectedStars === 0) {
       setCurrentStarsCount(0)
       setIsSelected(false)
+    } else {
+      setCurrentStarsCount(selectedStars)
+      setIsSelected(true)
     }
   }, [selectedStars])
+
+  console.log(selectedStars)
 
   return (
     <div className={classNames(cls.StarRating, {}, [className])}>

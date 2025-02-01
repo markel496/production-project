@@ -7,6 +7,7 @@ import { Page } from '@/widgets/Page'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList'
 import { ArticleComments } from '@/features/articleComments'
+import { ArticleRating } from '@/features/articleRating'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -20,6 +21,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
       <ArticleDetailsPageHeader id={id} />
       <ArticleDetails className={cls.articleDetails} id={id} />
+      <ArticleRating className={cls.articleRating} id={id} />
       <ArticleRecommendationsList className={cls.recommended} id={id} />
       <ArticleComments id={id} />
     </Page>

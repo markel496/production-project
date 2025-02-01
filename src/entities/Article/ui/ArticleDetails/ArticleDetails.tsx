@@ -1,5 +1,4 @@
 /* eslint-disable indent */
-import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleDetails.module.scss'
 import {
   DynamicModuleLoader,
@@ -134,7 +133,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={classNames('', {}, [className])}>{content}</div>
+      <div className={className}>{content}</div>
     </DynamicModuleLoader>
   )
 })

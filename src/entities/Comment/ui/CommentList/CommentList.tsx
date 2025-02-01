@@ -1,6 +1,5 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from '@/shared/lib/classNames/classNames'
 import { Comment, EditCommentArgs } from '../../model/types/comment'
 import { CommentCard } from '../CommentCard/CommentCard'
 import { Text, TextTheme } from '@/shared/ui/Text/Text'
@@ -28,7 +27,7 @@ export const CommentList = memo((props: CommentListProps) => {
 
   if (isLoading) {
     return (
-      <VStack className={classNames('', {}, [className])} gap="10">
+      <VStack className={className} gap="10">
         <CommentCard isLoading />
         <CommentCard isLoading />
       </VStack>
@@ -37,14 +36,14 @@ export const CommentList = memo((props: CommentListProps) => {
 
   if (error) {
     return (
-      <div className={classNames('', {}, [className])}>
+      <div className={className}>
         <Text text={error} theme={TextTheme.ERROR} />
       </div>
     )
   }
 
   return (
-    <VStack className={classNames('', {}, [className])} gap="10">
+    <VStack className={className} gap="10">
       {comments?.length ? (
         comments.map((comment) => (
           <CommentCard

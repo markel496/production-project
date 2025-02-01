@@ -32,7 +32,7 @@ export const ViewSelector = memo((props: ViewSelectorProps) => {
   const onClick = (viewType: ArticleView) => () => onViewClick(viewType)
 
   return (
-    <HStack className={classNames('', {}, [className])}>
+    <HStack className={className}>
       {viewTypes.map((viewType) => (
         <Button
           className={classNames(

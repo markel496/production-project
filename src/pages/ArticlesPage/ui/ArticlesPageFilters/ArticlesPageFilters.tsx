@@ -1,5 +1,4 @@
 import { memo, useCallback, useMemo } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticlesPageFilters.module.scss'
 import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
@@ -102,7 +101,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   )
 
   return (
-    <div className={classNames('', {}, [className])}>
+    <div className={className}>
       <HStack className={cls.sortWrapper} justify="between">
         <SortSelector
           sort={sort}

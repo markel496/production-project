@@ -1,4 +1,4 @@
-import { createRef, memo, useCallback, useState } from 'react'
+import { createRef, memo, useCallback, useEffect, useState } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Rating.module.scss'
 import { useTranslation } from 'react-i18next'
@@ -13,6 +13,7 @@ import { Drawer } from '@/shared/ui/Drawer/Drawer'
 
 interface RatingProps {
   className?: string
+  rating?: number
   title?: string
   feedbackTitle?: string
   placeholder?: string
@@ -23,6 +24,7 @@ interface RatingProps {
 export const Rating = memo((props: RatingProps) => {
   const {
     className,
+    rating = 0,
     title,
     feedbackTitle,
     placeholder,
@@ -33,7 +35,7 @@ export const Rating = memo((props: RatingProps) => {
   const { t } = useTranslation()
 
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [starsCount, setStarsCount] = useState(0)
+  const [starsCount, setStarsCount] = useState(rating)
   const [feedback, setFeedback] = useState('')
 
   const cancelButtonRef = createRef<HTMLButtonElement>()
@@ -73,8 +75,14 @@ export const Rating = memo((props: RatingProps) => {
     </>
   )
 
+  useEffect(() => {
+    setStarsCount(rating)
+  }, [rating])
+
+  console.log(starsCount)
+
   return (
-    <Card className={classNames('', {}, [className])}>
+    <Card className={className}>
       <VStack gap="8" align="center">
         <Text title={title} />
         <StarRating

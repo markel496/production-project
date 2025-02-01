@@ -30,7 +30,7 @@ export const NotificationList = memo((props: NotificationListProps) => {
 
   if (isLoading) {
     return (
-      <VStack className={classNames('', {}, [className])} gap="10">
+      <VStack className={className} gap="10">
         <Skeleton height={70} border="10px" />
         <Skeleton height={70} border="10px" />
         <Skeleton height={70} border="10px" />

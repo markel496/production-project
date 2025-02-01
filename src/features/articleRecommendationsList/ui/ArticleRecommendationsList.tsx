@@ -1,6 +1,5 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleRecommendationsList.module.scss'
 import { Text, TextSize } from '@/shared/ui/Text/Text'
 import { ArticleList, ArticleView } from '@/entities/Article'
@@ -22,7 +21,7 @@ export const ArticleRecommendationsList = memo(
     })
 
     return (
-      <div className={classNames('', {}, [className])}>
+      <div className={className}>
         <Text
           className={cls.recommendedTitle}
           title={t('Рекомендуем')}

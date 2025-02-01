@@ -1,5 +1,4 @@
 import { ReactNode, useCallback } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Tabs.module.scss'
 import { Card, CardTheme } from '../Card/Card'
 import { HStack } from '../Stack'
@@ -27,7 +26,7 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
   )
 
   return (
-    <HStack className={classNames('', {}, [className])} gap="8">
+    <HStack className={className} gap="8">
       {tabs.map((tab) => (
         <Card
           className={cls.tab}

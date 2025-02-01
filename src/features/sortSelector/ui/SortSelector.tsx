@@ -1,5 +1,4 @@
 import { memo, useMemo } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
 import { Select, SelectOption } from '@/shared/ui/Select/Select'
 import { useTranslation } from 'react-i18next'
 import { ArticleSortField } from '@/entities/Article'
@@ -36,7 +35,7 @@ export const SortSelector = memo((props: SortSelectorProps) => {
   )
 
   return (
-    <HStack className={classNames('', {}, [className])} gap="5">
+    <HStack className={className} gap="5">
       <Select<ArticleSortField>
         label={t('Сортировать')}
         value={sort}
