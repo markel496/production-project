@@ -25,3 +25,9 @@ export const Dark: Story = {
 export const Green: Story = {
   decorators: [ThemeDecorator(Theme.GREEN)]
 }
+
+export const WithSize: Story = {
+  args: {
+    size: 60
+  }
+}

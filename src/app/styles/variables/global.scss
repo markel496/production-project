@@ -25,9 +25,8 @@
   --navbar-height: 50px;
   --sidebar-width: 230px;
   --sidebar-width-collapsed: 80px;
-
-  // Z - индексы
-  --modal-z-index: 10000;
+  --modal-min-width: 490px // Z - индексы
+    --modal-z-index: 10000;
   --popups-z-index: 10000;
   --listbox-z-index: 10000;
   --sidebar-collaps-btn-z-index: 100;

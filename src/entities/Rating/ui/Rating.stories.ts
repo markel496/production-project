@@ -4,10 +4,13 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/app/providers/ThemeProvider'
 
 const meta: Meta<typeof Rating> = {
-  title: 'Shared/Rating',
+  title: 'Entities/Rating',
   component: Rating,
   parameters: {
     layout: 'padded'
+  },
+  args: {
+    title: 'Как вам статья?'
   },
   tags: ['autodocs'],
   argTypes: {}
@@ -24,4 +27,27 @@ export const Dark: Story = {
 
 export const Green: Story = {
   decorators: [ThemeDecorator(Theme.GREEN)]
+}
+
+export const WithoutTitle: Story = {
+  args: {
+    title: undefined
+  }
+}
+
+export const WithFeedback: Story = {
+  args: {
+    hasFeedback: true,
+    feedbackTitle: 'Оставьте отзыв',
+    placeholder: 'Напишите что-нибудь...'
+  },
+  decorators: [ThemeDecorator(Theme.DARK)]
+}
+
+export const AlreadyRated: Story = {
+  args: {
+    title: 'Спасибо за оценку!',
+    rating: 4
+  },
+  decorators: [ThemeDecorator(Theme.DARK)]
 }

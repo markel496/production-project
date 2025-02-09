@@ -45,6 +45,7 @@ export const StarRating = memo((props: StarRatingProps) => {
 
   const modsFunc = (starNumber: number) => ({
     [cls.hovered]: currentStarsCount >= starNumber,
+    [cls.normal]: currentStarsCount < starNumber,
     [cls.selected]: isSelected
   })
 
@@ -58,15 +59,11 @@ export const StarRating = memo((props: StarRatingProps) => {
     }
   }, [selectedStars])
 
-  console.log(selectedStars)
-
   return (
     <div className={classNames(cls.StarRating, {}, [className])}>
       {stars.map((starNumber) => (
         <Icon
-          className={classNames(cls.starIcon, modsFunc(starNumber), [
-            cls.normal
-          ])}
+          className={classNames(cls.starIcon, modsFunc(starNumber), [])}
           Svg={StarIcon}
           key={starNumber}
           width={size}

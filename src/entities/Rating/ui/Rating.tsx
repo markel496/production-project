@@ -63,7 +63,7 @@ export const Rating = memo((props: RatingProps) => {
   }, [])
 
   const modalContent = (type: string) => (
-    <>
+    <VStack gap="16" max>
       <Text title={feedbackTitle} />
       <textarea
         className={classNames(cls.textarea, {}, [type])}
@@ -72,14 +72,12 @@ export const Rating = memo((props: RatingProps) => {
         value={feedback}
         onChange={(e) => setFeedback(e.target.value)}
       />
-    </>
+    </VStack>
   )
 
   useEffect(() => {
     setStarsCount(rating)
   }, [rating])
-
-  console.log(starsCount)
 
   return (
     <Card className={className}>

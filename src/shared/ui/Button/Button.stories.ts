@@ -104,6 +104,14 @@ export const SquareSize_XL: Story = {
   }
 }
 
+export const Max: Story = {
+  args: {
+    children: 'Text',
+    theme: ButtonTheme.OUTLINE,
+    max: true
+  }
+}
+
 export const Disabled: Story = {
   args: {
     children: 'Text',

@@ -15,6 +15,9 @@ const meta: Meta<typeof NotificationButton> = {
   parameters: {
     layout: 'fullscreen'
   },
+  args: {
+    size: 20
+  },
   decorators: [
     StoreDecorator({
       user: { authData: { _id: '1234' } }

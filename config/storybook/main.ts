@@ -21,7 +21,14 @@ const config: StorybookConfig = {
   },
   async webpackFinal(config: webpack.Configuration) {
     const src: BuildPaths['src'] = path.resolve(__dirname, '..', '..', 'src')
-    config.resolve?.modules?.push(src)
+
+    if (config.resolve) {
+      config.resolve.modules?.push(src)
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@': src
+      }
+    }
 
     if (config.module?.rules) {
       config.module.rules = config.module.rules.map((rule) => {
@@ -36,7 +43,7 @@ const config: StorybookConfig = {
 
       config.module.rules.push({
         test: /\.svg$/,
-        use: ['@svgr/webpack']
+        use: [{ loader: '@svgr/webpack', options: { icon: true } }]
       })
       config.module.rules.push(buildCssLoader(true))
 

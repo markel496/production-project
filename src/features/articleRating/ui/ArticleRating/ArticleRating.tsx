@@ -48,8 +48,6 @@ export const ArticleRating = memo((props: ArticleRatingProps) => {
     [id, user, rateArticle, refetch]
   )
 
-  console.log(articleRating?.rating)
-
   if (isLoading || isLoadingforAdd || isFetching) {
     return (
       <div className={cls.loader}>

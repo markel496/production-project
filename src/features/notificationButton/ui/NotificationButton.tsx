@@ -10,10 +10,11 @@ import { Drawer } from '@/shared/ui/Drawer/Drawer'
 
 interface NotificationButtonProps {
   className?: string
+  size?: number
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
-  const { className } = props
+  const { className, size } = props
 
   const [isDrawer, setIsDrawer] = useState(false)
 
@@ -25,7 +26,15 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     setIsDrawer(false)
   }, [])
 
-  const trigger = <Icon className={cls.icon} Svg={NotificationIcon} inverted />
+  const trigger = (
+    <Icon
+      className={cls.icon}
+      Svg={NotificationIcon}
+      width={size}
+      height={size}
+      inverted
+    />
+  )
 
   return (
     <>
