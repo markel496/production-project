@@ -7,9 +7,7 @@ import { Icon } from '../../../Icon/Icon'
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg'
 import { Text } from '../../../Text/Text'
 import { VStack } from '../../../Stack'
-import cls from './Popover.module.scss'
 import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
-import { Button } from '../../../../ui/Button/Button'
 
 const meta: Meta<typeof Popover> = {
   title: 'Shared/Popups/Popover',
