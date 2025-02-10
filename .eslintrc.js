@@ -73,7 +73,8 @@ module.exports = {
     'markel-plugin/public-api-imports': [
       'error',
       {
-        alias: '@'
+        alias: '@',
+        testFilesPatterns: ['**/*.test.ts', '**/StoreDecorator.tsx']
       }
     ]
   }

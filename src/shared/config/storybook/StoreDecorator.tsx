@@ -1,14 +1,12 @@
-/* eslint-disable markel-plugin/public-api-imports */
 /* eslint-disable indent */
-// TODO
 import { Decorator } from '@storybook/react'
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider'
-import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice'
-import { editableProfileCardReducer } from '@/features/editableProfileCard/model/slices/editableProfileCardSlice'
-import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice'
-import { articleCommentsReducer } from '@/features/articleComments/model/slices/articleCommentsSlice'
+import { articleDetailsReducer } from '@/entities/Article/testing'
+import { editableProfileCardReducer } from '@/features/editableProfileCard/testing'
+import { loginReducer } from '@/features/AuthByUsername/testing'
+import { articleCommentsReducer } from '@/features/articleComments/testing'
 import { ReducersList } from '@/shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
-import { articlesPageReducer } from '@/pages/ArticlesPage/model/slices/articlesPageSlice'
+import { articlesPageReducer } from '@/pages/ArticlesPage/testing'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
