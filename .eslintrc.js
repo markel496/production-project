@@ -69,6 +69,12 @@ module.exports = {
       {
         alias: '@'
       }
+    ],
+    'markel-plugin/public-api-imports': [
+      'error',
+      {
+        alias: '@'
+      }
     ]
   }
 }

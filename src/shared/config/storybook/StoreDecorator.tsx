@@ -1,4 +1,6 @@
+/* eslint-disable markel-plugin/public-api-imports */
 /* eslint-disable indent */
+// TODO
 import { Decorator } from '@storybook/react'
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider'
 import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice'
