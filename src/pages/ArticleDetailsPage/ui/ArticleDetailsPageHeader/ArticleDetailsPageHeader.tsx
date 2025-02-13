@@ -2,12 +2,12 @@ import { memo, useCallback } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleDetailsPageHeader.module.scss'
 import { useNavigate } from 'react-router-dom'
-import { routePath } from '@/shared/config/routeConfig/routeConfig'
 import { Button } from '@/shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { getCanEditArticle } from '../../model/selectors/getCanEditArticle'
 import { HStack } from '@/shared/ui/Stack'
+import { routePath } from '@/shared/const/router'
 
 interface ArticleDetailsPageHeaderProps {
   className?: string

@@ -5,8 +5,8 @@ import cls from './AvatarDropdown.module.scss'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Dropdown } from '@/shared/ui/Popups'
 import { User, UserRole, userActions } from '@/entities/User'
-import { routePath } from '@/shared/config/routeConfig/routeConfig'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { routePath } from '@/shared/const/router'
 
 interface AvatarDropdownProps {
   className?: string

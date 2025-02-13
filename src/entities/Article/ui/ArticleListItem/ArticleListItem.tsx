@@ -12,12 +12,12 @@ import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { TFunction } from 'react-i18next'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { Button } from '@/shared/ui/Button/Button'
-import { routePath } from '@/shared/config/routeConfig/routeConfig'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
 
 import moment from 'moment'
 import 'moment/locale/ru'
 import { HStack } from '@/shared/ui/Stack'
+import { routePath } from '@/shared/const/router'
 
 interface ArticleListItemProps {
   className?: string
