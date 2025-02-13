@@ -2,7 +2,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Popover } from './Popover'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/const/theme'
 import { Icon } from '../../../Icon/Icon'
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg'
 import { Text } from '../../../Text/Text'

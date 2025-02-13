@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { CurrencySelect } from './CurrencySelect'
 import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/const/theme'
 import { Currency } from '../model/types/currency'
 
 const meta: Meta<typeof CurrencySelect> = {

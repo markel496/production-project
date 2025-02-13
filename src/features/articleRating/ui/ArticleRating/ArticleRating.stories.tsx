@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ArticleRating } from './ArticleRating'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/const/theme'
 import { mswLoader } from 'msw-storybook-addon'
 import { http, HttpResponse, delay, HttpHandler } from 'msw'
 import { RatingSchema } from '@/entities/Rating'

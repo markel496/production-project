@@ -1,6 +1,8 @@
 /* eslint-disable indent */
+// eslint-disable-next-line markel-plugin/layer-imports
+import { ThemeProvider } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/const/theme'
 import { Decorator } from '@storybook/react'
-import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider'
 
 export const ThemeDecorator =
   (theme: Theme): Decorator =>

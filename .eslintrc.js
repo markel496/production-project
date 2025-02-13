@@ -76,6 +76,13 @@ module.exports = {
         alias: '@',
         testFilesPatterns: ['**/*.test.ts', '**/StoreDecorator.tsx']
       }
+    ],
+    'markel-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+      }
     ]
   }
 }

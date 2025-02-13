@@ -1,7 +1,7 @@
-import { BugButton } from '@/app/providers/ErrorBoundary'
 import { useTranslation } from 'react-i18next'
 import { Page } from '@/widgets/Page'
 import { Rating } from '@/entities/Rating'
+import { BugButton } from '@/features/bugButton'
 
 const MainPage = () => {
   const { t } = useTranslation('main')

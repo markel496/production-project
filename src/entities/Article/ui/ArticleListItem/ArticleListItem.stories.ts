@@ -7,7 +7,7 @@ import {
   ArticleView
 } from '../../model/consts/articleConsts'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/const/theme'
 import i18n from '@/shared/config/i18n/i18n'
 import avatar from '@/shared/assets/tests/avatar.jpg'
 

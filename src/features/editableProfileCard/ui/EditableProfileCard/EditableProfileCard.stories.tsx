@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { EditableProfileCard } from './EditableProfileCard'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/const/theme'
 import { Profile } from '@/entities/Profile'
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'

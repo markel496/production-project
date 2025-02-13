@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { CommentList } from './CommentList'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/const/theme'
 import { Comment } from '../../model/types/comment'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import avatar from '@/shared/assets/tests/avatar.jpg'

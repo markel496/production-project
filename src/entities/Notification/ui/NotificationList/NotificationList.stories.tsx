@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { NotificationList } from './NotificationList'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/const/theme'
 import { Notification } from '../../model/types/notification'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
