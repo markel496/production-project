@@ -2,11 +2,11 @@ import { memo, useCallback, useState } from 'react'
 import { BrowserView, MobileView } from 'react-device-detect'
 import cls from './NotificationButton.module.scss'
 import { Popover } from '@/shared/ui/Popups'
-import { Icon } from '@/shared/ui/Icon/Icon'
+import { Icon } from '@/shared/ui/Icon'
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg'
 import { NotificationList } from '@/entities/Notification'
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
-import { Drawer } from '@/shared/ui/Drawer/Drawer'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
+import { Drawer } from '@/shared/ui/Drawer'
 
 interface NotificationButtonProps {
   className?: string

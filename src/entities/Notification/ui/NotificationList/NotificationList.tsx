@@ -6,9 +6,9 @@ import { getUserId } from '@/entities/User'
 import { useNotifications } from '../../api/notificationsApi'
 import { NotificationCard } from '../NotificationCard/NotificationCard'
 import { useTranslation } from 'react-i18next'
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text'
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text'
 import { VStack } from '@/shared/ui/Stack'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { Skeleton } from '@/shared/ui/Skeleton'
 
 interface NotificationListProps {
   className?: string

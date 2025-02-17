@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Comment, EditCommentArgs } from '../../model/types/comment'
 import { CommentCard } from '../CommentCard/CommentCard'
-import { Text, TextTheme } from '@/shared/ui/Text/Text'
+import { Text, TextTheme } from '@/shared/ui/Text'
 import { VStack } from '@/shared/ui/Stack'
 
 interface CommentListProps {

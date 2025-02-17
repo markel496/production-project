@@ -21,7 +21,7 @@ import { ValidateProfileError } from '../../model/consts/editableProfileCardCons
 import { validateProfileAge } from '../../lib/validateProfileAge/validateProfileAge'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
-import { Text, TextTheme } from '@/shared/ui/Text/Text'
+import { Text, TextTheme } from '@/shared/ui/Text'
 import { ProfileCard } from '@/entities/Profile'
 import { Currency } from '@/entities/Currency'
 import { Country } from '@/entities/Country'

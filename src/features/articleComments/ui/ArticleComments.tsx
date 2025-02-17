@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import cls from './ArticleComments.module.scss'
-import { Text, TextSize } from '@/shared/ui/Text/Text'
+import { Text, TextSize } from '@/shared/ui/Text'
 import { AddNewCommentForm, CommentList } from '@/entities/Comment'
 import {
   articleCommentsReducer,

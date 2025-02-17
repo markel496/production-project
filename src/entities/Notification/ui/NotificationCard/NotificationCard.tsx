@@ -1,10 +1,10 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './NotificationCard.module.scss'
-import { Card, CardTheme } from '@/shared/ui/Card/Card'
-import { Text, TextSize } from '@/shared/ui/Text/Text'
+import { Card, CardTheme } from '@/shared/ui/Card'
+import { Text, TextSize } from '@/shared/ui/Text'
 import { HStack } from '@/shared/ui/Stack'
 import { Notification } from '../../model/types/notification'
-import { AppLink } from '@/shared/ui/AppLink/AppLink'
+import { AppLink } from '@/shared/ui/AppLink'
 
 import moment from 'moment'
 import 'moment/locale/ru'

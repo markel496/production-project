@@ -8,7 +8,7 @@ import {
   getArticlesPageInited,
   getArticlesPageIsLoading
 } from '../../model/selectors/articlesPageSelectors'
-import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text/Text'
+import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text'
 
 interface ArticleInfiniteListProps {
   view: ArticleView

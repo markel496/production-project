@@ -1,9 +1,9 @@
 import { memo, useCallback, useState } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './AddNewCommentForm.module.scss'
-import { Input } from '@/shared/ui/Input/Input'
+import { Input } from '@/shared/ui/Input'
 import { useTranslation } from 'react-i18next'
-import { Button } from '@/shared/ui/Button/Button'
+import { Button } from '@/shared/ui/Button'
 import { HStack } from '@/shared/ui/Stack'
 
 export interface AddNewCommentFormProps {

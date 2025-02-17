@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './NotFoundPage.module.scss'
 import { useTranslation } from 'react-i18next'
 import { Page } from '@/widgets/Page'
-import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text/Text'
+import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text'
 
 interface NotFoundPageProps {
   className?: string

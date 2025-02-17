@@ -2,8 +2,8 @@ import { memo } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './CommentEditBtn.module.scss'
 import EditIcon from '@/shared/assets/icons/edit.svg'
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
-import { Icon } from '@/shared/ui/Icon/Icon'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
+import { Icon } from '@/shared/ui/Icon'
 
 interface CommentEditBtnProps {
   className?: string

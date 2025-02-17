@@ -5,7 +5,7 @@ import cls from './ArticleRating.module.scss'
 import { Rating } from '@/entities/Rating'
 import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi'
 import { getUserId } from '@/entities/User'
-import { Loader } from '@/shared/ui/Loader/Loader'
+import { Loader } from '@/shared/ui/Loader'
 
 interface ArticleRatingProps {
   className?: string
