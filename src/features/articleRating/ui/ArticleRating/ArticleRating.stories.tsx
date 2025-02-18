@@ -1,11 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { ArticleRating } from './ArticleRating'
+import { mswLoader } from 'msw-storybook-addon'
+
+import { http, HttpResponse, delay, HttpHandler } from 'msw'
+
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
-import { mswLoader } from 'msw-storybook-addon'
-import { http, HttpResponse, delay, HttpHandler } from 'msw'
+
 import { RatingSchema } from '@/entities/Rating'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
+
+import { ArticleRating } from './ArticleRating'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof ArticleRating> = {
   title: 'features/ArticleRating',

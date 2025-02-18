@@ -3,6 +3,7 @@ import {
   createEntityAdapter,
   createSlice
 } from '@reduxjs/toolkit'
+
 import { StateSchema } from '@/app/providers/StoreProvider'
 
 import {
@@ -11,10 +12,13 @@ import {
   ArticleType,
   ArticleView
 } from '@/entities/Article'
+
+import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage'
+
+import { SortOrder } from '@/shared/types/sort'
+
 import { ArticlesPageSchema } from '../types/articlesPageSchema'
 import { fetchArticles } from '../services/fetchArticles/fetchArticles'
-import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage'
-import { SortOrder } from '@/shared/types/sort'
 
 const articlesAdapter = createEntityAdapter<Article>({
   // Assume IDs are stored in a field other than `book.id`

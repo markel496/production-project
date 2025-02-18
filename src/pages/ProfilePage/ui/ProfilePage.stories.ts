@@ -1,5 +1,3 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import ProfilePage from './ProfilePage'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
@@ -7,6 +5,10 @@ import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
 import { Profile } from '@/entities/Profile'
 import avatar from '@/shared/assets/tests/avatar.jpg'
+
+import ProfilePage from './ProfilePage'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof ProfilePage> = {
   title: 'Pages/ProfilePage',

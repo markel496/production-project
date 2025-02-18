@@ -1,7 +1,9 @@
 import { StateSchema } from '@/app/providers/StoreProvider'
-import { getProfileInitialData } from './getProfileInitialData'
+
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
+
+import { getProfileInitialData } from './getProfileInitialData'
 
 describe('getProfileInitialData.test', () => {
   test('should return profile initial data', () => {

@@ -1,4 +1,5 @@
 import { PopupPosition } from '@/shared/types/ui'
+
 import cls from '../styles/Popups.module.scss'
 
 export const mapPositionClasses: Record<PopupPosition, string> = {

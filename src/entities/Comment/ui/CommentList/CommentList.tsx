@@ -1,9 +1,12 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
+
+import { Text, TextTheme } from '@/shared/ui/Text'
+
+import { VStack } from '@/shared/ui/Stack'
+
 import { Comment, EditCommentArgs } from '../../model/types/comment'
 import { CommentCard } from '../CommentCard/CommentCard'
-import { Text, TextTheme } from '@/shared/ui/Text'
-import { VStack } from '@/shared/ui/Stack'
 
 interface CommentListProps {
   className?: string

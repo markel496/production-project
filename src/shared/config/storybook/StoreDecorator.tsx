@@ -1,5 +1,6 @@
 /* eslint-disable indent */
 import { Decorator } from '@storybook/react'
+
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider'
 import { articleDetailsReducer } from '@/entities/Article/testing'
 import { editableProfileCardReducer } from '@/features/editableProfileCard/testing'

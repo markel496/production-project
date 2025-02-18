@@ -1,9 +1,19 @@
 import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import cls from './ArticleComments.module.scss'
+
 import { Text, TextSize } from '@/shared/ui/Text'
-import { AddNewCommentForm, CommentList } from '@/entities/Comment'
+import { AddNewCommentForm, CommentList , EditCommentArgs } from '@/entities/Comment'
+
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
+
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+
+import {
+  DynamicModuleLoader,
+  ReducersList
+} from '@/shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
+
 import {
   articleCommentsReducer,
   getArticleComments
@@ -12,17 +22,15 @@ import {
   getArticleCommentsError,
   getArticleCommentsIsLoading
 } from '../model/selectors/articleComments'
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+
+
 import { addNewCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle'
 import { deleteArticleComment } from '../model/services/deleteArticleComment/deleteArticleComment'
 import { editArticleComment } from '../model/services/editArticleComment/editArticleComment'
-import { EditCommentArgs } from '@/entities/Comment'
-import {
-  DynamicModuleLoader,
-  ReducersList
-} from '@/shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
+
+
+import cls from './ArticleComments.module.scss'
 
 const initialReducers: ReducersList = {
   articleComments: articleCommentsReducer

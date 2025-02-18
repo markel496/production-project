@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+
 import { Page } from '@/widgets/Page'
 import { Rating } from '@/entities/Rating'
 import { BugButton } from '@/features/bugButton'

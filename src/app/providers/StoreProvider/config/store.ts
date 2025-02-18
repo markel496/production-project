@@ -4,13 +4,16 @@ import {
   ReducersMapObject,
   configureStore
 } from '@reduxjs/toolkit'
-import { StateSchema, ThunkExtraArg } from './StateSchema'
+
 import { counterReducer } from '@/entities/Counter'
 import { userReducer } from '@/entities/User'
-import { createReducerManager } from './reducerManager'
+
 import { $api } from '@/shared/api/api'
 import { saveScrollReducer } from '@/widgets/Page'
 import { rtkApi } from '@/shared/api/rtkApi'
+
+import { createReducerManager } from './reducerManager'
+import { StateSchema, ThunkExtraArg } from './StateSchema'
 
 //Так можно будет отдельно создавать store для jest или storybook
 export function createReduxStore(

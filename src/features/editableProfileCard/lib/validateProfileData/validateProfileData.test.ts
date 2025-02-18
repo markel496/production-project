@@ -1,4 +1,5 @@
 import { ValidateProfileError } from '../../model/consts/editableProfileCardConsts'
+
 import { validateProfileData } from './validateProfileData'
 
 const data = {

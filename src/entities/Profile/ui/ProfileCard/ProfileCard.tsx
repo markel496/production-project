@@ -1,14 +1,18 @@
-import { Mods, classNames } from '@/shared/lib/classNames/classNames'
-import cls from './ProfileCard.module.scss'
 import { useTranslation } from 'react-i18next'
+
+import { Mods, classNames } from '@/shared/lib/classNames/classNames'
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text'
 import { Input } from '@/shared/ui/Input'
-import { Profile } from '../../model/types/profile'
+
 import { Loader } from '@/shared/ui/Loader'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Currency, CurrencySelect } from '@/entities/Currency'
 import { Country, CountrySelect } from '@/entities/Country'
 import { HStack, VStack } from '@/shared/ui/Stack'
+
+import { Profile } from '../../model/types/profile'
+
+import cls from './ProfileCard.module.scss'
 
 interface ProfileCardProps {
   className?: string

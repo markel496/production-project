@@ -1,9 +1,11 @@
 import { initialize } from 'msw-storybook-addon'
-import type { Preview } from '@storybook/react'
+
 import '../../src/app/styles/index.scss'
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator'
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator'
-import { Theme } from '../../src/app/providers/ThemeProvider/lib/themeContext'
+import { Theme } from '../../src/shared/const/theme'
+
+import type { Preview } from '@storybook/react'
 
 // Initialize MSW
 initialize()

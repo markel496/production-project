@@ -1,36 +1,39 @@
 /* eslint-disable indent */
-import cls from './ArticleDetails.module.scss'
+import { memo, useCallback } from 'react'
+import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
+import moment from 'moment'
+
+import 'moment/locale/ru'
+
 import {
   DynamicModuleLoader,
   ReducersList
 } from '@/shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
-import { memo, useCallback } from 'react'
-import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { TextTheme, Text, TextAlign, TextSize } from '@/shared/ui/Text'
+import { Skeleton } from '@/shared/ui/Skeleton'
+import { Avatar } from '@/shared/ui/Avatar'
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
+import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg'
+import { Icon } from '@/shared/ui/Icon'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { HStack, VStack } from '@/shared/ui/Stack'
+
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading
 } from '../../model/selectors/articleDetails'
-import { useSelector } from 'react-redux'
-import { TextTheme, Text, TextAlign, TextSize } from '@/shared/ui/Text'
-import { Skeleton } from '@/shared/ui/Skeleton'
-import { Avatar } from '@/shared/ui/Avatar'
-import { useTranslation } from 'react-i18next'
-import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
-import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg'
-import { Icon } from '@/shared/ui/Icon'
-import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
-import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
-
-import moment from 'moment'
-import 'moment/locale/ru'
-import { HStack, VStack } from '@/shared/ui/Stack'
-import { ArticleBlockType } from '../../model/consts/articleConsts'
 import { ArticleBlock } from '../../model/types/article'
+import { ArticleBlockType } from '../../model/consts/articleConsts'
+
+import cls from './ArticleDetails.module.scss'
 
 const initialReducers: ReducersList = {
   articleDetails: articleDetailsReducer

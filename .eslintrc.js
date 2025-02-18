@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'plugin:import/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
@@ -35,7 +36,8 @@ module.exports = {
     'react',
     'i18next',
     'react-hooks',
-    'markel-plugin'
+    'markel-plugin',
+    'unused-imports'
   ],
   settings: {
     react: {
@@ -83,6 +85,37 @@ module.exports = {
         alias: '@',
         ignoreImportPatterns: ['**/StoreProvider', '**/testing']
       }
-    ]
+    ],
+    'unused-imports/no-unused-imports': 'error',
+    'import/order': [
+      'warn',
+      {
+        groups: [
+          // Imports of builtins are first
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'type'
+        ],
+        pathGroups: [
+          {
+            // Minimatch pattern used to match against specifiers
+            pattern: '@/**',
+            // The predefined group this PathGroup is defined in relation to
+            group: 'internal',
+            // How matching imports will be positioned relative to "group"
+            position: 'before'
+          }
+        ],
+        'newlines-between': 'always-and-inside-groups'
+      }
+    ],
+    'import/no-unresolved': 'off',
+    'import/named': 'off',
+    'import/default': 'off',
+    'import/no-named-as-default-member': 'off'
   }
 }

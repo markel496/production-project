@@ -1,20 +1,28 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './ArticlesPage.module.scss'
 import { memo, useCallback } from 'react'
+
+import { useSelector } from 'react-redux'
+
 import {
   DynamicModuleLoader,
   ReducersList
 } from '@/shared/lib/componens/DynamicModuleLoader/DynamicModuleLoader'
-import { articlesPageReducer } from '../../model/slices/articlesPageSlice'
+
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { useSelector } from 'react-redux'
-import { getArticlesPageView } from '../../model/selectors/articlesPageSelectors'
+import { classNames } from '@/shared/lib/classNames/classNames'
+
 import { Page } from '@/widgets/Page'
+
+import { getArticlesPageView } from '../../model/selectors/articlesPageSelectors'
+
+import { articlesPageReducer } from '../../model/slices/articlesPageSlice'
+
 import { fetchNextArticles } from '../../model/services/fetchNextArticles/fetchNextArticles'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList'
+
+import cls from './ArticlesPage.module.scss'
 
 const initialReducers: ReducersList = {
   articles: articlesPageReducer

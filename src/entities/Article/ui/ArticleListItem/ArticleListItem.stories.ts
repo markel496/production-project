@@ -1,15 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { ArticleListItem } from './ArticleListItem'
-import { Article } from '../../model/types/article'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { Theme } from '@/shared/const/theme'
+import i18n from '@/shared/config/i18n/i18n'
+import avatar from '@/shared/assets/tests/avatar.jpg'
+
 import {
   ArticleBlockType,
   ArticleType,
   ArticleView
 } from '../../model/consts/articleConsts'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
-import i18n from '@/shared/config/i18n/i18n'
-import avatar from '@/shared/assets/tests/avatar.jpg'
+import { Article } from '../../model/types/article'
+
+import { ArticleListItem } from './ArticleListItem'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof ArticleListItem> = {
   title: 'Entities/Article/ArticleListItem',

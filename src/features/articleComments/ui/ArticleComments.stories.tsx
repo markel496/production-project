@@ -1,10 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { ArticleComments } from './ArticleComments'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 import avatar from '@/shared/assets/tests/avatar.jpg'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
+
 import { ArticleCommentsSchema } from '../model/types/articleCommentsSchema'
+
+import { ArticleComments } from './ArticleComments'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof ArticleComments> = {
   title: 'features/ArticleComments',

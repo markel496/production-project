@@ -1,9 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { CountrySelect } from './CountrySelect'
 import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
+
 import { Country } from '../model/types/country'
+
+import { CountrySelect } from './CountrySelect'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof CountrySelect> = {
   title: 'Entities/CountrySelect',

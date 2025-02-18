@@ -1,14 +1,18 @@
 import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
+
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import cls from './EditableProfileCardHeader.module.scss'
+
 import { HStack } from '@/shared/ui/Stack'
 import { Text } from '@/shared/ui/Text'
 import { Button, ButtonTheme } from '@/shared/ui/Button'
+
 import { editableProfileCardActions } from '../../model/slices/editableProfileCardSlice'
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData'
 import { getCanEditProfile } from '../../model/selectors/getCanEditProfile/getCanEditProfile'
+
+import cls from './EditableProfileCardHeader.module.scss'
 
 interface EditableProfileCardHeaderProps {
   isUpdated?: boolean

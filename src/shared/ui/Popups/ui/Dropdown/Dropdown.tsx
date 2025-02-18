@@ -1,12 +1,16 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo, Fragment, ReactNode } from 'react'
 import { Menu } from '@headlessui/react'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
-import popupsCls from '../../styles/Popups.module.scss'
-import cls from './Dropdown.module.scss'
+
 import { PopupPosition } from '@/shared/types/ui'
+
+import popupsCls from '../../styles/Popups.module.scss'
 import { AppLink } from '../../../AppLink/AppLink'
 import { mapPositionClasses } from '../../styles/consts'
+
+import cls from './Dropdown.module.scss'
 
 interface DropdownItem {
   content?: ReactNode

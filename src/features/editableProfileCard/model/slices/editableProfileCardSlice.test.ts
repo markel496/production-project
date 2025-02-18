@@ -1,6 +1,7 @@
 import { updateProfileData } from '../services/updateProfileData/updateProfileData'
 import { ValidateProfileError } from '../consts/editableProfileCardConsts'
 import { EditableProfileCardSchema } from '../types/editableProfileCardSchema'
+
 import {
   editableProfileCardActions,
   editableProfileCardReducer

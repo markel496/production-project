@@ -1,13 +1,18 @@
 /* eslint-disable indent */
-import type { Decorator, Meta, StoryObj } from '@storybook/react'
-import { NotificationButton } from './NotificationButton'
+import { mswLoader } from 'msw-storybook-addon'
+
+import { http, HttpResponse, delay } from 'msw'
+
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
-import { mswLoader } from 'msw-storybook-addon'
 import { Notification } from '@/entities/Notification'
-import { http, HttpResponse, delay } from 'msw'
+
+
+import { NotificationButton } from './NotificationButton'
+
+import type { Decorator, Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof NotificationButton> = {
   title: 'features/NotificationButton',

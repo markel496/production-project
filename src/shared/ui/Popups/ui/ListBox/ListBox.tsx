@@ -1,11 +1,15 @@
 import { Fragment, ReactNode } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './ListBox.module.scss'
+
 import { Listbox } from '@headlessui/react'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { PopupPosition } from '@/shared/types/ui'
+
 import { HStack } from '../../../Stack/HStack/HStack'
 import { Button } from '../../../Button/Button'
 import { mapPositionClasses } from '../../styles/consts'
+
+import cls from './ListBox.module.scss'
 
 export interface ListBoxItem<T extends string> {
   value: T

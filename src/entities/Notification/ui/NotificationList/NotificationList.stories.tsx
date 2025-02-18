@@ -1,12 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { NotificationList } from './NotificationList'
+import { mswLoader } from 'msw-storybook-addon'
+
+import { http, HttpResponse, delay } from 'msw'
+
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
-import { Notification } from '../../model/types/notification'
+
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
-import { mswLoader } from 'msw-storybook-addon'
-import { http, HttpResponse, delay } from 'msw'
+
+import { Notification } from '../../model/types/notification'
+
+import { NotificationList } from './NotificationList'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof NotificationList> = {
   title: 'entities/Notification/NotificationList',

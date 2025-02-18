@@ -1,11 +1,17 @@
 import { memo, useCallback, useState } from 'react'
+
+import { useTranslation } from 'react-i18next'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './EditCommentForm.module.scss'
+
 import { Input } from '@/shared/ui/Input'
 import { Button, ButtonSize } from '@/shared/ui/Button'
-import { useTranslation } from 'react-i18next'
-import { Comment, EditCommentArgs } from '../../model/types/comment'
+
 import { HStack } from '@/shared/ui/Stack'
+
+import { Comment, EditCommentArgs } from '../../model/types/comment'
+
+import cls from './EditCommentForm.module.scss'
 
 interface EditCommentFormProps {
   className?: string

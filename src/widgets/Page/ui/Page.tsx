@@ -1,14 +1,24 @@
 import { MutableRefObject, ReactNode, memo, UIEvent, useRef } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './Page.module.scss'
+
+import { useLocation } from 'react-router-dom'
+
+import { useSelector } from 'react-redux'
+
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { saveScrollActions } from '../model/slice/saveScrollSlice'
-import { useLocation } from 'react-router-dom'
+
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { useSelector } from 'react-redux'
-import { getScrollPositionByPath } from '../model/selectors/getScrollPosition'
+
+
+import { classNames } from '@/shared/lib/classNames/classNames'
+
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
+
+import { getScrollPositionByPath } from '../model/selectors/getScrollPosition'
+
+import { saveScrollActions } from '../model/slice/saveScrollSlice'
+
+import cls from './Page.module.scss'
 
 interface PageProps {
   className?: string

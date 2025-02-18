@@ -1,13 +1,19 @@
 /* eslint-disable i18next/no-literal-string */
-import type { Meta, StoryObj } from '@storybook/react'
-import { Popover } from './Popover'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
-import { Icon } from '../../../Icon/Icon'
+
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg'
+
+import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
+
+import { Icon } from '../../../Icon/Icon'
 import { Text } from '../../../Text/Text'
 import { VStack } from '../../../Stack'
-import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
+
+
+import { Popover } from './Popover'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Popover> = {
   title: 'Shared/Popups/Popover',

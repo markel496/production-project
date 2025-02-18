@@ -1,5 +1,3 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import ArticlesPage from './ArticlesPage'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
@@ -11,7 +9,12 @@ import {
   ArticleView
 } from '@/entities/Article'
 import avatar from '@/shared/assets/tests/avatar.jpg'
+
 import { ArticlesPageSchema } from '../../model/types/articlesPageSchema'
+
+import ArticlesPage from './ArticlesPage'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof ArticlesPage> = {
   title: 'Pages/ArticlesPage',

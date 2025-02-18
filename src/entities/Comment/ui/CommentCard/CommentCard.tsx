@@ -1,25 +1,33 @@
 /* eslint-disable indent */
 import { memo, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './CommentCard.module.scss'
-import { Comment, EditCommentArgs } from '../../model/types/comment'
+
+import { useSelector } from 'react-redux'
+
+import moment from 'moment'
+
 import { Avatar } from '@/shared/ui/Avatar'
 import { Text, TextSize } from '@/shared/ui/Text'
 import { Skeleton } from '@/shared/ui/Skeleton'
 import { AppLink } from '@/shared/ui/AppLink'
-import { CommentDeleteBtn } from '../CommentDeleteBtn/CommentDeleteBtn'
-import { CommentEditBtn } from '../CommentEditBtn/CommentEditBtn'
-import { EditCommentForm } from '../EditCommentForm/EditCommentForm'
+
 import { getUserAuthData } from '@/entities/User'
-import { useSelector } from 'react-redux'
 
 import { HStack, VStack } from '@/shared/ui/Stack'
 
-import moment from 'moment'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
 import 'moment/locale/ru'
 import { Card, CardTheme } from '@/shared/ui/Card'
 import { routePath } from '@/shared/const/router'
+
+import { EditCommentForm } from '../EditCommentForm/EditCommentForm'
+import { CommentEditBtn } from '../CommentEditBtn/CommentEditBtn'
+import { CommentDeleteBtn } from '../CommentDeleteBtn/CommentDeleteBtn'
+
+import { Comment, EditCommentArgs } from '../../model/types/comment'
+
+import cls from './CommentCard.module.scss'
 
 interface CommentCardProps {
   className?: string

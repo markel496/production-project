@@ -1,7 +1,9 @@
 import { ReactNode, useCallback } from 'react'
-import cls from './Tabs.module.scss'
+
 import { Card, CardTheme } from '../Card/Card'
 import { HStack } from '../Stack'
+
+import cls from './Tabs.module.scss'
 
 export interface TabItem<T extends string> {
   value: T

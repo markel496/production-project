@@ -1,6 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Avatar } from './Avatar'
 import AvatarImg from '@/shared/assets/tests/avatar.jpg'
+
+import { Avatar } from './Avatar'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Avatar> = {
   title: 'Shared/Avatar',

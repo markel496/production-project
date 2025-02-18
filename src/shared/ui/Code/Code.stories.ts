@@ -1,8 +1,10 @@
 /* eslint-disable quotes */
-import type { Meta, StoryObj } from '@storybook/react'
-import { Code } from './Code'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
+
+import { Code } from './Code'
+
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Code> = {
   title: 'Shared/Code',

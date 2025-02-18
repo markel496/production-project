@@ -1,5 +1,3 @@
-import { Mods, classNames } from '@/shared/lib/classNames/classNames'
-import cls from './Input.module.scss'
 import {
   ChangeEvent,
   InputHTMLAttributes,
@@ -8,7 +6,12 @@ import {
   useRef,
   useState
 } from 'react'
+
+import { Mods, classNames } from '@/shared/lib/classNames/classNames'
+
 import { HStack } from '../Stack'
+
+import cls from './Input.module.scss'
 
 /**Omit забирает все пропсы у InputHTMLAttributes<HTMLInputElement>, но исключает 'onChange' и readOnly */
 type HTMLInputProps = Omit<
