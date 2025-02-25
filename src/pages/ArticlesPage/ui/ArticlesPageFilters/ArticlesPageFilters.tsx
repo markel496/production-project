@@ -1,21 +1,14 @@
 import { memo, useCallback, useMemo } from 'react'
-
 import { useTranslation } from 'react-i18next'
-
 import { useSelector } from 'react-redux'
 
-import { ViewSelector } from '@/features/viewSelector'
+import { ArticleSortSelector } from '@/features/articleSortSelector'
+import { ArticleViewSelector } from '@/features/articleViewSelector'
 import { Card } from '@/shared/ui/Card'
 import { Input } from '@/shared/ui/Input'
-import { SortSelector } from '@/features/sortSelector'
-
-
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article'
-
-
 import { SortOrder } from '@/shared/types/sort'
-
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
 import { TabItem, Tabs } from '@/shared/ui/Tabs'
 import { HStack } from '@/shared/ui/Stack'
@@ -113,13 +106,13 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   return (
     <div className={className}>
       <HStack className={cls.sortWrapper} justify="between">
-        <SortSelector
+        <ArticleSortSelector
           sort={sort}
           order={order}
           onChangeSort={onChangeSort}
           onChangeOrder={onChangeOrder}
         />
-        <ViewSelector view={view} onViewClick={onChangeView} />
+        <ArticleViewSelector view={view} onViewClick={onChangeView} />
       </HStack>
       <Card className={cls.search}>
         <Input

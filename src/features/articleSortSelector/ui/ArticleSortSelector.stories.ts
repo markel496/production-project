@@ -1,19 +1,19 @@
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 
-import { SortSelector } from './SortSelector'
+import { ArticleSortSelector } from './ArticleSortSelector'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-const meta: Meta<typeof SortSelector> = {
-  title: 'Features/SortSelector',
-  component: SortSelector,
+const meta: Meta<typeof ArticleSortSelector> = {
+  title: 'Features/ArticleSortSelector',
+  component: ArticleSortSelector,
   tags: ['autodocs'],
   argTypes: {}
 }
 
 export default meta
-type Story = StoryObj<typeof SortSelector>
+type Story = StoryObj<typeof ArticleSortSelector>
 
 export const Primary: Story = {}
 

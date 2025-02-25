@@ -9,7 +9,7 @@ import { Button, ButtonTheme } from '@/shared/ui/Button'
 import { Icon } from '@/shared/ui/Icon'
 import { HStack } from '@/shared/ui/Stack'
 
-import cls from './ViewSelector.module.scss'
+import cls from './ArticleViewSelector.module.scss'
 
 const viewTypes = [
   {
@@ -22,13 +22,13 @@ const viewTypes = [
   }
 ]
 
-interface ViewSelectorProps {
+interface ArticleViewSelectorProps {
   className?: string
   view: ArticleView
   onViewClick: (view: ArticleView) => void
 }
 
-export const ViewSelector = memo((props: ViewSelectorProps) => {
+export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
   const { className, view, onViewClick } = props
 
   //onClick аргументом всегда принимает event, но мне надо также передавать новый вид отображения, который выбрал пользователь. Поэтому тут воспользовался замыканием

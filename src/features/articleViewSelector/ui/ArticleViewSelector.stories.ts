@@ -2,19 +2,19 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 import { ArticleView } from '@/entities/Article'
 
-import { ViewSelector } from './ViewSelector'
+import { ArticleViewSelector } from './ArticleViewSelector'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-const meta: Meta<typeof ViewSelector> = {
-  title: 'Features/ViewSelector',
-  component: ViewSelector,
+const meta: Meta<typeof ArticleViewSelector> = {
+  title: 'Features/ArticleViewSelector',
+  component: ArticleViewSelector,
   tags: ['autodocs'],
   argTypes: {}
 }
 
 export default meta
-type Story = StoryObj<typeof ViewSelector>
+type Story = StoryObj<typeof ArticleViewSelector>
 
 export const Primary: Story = {
   args: {

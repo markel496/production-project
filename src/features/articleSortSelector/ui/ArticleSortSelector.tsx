@@ -7,7 +7,7 @@ import { ArticleSortField } from '@/entities/Article'
 import { SortOrder } from '@/shared/types/sort'
 import { HStack } from '@/shared/ui/Stack'
 
-interface SortSelectorProps {
+interface ArticleSortSelectorProps {
   className?: string
   sort: ArticleSortField
   order: SortOrder
@@ -15,7 +15,7 @@ interface SortSelectorProps {
   onChangeOrder: (newOrder: SortOrder) => void
 }
 
-export const SortSelector = memo((props: SortSelectorProps) => {
+export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
   const { className, sort, order, onChangeSort, onChangeOrder } = props
   const { t } = useTranslation('articles')
 
