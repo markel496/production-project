@@ -17,9 +17,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof ArticleList> = {
   title: 'Entities/Article/ArticleList',
   component: ArticleList,
-  parameters: {
-    layout: 'padded'
-  },
+
   tags: ['autodocs'],
   argTypes: {}
 }

@@ -9,9 +9,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof LoginForm> = {
   title: 'Features/LoginForm',
   component: LoginForm,
-  parameters: {
-    layout: 'padded'
-  },
+
   decorators: [ThemeDecorator(Theme.DARK)],
   tags: ['autodocs']
 }

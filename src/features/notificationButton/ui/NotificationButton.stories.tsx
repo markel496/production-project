@@ -9,7 +9,6 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
 import { Notification } from '@/entities/Notification'
 
-
 import { NotificationButton } from './NotificationButton'
 
 import type { Decorator, Meta, StoryObj } from '@storybook/react'
@@ -17,9 +16,7 @@ import type { Decorator, Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof NotificationButton> = {
   title: 'features/NotificationButton',
   component: NotificationButton,
-  parameters: {
-    layout: 'fullscreen'
-  },
+
   args: {
     size: 20
   },

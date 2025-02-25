@@ -4,8 +4,11 @@ import { CSSProperties } from 'react'
 
 export const WrapperDecorator =
   (style: CSSProperties): Decorator =>
-  (StoryComponent) => (
-    <div style={style}>
+  (StoryComponent, { parameters }) =>
+    !parameters?.withoutGlobalWrapper ? (
+      <div style={style}>
+        <StoryComponent />
+      </div>
+    ) : (
       <StoryComponent />
-    </div>
-  )
+    )

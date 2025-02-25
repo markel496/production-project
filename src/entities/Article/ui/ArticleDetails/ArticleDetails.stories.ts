@@ -9,15 +9,11 @@ import { ArticleBlockType, ArticleType } from '../../model/consts/articleConsts'
 
 import { ArticleDetails } from './ArticleDetails'
 
-
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof ArticleDetails> = {
   title: 'Entities/Article/ArticleDetails',
   component: ArticleDetails,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs'],
   argTypes: {}
 }

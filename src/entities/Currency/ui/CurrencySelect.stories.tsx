@@ -11,9 +11,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof CurrencySelect> = {
   title: 'Entities/CurrencySelect',
   component: CurrencySelect,
-  parameters: {
-    layout: 'padded'
-  },
+
   args: {
     value: Currency.USD
   },

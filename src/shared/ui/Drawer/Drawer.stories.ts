@@ -8,9 +8,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof Drawer> = {
   title: 'Shared/Drawer',
   component: Drawer,
-  parameters: {
-    layout: 'padded'
-  },
+
   args: {
     isOpen: true,
     children: 'Test'

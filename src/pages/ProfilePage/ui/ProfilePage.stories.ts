@@ -14,7 +14,7 @@ const meta: Meta<typeof ProfilePage> = {
   title: 'Pages/ProfilePage',
   component: ProfilePage,
   parameters: {
-    layout: 'fullscreen'
+    withoutGlobalWrapper: true
   },
   tags: ['autodocs'],
   argTypes: {}

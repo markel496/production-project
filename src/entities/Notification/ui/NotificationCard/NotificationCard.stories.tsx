@@ -11,9 +11,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof NotificationCard> = {
   title: 'entities/Notification/NotificationCard',
   component: NotificationCard,
-  parameters: {
-    layout: 'padded'
-  },
+
   decorators: [WrapperDecorator({ width: 500 })],
   tags: ['autodocs'],
   argTypes: {}

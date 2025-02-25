@@ -10,7 +10,7 @@ const meta: Meta<typeof MainPage> = {
   title: 'Pages/MainPage',
   component: MainPage,
   parameters: {
-    layout: 'fullscreen'
+    withoutGlobalWrapper: true
   },
   decorators: [
     StoreDecorator({

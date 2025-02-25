@@ -10,7 +10,6 @@ import { Icon } from '../../../Icon/Icon'
 import { Text } from '../../../Text/Text'
 import { VStack } from '../../../Stack'
 
-
 import { Popover } from './Popover'
 
 import type { Meta, StoryObj } from '@storybook/react'
@@ -19,7 +18,7 @@ const meta: Meta<typeof Popover> = {
   title: 'Shared/Popups/Popover',
   component: Popover,
   args: {
-    trigger: <Icon Svg={NotificationIcon} inverted />,
+    trigger: <Icon Svg={NotificationIcon} inverted width={30} height={30} />,
     children: (
       <VStack style={{ width: 300 }} gap="10">
         <Text text="Какой-то текст для сторибука" />
@@ -31,9 +30,6 @@ const meta: Meta<typeof Popover> = {
         <Text text="Какой-то текст для сторибука" />
       </VStack>
     )
-  },
-  parameters: {
-    layout: 'padded'
   },
   tags: ['autodocs']
 }

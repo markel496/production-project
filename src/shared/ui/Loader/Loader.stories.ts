@@ -8,9 +8,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof Loader> = {
   title: 'Shared/Loader',
   component: Loader,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs'],
   argTypes: {}
 }

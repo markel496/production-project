@@ -8,9 +8,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof Modal> = {
   title: 'Shared/Modal',
   component: Modal,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs']
 }
 

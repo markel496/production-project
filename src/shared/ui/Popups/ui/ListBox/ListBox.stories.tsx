@@ -17,9 +17,7 @@ const items = [
 const meta: Meta<typeof ListBox> = {
   title: 'Shared/Popups/ListBox',
   component: ListBox,
-  parameters: {
-    layout: 'padded'
-  },
+
   args: {
     items,
     defaultValue: '5'

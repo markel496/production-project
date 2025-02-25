@@ -5,9 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof Flex> = {
   title: 'Shared/Flex',
   component: Flex,
-  parameters: {
-    layout: 'padded'
-  },
+
   args: {
     children: (
       <>

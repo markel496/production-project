@@ -11,9 +11,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof CountrySelect> = {
   title: 'Entities/CountrySelect',
   component: CountrySelect,
-  parameters: {
-    layout: 'padded'
-  },
+
   args: {
     value: Country.Kazakhstan
   },

@@ -8,9 +8,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof StarRating> = {
   title: 'Shared/StarRating',
   component: StarRating,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs'],
   argTypes: {}
 }

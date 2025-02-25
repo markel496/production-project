@@ -20,7 +20,7 @@ const meta: Meta<typeof ArticlesPage> = {
   title: 'Pages/ArticlesPage',
   component: ArticlesPage,
   parameters: {
-    layout: 'fullscreen'
+    withoutGlobalWrapper: true
   },
   tags: ['autodocs'],
   argTypes: {}

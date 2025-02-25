@@ -9,9 +9,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof Navbar> = {
   title: 'Widgets/Navbar',
   component: Navbar,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs'],
   argTypes: {}
 }

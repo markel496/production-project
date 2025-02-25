@@ -22,9 +22,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof Rating> = {
   title: 'Entities/Rating',
   component: Rating,
-  parameters: {
-    layout: 'padded'
-  },
   args: {
     title: 'Как вам статья?'
   },

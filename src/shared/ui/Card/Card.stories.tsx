@@ -10,9 +10,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof Card> = {
   title: 'Shared/Card',
   component: Card,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs']
 }
 

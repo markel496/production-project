@@ -9,9 +9,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof ViewSelector> = {
   title: 'Features/ViewSelector',
   component: ViewSelector,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs'],
   argTypes: {}
 }

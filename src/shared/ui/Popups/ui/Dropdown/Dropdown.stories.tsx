@@ -12,9 +12,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof Dropdown> = {
   title: 'Shared/Popups/Dropdown',
   component: Dropdown,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs'],
   args: {
     trigger: <Button>Open</Button>,

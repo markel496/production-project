@@ -8,9 +8,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof Skeleton> = {
   title: 'Shared/Skeleton',
   component: Skeleton,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs']
 }
 

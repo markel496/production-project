@@ -7,9 +7,6 @@ import { Theme } from 'app/providers/ThemeProvider'
 const meta: Meta<typeof ${componentName}> = {
   title: '${layer}/${componentName}',
   component: ${componentName},
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs'],
   argTypes: {}
 }
@@ -17,9 +14,7 @@ const meta: Meta<typeof ${componentName}> = {
 export default meta
 type Story = StoryObj<typeof ${componentName}>
 
-export const Primary: Story = {
-  args: {}
-}
+export const Primary: Story = {}
 
 export const Dark: Story = {
   args: {},

@@ -13,9 +13,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof CommentCard> = {
   title: 'Entities/Comment/CommentCard',
   component: CommentCard,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs'],
   decorators: [StoreDecorator({ user: { authData: { _id: '1' } } })],
   argTypes: {}

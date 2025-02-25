@@ -9,16 +9,15 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof AboutPage> = {
   title: 'Pages/AboutPage',
   component: AboutPage,
-  parameters: {
-    layout: 'fullscreen'
-  },
   decorators: [
     StoreDecorator({
       scrollPosition: { scroll: {} }
     })
   ],
-  tags: ['autodocs'],
-  argTypes: {}
+  parameters: {
+    withoutGlobalWrapper: true
+  },
+  tags: ['autodocs']
 }
 
 export default meta

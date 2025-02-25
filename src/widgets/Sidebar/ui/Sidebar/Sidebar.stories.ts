@@ -9,9 +9,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof Sidebar> = {
   title: 'Widgets/SideBar',
   component: Sidebar,
-  parameters: {
-    layout: 'padded'
-  },
+
   decorators: [StoreDecorator({ user: { authData: {} } })],
   tags: ['autodocs'],
   argTypes: {}

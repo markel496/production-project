@@ -9,9 +9,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof Code> = {
   title: 'Shared/Code',
   component: Code,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs']
 }
 

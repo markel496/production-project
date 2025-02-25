@@ -8,9 +8,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof AppLink> = {
   title: 'Shared/AppLink',
   component: AppLink,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs'],
   args: {
     to: '/'

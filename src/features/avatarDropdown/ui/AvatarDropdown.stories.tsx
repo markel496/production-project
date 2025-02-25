@@ -12,9 +12,7 @@ import type { Decorator, Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof AvatarDropdown> = {
   title: 'features/AvatarDropdown',
   component: AvatarDropdown,
-  parameters: {
-    layout: 'fullscreen'
-  },
+
   decorators: [StoreDecorator({})],
   tags: ['autodocs'],
   argTypes: {}

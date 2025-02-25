@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 
 import { Theme } from '@/shared/const/theme'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
-import { Article , ArticleBlockType, ArticleType } from '@/entities/Article'
+import { Article, ArticleBlockType, ArticleType } from '@/entities/Article'
 
 import { ArticleCommentsSchema } from '@/features/articleComments'
 import avatar from '@/shared/assets/tests/avatar.jpg'
@@ -13,15 +13,13 @@ import ArticleDetailsPage from './ArticleDetailsPage'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
 const meta: Meta<typeof ArticleDetailsPage> = {
   title: 'Pages/ArticleDetailsPage',
   component: ArticleDetailsPage,
   parameters: {
-    layout: 'fullscreen'
+    withoutGlobalWrapper: true
   },
-  tags: ['autodocs'],
-  argTypes: {}
+  tags: ['autodocs']
 }
 
 export default meta

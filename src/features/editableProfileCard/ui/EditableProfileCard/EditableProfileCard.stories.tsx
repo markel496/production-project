@@ -15,9 +15,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof EditableProfileCard> = {
   title: 'features/EditableProfileCard',
   component: EditableProfileCard,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs'],
   argTypes: {}
 }

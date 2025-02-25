@@ -8,13 +8,9 @@ import { Tabs } from './Tabs'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
 const meta: Meta<typeof Tabs> = {
   title: 'Shared/Tabs',
   component: Tabs,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs'],
   args: {
     tabs: [

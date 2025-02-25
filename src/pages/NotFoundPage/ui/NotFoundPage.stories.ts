@@ -10,7 +10,7 @@ const meta: Meta<typeof NotFoundPage> = {
   title: 'Pages/NotFoundPage',
   component: NotFoundPage,
   parameters: {
-    layout: 'fullscreen'
+    withoutGlobalWrapper: true
   },
   decorators: [
     StoreDecorator({

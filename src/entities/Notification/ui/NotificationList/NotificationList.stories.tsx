@@ -23,9 +23,7 @@ const meta: Meta<typeof NotificationList> = {
     }),
     WrapperDecorator({ width: 500, height: 400, overflowY: 'auto' })
   ],
-  parameters: {
-    layout: 'padded'
-  },
+
   loaders: [mswLoader],
   tags: ['autodocs'],
   argTypes: {}

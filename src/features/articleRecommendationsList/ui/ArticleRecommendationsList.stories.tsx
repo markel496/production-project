@@ -18,9 +18,7 @@ const meta: Meta<typeof ArticleRecommendationsList> = {
   args: {
     id: '1'
   },
-  parameters: {
-    layout: 'padded'
-  },
+
   decorators: [StoreDecorator({})],
   loaders: [mswLoader],
   tags: ['autodocs'],

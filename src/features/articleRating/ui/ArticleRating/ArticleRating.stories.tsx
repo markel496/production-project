@@ -15,9 +15,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof ArticleRating> = {
   title: 'features/ArticleRating',
   component: ArticleRating,
-  parameters: {
-    layout: 'padded'
-  },
+
   args: {
     id: '1'
   },

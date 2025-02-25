@@ -13,9 +13,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof ProfileCard> = {
   title: 'Entities/ProfileCard',
   component: ProfileCard,
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs'],
   argTypes: {}
 }

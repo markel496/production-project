@@ -9,9 +9,6 @@ const meta: Meta<typeof AddNewCommentForm> = {
   title: 'Entities/Comment/AddNewCommentForm',
   component: AddNewCommentForm,
   decorators: [ThemeDecorator(Theme.DARK)],
-  parameters: {
-    layout: 'padded'
-  },
   tags: ['autodocs']
 }
 
