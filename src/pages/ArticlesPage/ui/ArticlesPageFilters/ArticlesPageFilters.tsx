@@ -1,17 +1,16 @@
-import { memo, useCallback, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
+import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 
 import { ArticleSortSelector } from '@/features/articleSortSelector'
 import { ArticleViewSelector } from '@/features/articleViewSelector'
-import { Card } from '@/shared/ui/Card'
-import { Input } from '@/shared/ui/Input'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article'
 import { SortOrder } from '@/shared/types/sort'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
-import { TabItem, Tabs } from '@/shared/ui/Tabs'
+import { TabItem } from '@/shared/ui/Tabs'
 import { HStack } from '@/shared/ui/Stack'
+import { ArticleSearch } from '@/features/articleSearch'
+import { ArticleTypeTabs } from '@/features/articleTypeTabs'
 
 import { articlesPageActions } from '../../model/slices/articlesPageSlice'
 import {
@@ -31,7 +30,6 @@ interface ArticlesPageFiltersProps {
 
 export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   const { className, view } = props
-  const { t } = useTranslation('articles')
 
   const sort = useSelector(getArticlesPageSort)
   const order = useSelector(getArticlesPageOrder)
@@ -39,18 +37,6 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   const type = useSelector(getArticlesPageType)
 
   const dispatch = useAppDispatch()
-
-  const typeTabs = useMemo<TabItem<ArticleType>[]>(
-    () => [
-      { value: ArticleType.ALL, content: t('Все') },
-      { value: ArticleType.ECONOMICS, content: t('Экономика') },
-      { value: ArticleType.IT, content: t('Айти') },
-      { value: ArticleType.POLITICS, content: t('Политика') },
-      { value: ArticleType.SCIENCE, content: t('Наука') },
-      { value: ArticleType.SPORT, content: t('Спорт') }
-    ],
-    [t]
-  )
 
   const fetchData = useCallback(() => {
     if (__PROJECT__ === 'storybook') return
@@ -105,7 +91,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
 
   return (
     <div className={className}>
-      <HStack className={cls.sortWrapper} justify="between">
+      <HStack className={cls.stackWrapper} justify="between">
         <ArticleSortSelector
           sort={sort}
           order={order}
@@ -114,14 +100,12 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         />
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
       </HStack>
-      <Card className={cls.search}>
-        <Input
-          value={search}
-          onChange={onChangeSearch}
-          placeholder={t('Поиск')}
-        />
-      </Card>
-      <Tabs tabs={typeTabs} value={type} onTabClick={onChangeTab} />
+      <ArticleSearch
+        className={cls.search}
+        search={search}
+        onChangeSearch={onChangeSearch}
+      />
+      <ArticleTypeTabs value={type} onChangeTab={onChangeTab} />
     </div>
   )
 })
