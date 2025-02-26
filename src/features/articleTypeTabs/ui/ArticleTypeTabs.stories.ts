@@ -1,7 +1,7 @@
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 
-import { ArticleTypeTabs } from './articleTypeTabs'
+import { ArticleTypeTabs } from './ArticleTypeTabs'
 
 import type { Meta, StoryObj } from '@storybook/react'
 

@@ -1,1 +1,1 @@
-export { ArticleTypeTabs } from './ui/articleTypeTabs'
+export { ArticleTypeTabs } from './ui/ArticleTypeTabs'
