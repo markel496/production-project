@@ -12,7 +12,7 @@ import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
 import { HStack } from '@/shared/ui/Stack'
 import { NotificationButton } from '@/features/notificationButton'
 import { AvatarDropdown } from '@/features/avatarDropdown'
-import { routePath } from '@/shared/const/router'
+import { getRouteArticleCreate } from '@/shared/const/router'
 
 import cls from './Navbar.module.scss'
 
@@ -42,7 +42,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           title="My app"
           theme={TextTheme.INVERTED}
         />
-        <AppLink theme={AppLinkTheme.INVERTED} to={routePath.article_create}>
+        <AppLink theme={AppLinkTheme.INVERTED} to={getRouteArticleCreate()}>
           {t('Создать статью')}
         </AppLink>
 

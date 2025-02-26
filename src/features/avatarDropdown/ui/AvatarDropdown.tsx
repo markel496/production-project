@@ -6,7 +6,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { Dropdown } from '@/shared/ui/Popups'
 import { User, UserRole, userActions } from '@/entities/User'
 import { Avatar } from '@/shared/ui/Avatar'
-import { routePath } from '@/shared/const/router'
+import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router'
 
 import cls from './AvatarDropdown.module.scss'
 
@@ -38,13 +38,13 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
           ? [
               {
                 content: t('Админка'),
-                href: routePath.admin_panel
+                href: getRouteAdminPanel()
               }
             ]
           : []),
         {
           content: t('Профиль'),
-          href: routePath.profile + authData._id
+          href: getRouteProfile(authData._id)
         },
         { content: t('Выйти'), onClick: onLogout }
       ]}

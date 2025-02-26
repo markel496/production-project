@@ -13,7 +13,7 @@ import { Text, TextSize } from '@/shared/ui/Text'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import 'moment/locale/ru'
 import { HStack } from '@/shared/ui/Stack'
-import { routePath } from '@/shared/const/router'
+import { getRouteArticleDetails, getRouteProfile } from '@/shared/const/router'
 
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 
@@ -57,10 +57,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         className={classNames('', {}, [className, cls[view]])}
       >
         <HStack className={cls.header}>
-          <AppLink
-            className={cls.user}
-            to={routePath.profile + article.user._id}
-          >
+          <AppLink className={cls.user} to={getRouteProfile(article.user._id)}>
             {article.user.avatar && (
               <Avatar
                 className={cls.avatar}
@@ -83,7 +80,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           />
         )}
         <HStack className={cls.footer}>
-          <AppLink to={routePath.article_details + article._id} target={target}>
+          <AppLink to={getRouteArticleDetails(article._id)} target={target}>
             <Button>{t('Читать далее...')}</Button>
           </AppLink>
           {views}
@@ -96,7 +93,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   return (
     <AppLink
       className={classNames('', {}, [className, cls[view]])}
-      to={routePath.article_details + article._id}
+      to={getRouteArticleDetails(article._id)}
       target={target}
       {...bindHover}
     >

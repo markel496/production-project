@@ -15,11 +15,10 @@ import { getUserAuthData } from '@/entities/User'
 
 import { HStack, VStack } from '@/shared/ui/Stack'
 
-
 import { classNames } from '@/shared/lib/classNames/classNames'
 import 'moment/locale/ru'
 import { Card, CardTheme } from '@/shared/ui/Card'
-import { routePath } from '@/shared/const/router'
+import { getRouteProfile } from '@/shared/const/router'
 
 import { EditCommentForm } from '../EditCommentForm/EditCommentForm'
 import { CommentEditBtn } from '../CommentEditBtn/CommentEditBtn'
@@ -98,7 +97,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
         <VStack>
           <AppLink
             className={cls.profile}
-            to={`${routePath.profile}${comment.user._id}`}
+            to={getRouteProfile(comment.user._id)}
           >
             {comment.user.avatar && (
               <Avatar

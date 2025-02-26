@@ -8,9 +8,8 @@ import { useSelector } from 'react-redux'
 import { Button } from '@/shared/ui/Button'
 import { classNames } from '@/shared/lib/classNames/classNames'
 
-
 import { HStack } from '@/shared/ui/Stack'
-import { routePath } from '@/shared/const/router'
+import { getRouteArticles, getRouteArticleEdit } from '@/shared/const/router'
 
 import { getCanEditArticle } from '../../model/selectors/getCanEditArticle'
 
@@ -31,11 +30,11 @@ export const ArticleDetailsPageHeader = memo(
     const navigate = useNavigate()
 
     const onBackToList = useCallback(() => {
-      navigate(routePath.articles)
+      navigate(getRouteArticles())
     }, [navigate])
 
     const onEditArticle = useCallback(() => {
-      navigate(`${routePath.article_details}${id}/edit`)
+      if (id) navigate(getRouteArticleEdit(id))
     }, [navigate, id])
 
     return (
