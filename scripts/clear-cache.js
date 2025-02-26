@@ -1,6 +1,7 @@
+const path = require('path')
 const fs = require('fs')
 
-const cacheDirectory = '../node_modules/.cache'
+const cacheDirectory = path.resolve(__dirname, '..', 'node_modules', '.cache')
 
 try {
   fs.rmSync(cacheDirectory, { recursive: true, force: true })
