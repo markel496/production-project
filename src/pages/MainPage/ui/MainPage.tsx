@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Page } from '@/widgets/Page'
 import { Rating } from '@/entities/Rating'
 import { BugButton } from '@/features/bugButton'
+import { Counter } from '@/entities/Counter'
 
 const MainPage = () => {
   const { t } = useTranslation('main')
@@ -17,6 +18,7 @@ const MainPage = () => {
         feedbackTitle={t('Оставьте отзыв о статье')}
         placeholder={t('Напишите что-нибудь...')}
       />
+      <Counter />
     </Page>
   )
 }
