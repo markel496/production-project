@@ -10,9 +10,12 @@ import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider'
 
 export interface componentRenderOptions {
   route?: string
-  //DeepPartial для того, чтобы использовать определенные участки для тестирования, а не перечислять весь стейт
+  /**
+   * DeepPartial для того, чтобы использовать определенные участки для тестирования, а не перечислять весь стейт */
   initialState?: DeepPartial<StateSchema>
-  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>> // Для тех случаев, когда тестирую какой-то вложенный компонент, а initialState монтируется в родительский компонент
+  /**
+   * Для тех случаев, когда тестирую какой-то вложенный компонент, а initialState монтируется в родительский компонент */
+  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
 }
 
 export function componentRender(

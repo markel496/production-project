@@ -35,7 +35,7 @@ export const WithErrorFallback: Story = {
     src: undefined,
     fallback: <Skeleton width={375} height={500} />,
     errorFallback: (
-      <Text title="Ты видишь этот текст, тк ссылка на изображение недействительна :)" />
+      <Text title="Ты видишь этот текст, тк ссылка на изображение недействительна ;)" />
     )
   }
 }
