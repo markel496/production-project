@@ -14,7 +14,6 @@ import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkele
 
 import cls from './ArticleList.module.scss'
 
-
 interface ArticleListProps {
   className?: string
   articles: Article[]

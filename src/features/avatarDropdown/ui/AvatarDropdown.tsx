@@ -8,8 +8,6 @@ import { User, UserRole, userActions } from '@/entities/User'
 import { Avatar } from '@/shared/ui/Avatar'
 import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router'
 
-import cls from './AvatarDropdown.module.scss'
-
 interface AvatarDropdownProps {
   className?: string
   authData: User
@@ -30,6 +28,10 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     dispatch(userActions.logout())
   }, [dispatch])
 
+  const trigger = (
+    <Avatar alt="Аватар" size={30} src={authData.avatar} fallbackInverted />
+  )
+
   return (
     <Dropdown
       className={className}
@@ -48,14 +50,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
         },
         { content: t('Выйти'), onClick: onLogout }
       ]}
-      trigger={
-        <Avatar
-          className={authData.avatar ?? cls.noAvatar}
-          alt="Аватар"
-          size={30}
-          src={authData.avatar}
-        />
-      }
+      trigger={trigger}
       position="bottom left"
     />
   )

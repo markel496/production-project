@@ -81,7 +81,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     <VStack className={classNames(cls.ProfileCard, mods, [className])} gap="10">
       {data?.avatar && (
         <HStack justify="center" max>
-          <Avatar src={data?.avatar} alt="Аватарка" />
+          <Avatar src={data?.avatar} alt={t('Аватарка')} />
         </HStack>
       )}
       <Input

@@ -7,7 +7,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof Avatar> = {
   title: 'Shared/Avatar',
   component: Avatar,
-  
+
   tags: ['autodocs'],
   argTypes: {}
 }
@@ -26,5 +26,18 @@ export const Small: Story = {
   args: {
     src: AvatarImg,
     size: 50
+  }
+}
+
+export const NoAvatar: Story = {
+  args: {
+    src: undefined
+  }
+}
+
+export const NoAvatarInverted: Story = {
+  args: {
+    src: undefined,
+    fallbackInverted: true
   }
 }

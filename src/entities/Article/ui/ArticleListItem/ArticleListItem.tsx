@@ -1,4 +1,4 @@
-import { HTMLAttributeAnchorTarget, memo } from 'react'
+import { HTMLAttributeAnchorTarget, memo, useMemo } from 'react'
 import { TFunction } from 'react-i18next'
 import moment from 'moment'
 
@@ -14,6 +14,8 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import 'moment/locale/ru'
 import { HStack } from '@/shared/ui/Stack'
 import { getRouteArticleDetails, getRouteProfile } from '@/shared/const/router'
+import { AppImage } from '@/shared/ui/AppImage'
+import { Skeleton } from '@/shared/ui/Skeleton'
 
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 
@@ -41,8 +43,22 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     />
   )
   const types = <Text className={cls.types} text={article.type.join(', ')} />
-  const image = (
-    <img className={cls.img} src={article.img} alt={article.title} />
+  const imageHandler = useMemo(
+    () => (view: ArticleView) => {
+      const width = view === ArticleView.BIG ? '100%' : 200
+      const height = view === ArticleView.BIG ? 260 : 200
+      const fallback = <Skeleton width={width} height={height} />
+
+      return (
+        <AppImage
+          className={cls.img}
+          src={article.img}
+          alt={article.title}
+          fallback={fallback}
+        />
+      )
+    },
+    [article.img, article.title]
   )
   const views = <Text className={cls.views} text={String(article.views)} />
 
@@ -58,21 +74,18 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       >
         <HStack className={cls.header}>
           <AppLink className={cls.user} to={getRouteProfile(article.user._id)}>
-            {article.user.avatar && (
-              <Avatar
-                className={cls.avatar}
-                size={50}
-                src={article.user.avatar}
-                alt={t('Аватар')}
-              />
-            )}
-            <Text size={TextSize.L} text={article.user.username} />
+            <Avatar size={50} src={article.user.avatar} alt={t('Аватар')} />
+            <Text
+              className={cls.username}
+              size={TextSize.L}
+              text={article.user.username}
+            />
           </AppLink>
           {createdAt}
         </HStack>
         <Text className={cls.title} title={article.title} />
         {types}
-        {image}
+        {imageHandler(ArticleView.BIG)}
         {textBlock && (
           <ArticleTextBlockComponent
             className={cls.textBlock}
@@ -99,7 +112,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     >
       <Card>
         <div className={cls.imgWrapper}>
-          {image}
+          {imageHandler(ArticleView.SMALL)}
           {isHover && createdAt}
         </div>
         <HStack className={cls.infoWrapper}>
