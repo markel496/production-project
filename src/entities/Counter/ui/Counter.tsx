@@ -11,13 +11,25 @@ export const Counter = () => {
   return (
     <div>
       <h1 data-testid="value-title">value = {counterValue}</h1>
-      <Button onClick={() => increment()} data-testid="increment-btn">
+      <Button
+        style={{ background: 'green' }}
+        onClick={() => increment()}
+        data-testid="increment-btn"
+      >
         increment
       </Button>
-      <Button onClick={() => decrement()} data-testid="decrement-btn">
+      <Button
+        style={{ background: 'red' }}
+        onClick={() => decrement()}
+        data-testid="decrement-btn"
+      >
         decrement
       </Button>
-      <Button onClick={() => add(5)} data-testid="decrement-btn">
+      <Button
+        style={{ background: 'yellow' }}
+        onClick={() => add(5)}
+        data-testid="decrement-btn"
+      >
         add
       </Button>
     </div>
