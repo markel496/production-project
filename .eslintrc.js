@@ -10,7 +10,8 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:i18next/recommended',
-    'plugin:storybook/recommended'
+    'plugin:storybook/recommended',
+    'plugin:cypress/recommended'
   ],
   overrides: [
     {
@@ -37,7 +38,8 @@ module.exports = {
     'i18next',
     'react-hooks',
     'markel-plugin',
-    'unused-imports'
+    'unused-imports',
+    'cypress'
   ],
   settings: {
     react: {
@@ -116,6 +118,7 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/named': 'off',
     'import/default': 'off',
-    'import/no-named-as-default-member': 'off'
+    'import/no-named-as-default-member': 'off',
+    '@typescript-eslint/no-namespace': ['error', { allowDeclarations: true }]
   }
 }
