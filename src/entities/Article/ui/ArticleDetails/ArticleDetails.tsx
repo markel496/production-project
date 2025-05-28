@@ -104,14 +104,18 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
           />
         </HStack>
         <Text
+          className={cls.title}
           title={article?.title}
           text={article?.subtitle}
           size={TextSize.L}
-          className={cls.title}
+          data-testid="ArticleDetailsTextTitle"
         />
         <HStack gap="8">
           <Icon Svg={EyeIcon} />
-          <Text text={String(article?.views)} />
+          <Text
+            text={String(article?.views)}
+            data-testid="ArticleDetailsTextViews"
+          />
         </HStack>
         <HStack gap="8">
           <Icon Svg={CalendarIcon} className={cls.icon} />

@@ -3,7 +3,11 @@ import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
 import { Text, TextSize } from '@/shared/ui/Text'
-import { AddNewCommentForm, CommentList , EditCommentArgs } from '@/entities/Comment'
+import {
+  AddNewCommentForm,
+  CommentList,
+  EditCommentArgs
+} from '@/entities/Comment'
 
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 
@@ -24,11 +28,9 @@ import {
 } from '../model/selectors/articleComments'
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 
-
 import { addNewCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle'
 import { deleteArticleComment } from '../model/services/deleteArticleComment/deleteArticleComment'
 import { editArticleComment } from '../model/services/editArticleComment/editArticleComment'
-
 
 import cls from './ArticleComments.module.scss'
 

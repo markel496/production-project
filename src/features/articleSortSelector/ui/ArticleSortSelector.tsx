@@ -43,8 +43,14 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
         value={sort}
         onChange={onChangeSort}
         options={sortFieldOptions}
+        data-testid="Select.ArticleSort"
       />
-      <Select value={order} onChange={onChangeOrder} options={orderOptions} />
+      <Select
+        value={order}
+        onChange={onChangeOrder}
+        options={orderOptions}
+        data-testid="Select.ArticleOrder"
+      />
     </HStack>
   )
 })

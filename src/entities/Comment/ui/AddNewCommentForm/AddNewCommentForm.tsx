@@ -46,6 +46,7 @@ const AddNewCommentForm = memo((props: AddNewCommentFormProps) => {
       ])}
       justify="between"
       gap="20"
+      data-testid={'AddNewCommentForm'}
     >
       <Input
         className={cls.input}
@@ -53,8 +54,11 @@ const AddNewCommentForm = memo((props: AddNewCommentFormProps) => {
         value={text}
         onChange={onCommentTextChange}
         clearError={clearError}
+        data-testid={'AddNewCommentForm.Input'}
       />
-      <Button onClick={onSendHandler}>{t('Отправить')}</Button>
+      <Button onClick={onSendHandler} data-testid={'AddNewCommentForm.SendBtn'}>
+        {t('Отправить')}
+      </Button>
     </HStack>
   )
 })

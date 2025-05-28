@@ -31,7 +31,6 @@ type Story = StoryObj<typeof ArticleRating>
 const rating: RatingSchema = {
   _id: '1',
   autor: 'Ivan Markelov',
-  dataId: '1',
   rating: 4
 }
 

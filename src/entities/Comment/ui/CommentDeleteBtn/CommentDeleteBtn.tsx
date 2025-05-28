@@ -21,6 +21,7 @@ export const CommentDeleteBtn = memo((props: CommentDeleteBtnProps) => {
       className={classNames(cls.CommentDeleteBtn, {}, [className])}
       theme={ButtonTheme.CLEAR}
       onClick={onDeleteComment}
+      data-testid="CommentCard.DeleteBtn"
     >
       <Icon Svg={RemoveIcon} className={cls.icon} />
     </Button>

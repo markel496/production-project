@@ -92,6 +92,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
     <Card
       className={classNames(cls.CommentCard, {}, [className])}
       theme={CardTheme.OUTLINE}
+      data-testid="CommentCard"
     >
       <HStack className={cls.header} justify="between">
         <VStack>
@@ -114,7 +115,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
         )}
       </HStack>
       {!isEditing ? (
-        <Text text={comment.text} />
+        <Text text={comment.text} data-testid="CommentCard.Text" />
       ) : (
         <EditCommentForm
           onCancelEditing={onCancelEditing}

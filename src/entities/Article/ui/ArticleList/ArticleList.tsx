@@ -65,7 +65,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
   }
 
   return (
-    <div className={classNames(cls.ArticleList, {}, [className])}>
+    <div
+      className={classNames(cls.ArticleList, {}, [className])}
+      data-testid="ArticleList"
+    >
       {articles.length > 0 ? renderArticles() : null}
       {isLoading && getSkeletons(view, recommended)}
     </div>

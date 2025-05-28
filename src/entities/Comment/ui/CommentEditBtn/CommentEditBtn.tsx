@@ -21,6 +21,7 @@ export const CommentEditBtn = memo((props: CommentEditBtnProps) => {
       className={classNames(cls.CommentEditBtn, {}, [className])}
       theme={ButtonTheme.CLEAR}
       onClick={onChangeComment}
+      data-testid="CommentCard.EditBtn"
     >
       <Icon Svg={EditIcon} className={cls.icon} />
     </Button>

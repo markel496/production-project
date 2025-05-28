@@ -69,8 +69,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     return (
       <Card
-        {...bindHover}
         className={classNames('', {}, [className, cls[view]])}
+        data-testid="ArticleList.Item"
+        {...bindHover}
       >
         <HStack className={cls.header}>
           <AppLink className={cls.user} to={getRouteProfile(article.user._id)}>
@@ -83,7 +84,11 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           </AppLink>
           {createdAt}
         </HStack>
-        <Text className={cls.title} title={article.title} />
+        <Text
+          className={cls.title}
+          title={article.title}
+          data-testid="ArticleList.Item.Text"
+        />
         {types}
         {imageHandler(ArticleView.BIG)}
         {textBlock && (
@@ -108,6 +113,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       className={classNames('', {}, [className, cls[view]])}
       to={getRouteArticleDetails(article._id)}
       target={target}
+      data-testid="ArticleList.Item"
       {...bindHover}
     >
       <Card>
@@ -120,7 +126,11 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           {views}
           <Icon className={cls.icon} Svg={EyeIcon} />
         </HStack>
-        <Text className={cls.title} text={article.title} />
+        <Text
+          className={cls.title}
+          text={article.title}
+          data-testid="ArticleList.Item.Text"
+        />
       </Card>
     </AppLink>
   )

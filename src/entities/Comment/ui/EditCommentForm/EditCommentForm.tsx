@@ -42,23 +42,32 @@ export const EditCommentForm = memo((props: EditCommentFormProps) => {
   }, [_id, onEditComment, text])
 
   return (
-    <div className={classNames(cls.EditCommentForm, {}, [className])}>
+    <div
+      className={classNames(cls.EditCommentForm, {}, [className])}
+      data-testid="EditCommentForm"
+    >
       <Input
         className={cls.input}
         value={text}
         onChange={onCommentTextChange}
         placeholder=" "
         autoFocus
+        data-testid="EditCommentForm.Input"
       />
       <HStack gap="5">
         <Button
           size={ButtonSize.S}
           disabled={disabledChangeBtn()}
           onClick={onEditHandler}
+          data-testid="EditCommentForm.ChangeBtn"
         >
           {t('Изменить')}
         </Button>
-        <Button size={ButtonSize.S} onClick={onCancelEditing}>
+        <Button
+          size={ButtonSize.S}
+          onClick={onCancelEditing}
+          data-testid="EditCommentForm.CancelBtn"
+        >
           {t('Отмена')}
         </Button>
       </HStack>

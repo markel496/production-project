@@ -23,6 +23,7 @@ interface RatingProps {
   placeholder?: string
   hasFeedback?: boolean
   onAccept?: (starsCount: number, feedback?: string) => void
+  onReset?: () => void
 }
 
 export const Rating = memo((props: RatingProps) => {
@@ -33,7 +34,8 @@ export const Rating = memo((props: RatingProps) => {
     feedbackTitle,
     placeholder,
     hasFeedback,
-    onAccept
+    onAccept,
+    onReset
   } = props
 
   const { t } = useTranslation()
@@ -67,7 +69,7 @@ export const Rating = memo((props: RatingProps) => {
   }, [])
 
   const modalContent = (type: string) => (
-    <VStack gap="16" max>
+    <VStack gap="16" max data-testid="FeedbackModal">
       <Text title={feedbackTitle} />
       <textarea
         className={classNames(cls.textarea, {}, [type])}
@@ -75,6 +77,7 @@ export const Rating = memo((props: RatingProps) => {
         placeholder={placeholder}
         value={feedback}
         onChange={(e) => setFeedback(e.target.value)}
+        data-testid="FeedbackModal.Textarea"
       />
     </VStack>
   )
@@ -84,14 +87,24 @@ export const Rating = memo((props: RatingProps) => {
   }, [rating])
 
   return (
-    <Card className={className}>
+    <Card className={className} data-testid="RatingCard">
       <VStack gap="8" align="center">
-        <Text title={title} />
+        <Text title={title} data-testid="RatingCard.Text" />
         <StarRating
           size={40}
           selectedStars={starsCount}
           onSelect={onSelectStars}
         />
+        {rating !== 0 && (
+          <Button
+            className={cls.againRateBtn}
+            theme={ButtonTheme.CLEAR}
+            onClick={onReset}
+            data-testid="RatingCard.ResetBtn"
+          >
+            {t('Оценить статью заново')}
+          </Button>
+        )}
       </VStack>
 
       <BrowserView>
@@ -104,10 +117,19 @@ export const Rating = memo((props: RatingProps) => {
           <VStack className={cls.modalContent} gap="32" max>
             {modalContent(cls.modal)}
             <HStack justify="end" gap="16" max>
-              <Button ref={cancelButtonRef} theme={ButtonTheme.OUTLINE_RED}>
+              <Button
+                ref={cancelButtonRef}
+                theme={ButtonTheme.OUTLINE_RED}
+                data-testid="FeedbackModal.CancelBtn"
+              >
                 {t('Отмена')}
               </Button>
-              <Button onClick={acceptHandle}>{t('Отправить')}</Button>
+              <Button
+                onClick={acceptHandle}
+                data-testid="FeedbackModal.SendBtn"
+              >
+                {t('Отправить')}
+              </Button>
             </HStack>
           </VStack>
         </Modal>

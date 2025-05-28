@@ -14,7 +14,6 @@ import { SidebarItem } from '../SidebarItem/SidebarItem'
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 
-
 import cls from './Sidebar.module.scss'
 
 interface SidebarProps {
@@ -52,7 +51,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         {collapsed ? '>' : '<'}
       </Button>
       <div className={cls.switchers}>
-        <ThemeSwitcher />
+        <ThemeSwitcher className={cls.themeSwitcher} />
         <LangSwitcher short={collapsed} className={cls.lang} />
       </div>
     </aside>

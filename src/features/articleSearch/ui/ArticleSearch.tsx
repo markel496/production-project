@@ -20,6 +20,7 @@ export const ArticleSearch = memo((props: ArticleSearchProps) => {
         value={search}
         onChange={onChangeSearch}
         placeholder={t('Поиск')}
+        data-testid="ArticleSearch.Input"
       />
     </Card>
   )

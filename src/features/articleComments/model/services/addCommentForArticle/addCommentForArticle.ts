@@ -23,7 +23,8 @@ export const addNewCommentForArticle = createAsyncThunk<
 
   const newComment = {
     text: comment,
-    user: userId
+    user: userId,
+    ref: 'ARTICLE'
   }
 
   try {

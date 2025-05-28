@@ -7,7 +7,11 @@ import { Rating } from '@/entities/Rating'
 import { getUserId } from '@/entities/User'
 import { Loader } from '@/shared/ui/Loader'
 
-import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi'
+import {
+  useGetArticleRating,
+  useRateArticle,
+  useResetRateArticle
+} from '../../api/articleRatingApi'
 
 import cls from './ArticleRating.module.scss'
 
@@ -34,6 +38,9 @@ export const ArticleRating = memo((props: ArticleRatingProps) => {
 
   const [rateArticle, { isLoading: isLoadingforAdd }] = useRateArticle()
 
+  const [resetRateArticle, { isLoading: isLoadingforReset }] =
+    useResetRateArticle()
+
   const handleRateArticle = useCallback(
     async (rating: number, review?: string) => {
       try {
@@ -52,7 +59,16 @@ export const ArticleRating = memo((props: ArticleRatingProps) => {
     [id, user, rateArticle, refetch]
   )
 
-  if (isLoading || isLoadingforAdd || isFetching) {
+  const handleResetRateArticle = useCallback(async () => {
+    try {
+      await resetRateArticle(articleRating?._id)
+      refetch()
+    } catch (e) {
+      console.log(e)
+    }
+  }, [resetRateArticle, refetch, articleRating?._id])
+
+  if (isLoading || isLoadingforAdd || isLoadingforReset || isFetching) {
     return (
       <div className={cls.loader}>
         <Loader />
@@ -71,6 +87,7 @@ export const ArticleRating = memo((props: ArticleRatingProps) => {
       feedbackTitle={t('Оставьте отзыв о статье')}
       placeholder={t('Напишите что-нибудь...')}
       onAccept={handleRateArticle}
+      onReset={handleResetRateArticle}
     />
   )
 })

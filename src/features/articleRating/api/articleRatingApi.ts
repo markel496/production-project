@@ -35,9 +35,16 @@ const articleRatingApi = rtkApi.injectEndpoints({
           review
         }
       })
+    }),
+    resetRateArticle: build.mutation<void, string | undefined>({
+      query: (id) => ({
+        url: `/feedbacks/${id}`,
+        method: 'DELETE'
+      })
     })
   })
 })
 
 export const useGetArticleRating = articleRatingApi.useGetArticleRatingQuery
 export const useRateArticle = articleRatingApi.useRateArticleMutation
+export const useResetRateArticle = articleRatingApi.useResetRateArticleMutation

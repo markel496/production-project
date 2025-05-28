@@ -26,10 +26,11 @@ interface ArticleViewSelectorProps {
   className?: string
   view: ArticleView
   onViewClick: (view: ArticleView) => void
+  size?: number
 }
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
-  const { className, view, onViewClick } = props
+  const { className, view, onViewClick, size } = props
 
   //onClick аргументом всегда принимает event, но мне надо также передавать новый вид отображения, который выбрал пользователь. Поэтому тут воспользовался замыканием
   const onClick = (viewType: ArticleView) => () => onViewClick(viewType)
@@ -48,7 +49,7 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
           key={viewType.view}
           disabled={viewType.view === view}
         >
-          <Icon Svg={viewType.icon} />
+          <Icon Svg={viewType.icon} width={size} height={size} />
         </Button>
       ))}
     </HStack>
