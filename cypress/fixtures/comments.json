@@ -1,0 +1,43 @@
+[
+  {
+    "_id": "6831df8ba8c5917b54823da2",
+    "text": "Первый коммент!",
+    "user": {
+      "_id": "67eecd8cceb0558a80db9a90",
+      "username": "testUser",
+      "roles": ["ADMIN"]
+    },
+    "reference": "ARTICLE",
+    "createdAt": "2025-05-24T15:02:35.232Z",
+    "updatedAt": "2025-05-24T15:02:35.232Z",
+    "__v": 0
+  },
+  {
+    "_id": "68386f2d13e36bfcb74ac118",
+    "text": "12345",
+    "user": {
+      "_id": "660eed36602f9f1d856400db",
+      "username": "admin",
+      "avatar": "https://i.pinimg.com/736x/d0/1f/98/d01f988cab5482b73b735bd3e7ba0008.jpg",
+      "roles": ["ADMIN"]
+    },
+    "reference": "ARTICLE",
+    "createdAt": "2025-05-29T14:29:01.074Z",
+    "updatedAt": "2025-05-29T14:29:01.074Z",
+    "__v": 0
+  },
+  {
+    "_id": "68386f4d13e36bfcb74ac173",
+    "text": "Комментарий для теста!",
+    "user": {
+      "roles": [],
+      "_id": "660eedf0602f9f1d856400dd",
+      "username": "Vasya",
+      "avatar": "https://i1.sndcdn.com/avatars-000150805653-ocp9ga-t500x500.jpg"
+    },
+    "reference": "ARTICLE",
+    "createdAt": "2025-05-29T14:29:33.487Z",
+    "updatedAt": "2025-05-29T14:29:33.487Z",
+    "__v": 0
+  }
+]

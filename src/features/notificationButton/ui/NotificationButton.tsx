@@ -8,6 +8,8 @@ import { NotificationList } from '@/entities/Notification'
 import { Button, ButtonTheme } from '@/shared/ui/Button'
 import { Drawer } from '@/shared/ui/Drawer'
 
+import { classNames } from '@/shared/lib/classNames/classNames'
+
 import cls from './NotificationButton.module.scss'
 
 interface NotificationButtonProps {
@@ -16,7 +18,7 @@ interface NotificationButtonProps {
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
-  const { className, size } = props
+  const { className, size = 20 } = props
 
   const [isDrawer, setIsDrawer] = useState(false)
 
@@ -41,7 +43,11 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
   return (
     <>
       <BrowserView>
-        <Popover className={className} trigger={trigger} position="bottom left">
+        <Popover
+          className={classNames(cls.NotificationButton, {}, [className])}
+          trigger={trigger}
+          position="bottom left"
+        >
           <NotificationList className={cls.panel} />
         </Popover>
       </BrowserView>

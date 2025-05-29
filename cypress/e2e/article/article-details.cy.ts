@@ -1,5 +1,19 @@
 let currentArticleId = ''
 
+const comment = {
+  _id: '6831df8ba8c5917b54823da2',
+  text: 'test comment',
+  user: {
+    _id: '67eecd8cceb0558a80db9a90',
+    username: 'testUser',
+    roles: ['ADMIN']
+  },
+  reference: 'ARTICLE',
+  createdAt: '2025-05-24T15:02:35.232Z',
+  updatedAt: '2025-05-24T15:02:35.232Z',
+  __v: 0
+}
+
 describe('Пользователь заходит на страницу статьи', () => {
   beforeEach(() => {
     cy.login()
@@ -29,6 +43,10 @@ describe('Пользователь заходит на страницу стат
   it('Видит нужное количество рекомендованных статей', () => {
     cy.getByTestId('ArticleList.Item').should('have.length', 4)
   })
+  it('Видит нужное количество комментариев', () => {
+    cy.intercept('GET', '**/articles/**/comments', { fixture: 'comments.json' })
+    cy.getByTestId('CommentCard').should('have.length', 3)
+  })
   it('Оставляет комментарий', () => {
     cy.createComment('test comment123')
     cy.getByTestId('CommentCard').should('exist')
@@ -40,6 +58,7 @@ describe('Пользователь заходит на страницу стат
   })
   it('Создает комментарий и редактирует его', () => {
     cy.createComment('test comment123')
+    cy.getByTestId('CommentCard')
     cy.editComment({ text: 'test comment123 update' })
     cy.getByTestId('CommentCard.Text.Paragraph').should(
       'have.text',
@@ -55,24 +74,39 @@ describe('Пользователь заходит на страницу стат
       '1px solid rgb(255, 2, 2)'
     )
   })
-  it('Создает комментарий и пытается изменить его на пустой', () => {
-    cy.createComment('test comment123')
+  it('Пытается изменить комментарий на пустой', () => {
+    cy.intercept('GET', '**/articles/**/comments', {
+      body: [comment]
+    })
     cy.editComment({ text: '' })
     cy.getByTestId('EditCommentForm.ChangeBtn').should('be.disabled')
-    cy.deleteComment()
   })
-  it('Создает комментарий и пытается изменить его на такой же', () => {
-    cy.createComment('test comment123')
-    cy.editComment({ text: 'test comment123' })
+  it('Пытается изменить комментарий на такой же', () => {
+    cy.intercept('GET', '**/articles/**/comments', {
+      body: [comment]
+    })
+    cy.editComment({ text: 'test comment' })
     cy.getByTestId('EditCommentForm.ChangeBtn').should('be.disabled')
-    cy.deleteComment()
   })
-  it('Создает комментарий, редактирует его и отменяет', () => {
-    cy.createComment('test comment123')
+  it('Редактирует комментарий и отменяет', () => {
+    cy.intercept('GET', '**/articles/**/comments', {
+      body: [comment]
+    })
     cy.editComment({ text: 'update', cancel: true })
     cy.getByTestId('EditCommentForm').should('not.exist')
-    cy.deleteComment()
   })
+  it('Видит свою оценку', () => {
+    cy.intercept('GET', '**/articles/*/rating?*', {
+      body: {
+        _id: '6831c0352316a915e3c2796f',
+        autor: '660eed36602f9f1d856400db',
+        rating: 4
+      }
+    }).then(() => {
+      cy.get('[data-selected=true]').should('have.length', 4) // количество выбранных звезд
+    })
+  })
+
   it('Оценивает статью', () => {
     cy.setRate({ starsCount: 3, feedback: 'test12345' })
     cy.getByTestId('RatingCard.Text.Title').should(

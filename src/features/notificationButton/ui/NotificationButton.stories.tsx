@@ -16,10 +16,6 @@ import type { Decorator, Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof NotificationButton> = {
   title: 'features/NotificationButton',
   component: NotificationButton,
-
-  args: {
-    size: 20
-  },
   decorators: [
     StoreDecorator({
       user: { authData: { _id: '1234' } }
