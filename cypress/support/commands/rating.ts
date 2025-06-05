@@ -1,4 +1,4 @@
-import { RatingSchema } from '../../../src/entities/Rating'
+import { RatingSchema } from '@/entities/Rating'
 
 interface SetRateArgs {
   starsCount?: number

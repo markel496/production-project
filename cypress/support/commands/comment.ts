@@ -1,4 +1,4 @@
-import { Comment } from '../../../src/entities/Comment'
+import { Comment } from '@/entities/Comment'
 
 interface EditCommentArgs {
   text?: string
