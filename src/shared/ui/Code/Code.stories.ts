@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 

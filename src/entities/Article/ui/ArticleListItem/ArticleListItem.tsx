@@ -55,6 +55,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           src={article.img}
           alt={article.title}
           fallback={fallback}
+          errorFallback={fallback}
         />
       )
     },

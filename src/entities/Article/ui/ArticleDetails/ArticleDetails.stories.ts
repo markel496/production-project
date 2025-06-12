@@ -68,7 +68,6 @@ const article: Article = {
     {
       _id: '3',
       type: ArticleBlockType.CODE,
-      // eslint-disable-next-line quotes
       code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
     },
     {

@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import { Decorator } from '@storybook/react'
 import { CSSProperties } from 'react'
 

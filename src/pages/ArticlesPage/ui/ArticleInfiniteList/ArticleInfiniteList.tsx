@@ -10,7 +10,8 @@ import { getArticles } from '../../model/slices/articlesPageSlice'
 import {
   getArticlesPageError,
   getArticlesPageInited,
-  getArticlesPageIsLoading
+  getArticlesPageIsLoading,
+  useGetArticleById
 } from '../../model/selectors/articlesPageSelectors'
 
 interface ArticleInfiniteListProps {
@@ -26,6 +27,9 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
   const error = useSelector(getArticlesPageError)
 
   const inited = useSelector(getArticlesPageInited)
+
+  const exampleArticle = useGetArticleById('66129e44c981bbf84c7733ed')
+  console.log(exampleArticle)
 
   if (!inited) return null
 

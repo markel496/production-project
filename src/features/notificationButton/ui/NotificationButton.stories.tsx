@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import { mswLoader } from 'msw-storybook-addon'
 
 import { http, HttpResponse, delay } from 'msw'

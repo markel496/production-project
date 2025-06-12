@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 

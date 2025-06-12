@@ -1,5 +1,3 @@
-/* eslint-disable indent */
-
 import { Decorator } from '@storybook/react'
 
 // eslint-disable-next-line markel-plugin/layer-imports
