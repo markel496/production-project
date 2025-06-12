@@ -13,10 +13,10 @@ const MainPage = () => {
       {t('Главная страница')}
       <BugButton />
       <Rating
-        title={t('Как Вам статья?')}
+        title={'Как Вам главная страница?'}
         hasFeedback
-        feedbackTitle={t('Оставьте отзыв о статье')}
-        placeholder={t('Напишите что-нибудь...')}
+        feedbackTitle={'Оставьте отзыв о главной странице'}
+        placeholder={'Напишите что-нибудь...'}
       />
       <Counter />
     </Page>
