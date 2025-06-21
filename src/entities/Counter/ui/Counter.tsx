@@ -4,6 +4,8 @@ import { Button } from '@/shared/ui/Button'
 import { useCounterActions } from '../model/slice/counterSlice'
 import { useGetCounterValue } from '../model/selectors/getCounterValue/getCounterValue'
 
+const COUNT = 5
+
 export const Counter = () => {
   const counterValue = useGetCounterValue()
   const { decrement, increment, add } = useCounterActions()
@@ -27,10 +29,10 @@ export const Counter = () => {
       </Button>
       <Button
         style={{ background: 'yellow' }}
-        onClick={() => add(5)}
+        onClick={() => add(COUNT)}
         data-testid="add-btn"
       >
-        add
+        add {COUNT}
       </Button>
     </div>
   )
