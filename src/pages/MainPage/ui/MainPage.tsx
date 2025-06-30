@@ -26,7 +26,11 @@ const MainPage = () => {
           placeholder={'Напишите что-нибудь...'}
         />
       ),
-      off: () => <Card>{t('Рейтинг скоро появится!')}</Card>
+      off: () => (
+        <Card style={{ textAlign: 'center' }}>
+          {t('Рейтинг скоро появится!')}
+        </Card>
+      )
     })
 
     const counter = toggleFeatures({
