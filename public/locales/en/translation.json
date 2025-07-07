@@ -13,6 +13,8 @@
   "Пароль": "Password",
   "Форма авторизации": "Authorization form",
   "Неверный логин или пароль": "Incorrect login or password",
+  "Введите логин или пароль": "Enter login or password",
+  "Ошибка сервера": "ServerError",
   "Укажите валюту": "Select currency",
   "Укажите страну": "Select country",
   "Создать статью": "Create article",

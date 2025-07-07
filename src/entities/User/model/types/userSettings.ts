@@ -5,4 +5,5 @@ import { Theme } from '@/shared/const/theme'
 export interface UserSettings {
   theme?: Theme
   isFirstVisit?: boolean
+  isArticlesPageWasOpened?: boolean
 }

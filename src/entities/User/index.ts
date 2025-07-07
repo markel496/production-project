@@ -1,5 +1,9 @@
 export { userActions, userReducer } from './model/slice/userSlice'
-export { getUserAuthData, getUserId } from './model/selectors/authDataSelectors'
+export {
+  useGetUserAuthData,
+  getUserAuthData,
+  getUserId
+} from './model/selectors/authDataSelectors'
 export { getUserRoles } from './model/selectors/getUserRoles'
 export { UserRole } from './model/consts/userConsts'
 export { useGetUserSettings } from './model/selectors/getUserSettings'

@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 
 import { useSelector } from 'react-redux'
 
-import { memo, useCallback } from 'react'
+import { memo, useCallback, useMemo } from 'react'
 
 import { Button, ButtonTheme } from '@/shared/ui/Button'
 import { Input } from '@/shared/ui/Input'
@@ -52,6 +52,22 @@ const LoginForm = memo((props: LoginFormProps) => {
   const isLoading = useSelector(getLoginIsLoading)
   const error = useSelector(getLoginError)
 
+  const errorTranslates = useMemo(() => {
+    switch (error) {
+      case 'Validation error':
+        return t('Введите логин или пароль')
+
+      case 'User not found':
+        return t('Неверный логин или пароль')
+
+      case 'Server error':
+        return t('Ошибка сервера')
+
+      default:
+        return error
+    }
+  }, [t, error])
+
   const onChangeUsername = useCallback(
     (value: string) => {
       dispatch(loginActions.setUsername(value))
@@ -77,9 +93,7 @@ const LoginForm = memo((props: LoginFormProps) => {
     <DynamicModuleLoader reducers={initialReducers}>
       <VStack className={classNames(cls.LoginForm, {}, [className])} gap="10">
         <Text title={t('Форма авторизации')} />
-        {error && (
-          <Text text={t('Неверный логин или пароль')} theme={TextTheme.ERROR} />
-        )}
+        {error && <Text text={errorTranslates} theme={TextTheme.ERROR} />}
         <Input
           placeholder={t('Пользователь')}
           onChange={onChangeUsername}

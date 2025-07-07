@@ -14,10 +14,12 @@
 
 .content {
   min-width: var(--modal-min-width);
+  max-width: var(--modal-max-width);
+  width: 100%;
+  margin: 0 20px;
   padding: 20px;
   border-radius: 12px;
   background-color: var(--bg-color);
-  max-width: 60%;
   transform: scale(0.5);
   opacity: 0;
   transition:

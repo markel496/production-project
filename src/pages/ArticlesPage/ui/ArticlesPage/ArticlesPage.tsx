@@ -12,6 +12,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { classNames } from '@/shared/lib/classNames/classNames'
 
 import { Page } from '@/widgets/Page'
+import { ArticlesPageGreeting } from '@/features/articlesPageGreeting'
 
 import { getArticlesPageView } from '../../model/selectors/articlesPageSelectors'
 
@@ -56,6 +57,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
       >
         <ArticlesPageFilters className={cls.filters} view={view} />
         <ArticleInfiniteList view={view} />
+        <ArticlesPageGreeting />
       </Page>
     </DynamicModuleLoader>
   )

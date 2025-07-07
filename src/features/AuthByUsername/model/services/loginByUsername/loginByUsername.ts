@@ -5,9 +5,15 @@ import { User, userActions } from '@/entities/User'
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage'
 import { setFeatureFlags } from '@/shared/lib/features'
 
+import type { AxiosError } from 'axios'
+
 interface loginByUsernameProps {
   username: string
   password: string
+}
+
+interface Error {
+  message: string
 }
 
 export const loginByUsername = createAsyncThunk<
@@ -16,6 +22,10 @@ export const loginByUsername = createAsyncThunk<
   ThunkConfig<string>
 >('login/loginByUsername', async (authData, thunkAPI) => {
   const { dispatch, extra, rejectWithValue } = thunkAPI
+
+  const { username, password } = authData
+
+  if (!username || !password) return rejectWithValue('Validation error')
 
   try {
     const response = await extra.api.post<User>('/login', authData)
@@ -34,6 +44,10 @@ export const loginByUsername = createAsyncThunk<
 
     return response.data
   } catch (e) {
-    return rejectWithValue('error')
+    const error = e as AxiosError<Error>
+    if (!error.response) {
+      return rejectWithValue('Server error')
+    }
+    return rejectWithValue(error.response.data.message)
   }
 })
