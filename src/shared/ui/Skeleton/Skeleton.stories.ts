@@ -1,6 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
-
 import { Skeleton } from './Skeleton'
 
 import type { Meta, StoryObj } from '@storybook/react'
@@ -27,38 +24,4 @@ export const Circle: Story = {
     height: 100,
     border: '50%'
   }
-}
-
-export const PrimaryDark: Story = {
-  args: {
-    width: '100%',
-    height: 200
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const CircleDark: Story = {
-  args: {
-    width: 100,
-    height: 100,
-    border: '50%'
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const PrimaryGreen: Story = {
-  args: {
-    width: '100%',
-    height: 200
-  },
-  decorators: [ThemeDecorator(Theme.GREEN)]
-}
-
-export const CircleGreen: Story = {
-  args: {
-    width: 100,
-    height: 100,
-    border: '50%'
-  },
-  decorators: [ThemeDecorator(Theme.GREEN)]
 }

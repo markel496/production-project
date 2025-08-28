@@ -22,7 +22,7 @@ type Story = StoryObj<typeof AppImage>
 
 export const Primary: Story = {}
 
-export const WithFallbackAndAlt: Story = {
+export const SrcUndefinedWithFallbackAndAlt: Story = {
   args: {
     src: undefined,
     fallback: <Skeleton width={375} height={500} />,

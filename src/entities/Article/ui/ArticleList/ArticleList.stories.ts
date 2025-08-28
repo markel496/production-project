@@ -1,5 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
 import i18n from '@/shared/config/i18n/i18n'
 import avatar from '@/shared/assets/tests/avatar.jpg'
 
@@ -88,80 +86,4 @@ export const PrimarySkeletonBig: Story = {
     isLoading: true,
     t
   }
-}
-
-//===============================================================================================
-
-export const DarkSmall: Story = {
-  args: {
-    articles,
-    view: ArticleView.SMALL
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const DarkBig: Story = {
-  args: {
-    articles,
-    view: ArticleView.BIG,
-    t
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const DarkSkeletonSmall: Story = {
-  args: {
-    articles: [],
-    view: ArticleView.SMALL,
-    isLoading: true
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const DarkSkeletonBig: Story = {
-  args: {
-    articles: [],
-    view: ArticleView.BIG,
-    isLoading: true,
-    t
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-//===============================================================================================
-
-export const GreenSmall: Story = {
-  args: {
-    articles,
-    view: ArticleView.SMALL
-  },
-  decorators: [ThemeDecorator(Theme.GREEN)]
-}
-
-export const GreenBig: Story = {
-  args: {
-    articles,
-    view: ArticleView.BIG,
-    t
-  },
-  decorators: [ThemeDecorator(Theme.GREEN)]
-}
-
-export const GreenSkeletonSmall: Story = {
-  args: {
-    articles: [],
-    view: ArticleView.SMALL,
-    isLoading: true
-  },
-  decorators: [ThemeDecorator(Theme.GREEN)]
-}
-
-export const GreenSkeletonBig: Story = {
-  args: {
-    articles: [],
-    view: ArticleView.BIG,
-    isLoading: true,
-    t
-  },
-  decorators: [ThemeDecorator(Theme.GREEN)]
 }

@@ -1,6 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
-
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import avatar from '@/shared/assets/tests/avatar.jpg'
 
@@ -39,43 +36,14 @@ export const Primary: Story = {
   }
 }
 
-export const Dark: Story = {
-  args: {
-    comment
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const Green: Story = {
-  args: {
-    comment
-  },
-  decorators: [ThemeDecorator(Theme.GREEN)]
-}
-
 export const Loading: Story = {
   args: {
     isLoading: true
   }
 }
 
-export const LoadingDark: Story = {
-  args: {
-    isLoading: true
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const LoadingGreen: Story = {
-  args: {
-    isLoading: true
-  },
-  decorators: [ThemeDecorator(Theme.GREEN)]
-}
-
 export const Edited: Story = {
   args: {
     comment: { ...comment, updatedAt: '24 окт. 2024 г. в 21:25' }
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
+  }
 }

@@ -98,7 +98,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
           onChangeSort={onChangeSort}
           onChangeOrder={onChangeOrder}
         />
-        <ArticleViewSelector view={view} onViewClick={onChangeView} size={24} />
+        <ArticleViewSelector view={view} onViewClick={onChangeView} />
       </HStack>
       <ArticleSearch
         className={cls.search}

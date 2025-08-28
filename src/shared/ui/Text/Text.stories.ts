@@ -1,6 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
-
 import { Text, TextAlign, TextSize, TextTheme } from './Text'
 
 import type { Meta, StoryObj } from '@storybook/react'
@@ -33,43 +30,12 @@ export const OnlyText: Story = {
   }
 }
 
-export const PrimaryDark: Story = {
-  args: {
-    title: 'Header',
-    text: 'Some text...'
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const OnlyTitleDark: Story = {
-  args: {
-    title: 'Header'
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const OnlyTextDark: Story = {
-  args: {
-    text: 'Some text...'
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
 export const Error: Story = {
   args: {
     title: 'Header',
     text: 'Some text...',
     theme: TextTheme.ERROR
   }
-}
-
-export const ErrorDark: Story = {
-  args: {
-    title: 'Header',
-    text: 'Some text...',
-    theme: TextTheme.ERROR
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
 }
 
 export const Size_S: Story = {

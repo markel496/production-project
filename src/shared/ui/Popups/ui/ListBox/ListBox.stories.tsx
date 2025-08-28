@@ -1,6 +1,4 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
-import { Theme } from '@/shared/const/theme'
 
 import { ListBox } from './ListBox'
 
@@ -28,47 +26,37 @@ const meta: Meta<typeof ListBox> = {
 export default meta
 type Story = StoryObj<typeof ListBox>
 
-export const LightBottomRight: Story = {}
+export const BottomRight: Story = {}
 
-export const DarkBottomLeft: Story = {
+export const BottomLeft: Story = {
   args: {
     position: 'bottom left'
   },
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    WrapperDecorator({ paddingLeft: 60 })
-  ]
+  decorators: [WrapperDecorator({ paddingLeft: 60 })]
 }
 
-export const LightTopRight: Story = {
+export const TopRight: Story = {
   args: {
     position: 'top right'
   },
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    WrapperDecorator({ paddingTop: 300 })
-  ]
+  decorators: [WrapperDecorator({ paddingTop: 300 })]
 }
 
-export const DarkTopLeft: Story = {
+export const TopLeft: Story = {
   args: {
     position: 'top left'
   },
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    WrapperDecorator({ paddingLeft: 60, paddingTop: 300 })
-  ]
+  decorators: [WrapperDecorator({ paddingLeft: 60, paddingTop: 300 })]
 }
 
-export const LightWithLabel: Story = {
+export const WithLabel: Story = {
   args: {
     label: 'Выберите значение'
   }
 }
 
-export const GreenReadonly: Story = {
+export const Readonly: Story = {
   args: {
     readonly: true
-  },
-  decorators: [ThemeDecorator(Theme.GREEN)]
+  }
 }

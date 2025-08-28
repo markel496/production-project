@@ -28,7 +28,7 @@ export const ArticleListItemSkeleton = (
               height={50}
               border="50%"
             />
-            <Skeleton width={150} height={24} />
+            <Skeleton className={cls.username} width={150} height={24} />
           </div>
           <Skeleton className={cls.date} width={100} height={16} />
         </div>

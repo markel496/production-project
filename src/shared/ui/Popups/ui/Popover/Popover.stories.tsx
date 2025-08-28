@@ -1,6 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
-
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg'
 
 import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
@@ -36,15 +33,7 @@ const meta: Meta<typeof Popover> = {
 export default meta
 type Story = StoryObj<typeof Popover>
 
-export const Light: Story = {}
-
-export const Dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const Green: Story = {
-  decorators: [ThemeDecorator(Theme.GREEN)]
-}
+export const Primary: Story = {}
 
 export const BottomLeft: Story = {
   args: {

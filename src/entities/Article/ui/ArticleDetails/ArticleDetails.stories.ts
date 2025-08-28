@@ -1,7 +1,4 @@
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-
-import { Theme } from '@/shared/const/theme'
 
 import { Article } from '../../model/types/article'
 
@@ -100,36 +97,8 @@ export const Primary: Story = {
   decorators: [StoreDecorator({ articleDetails: { data: article } })]
 }
 
-export const Dark: Story = {
-  decorators: [
-    StoreDecorator({ articleDetails: { data: article } }),
-    ThemeDecorator(Theme.DARK)
-  ]
-}
-
-export const Green: Story = {
-  decorators: [
-    StoreDecorator({ articleDetails: { data: article } }),
-    ThemeDecorator(Theme.GREEN)
-  ]
-}
-
 export const Loading: Story = {
   decorators: [StoreDecorator({ articleDetails: { isLoading: true } })]
-}
-
-export const LoadingDark: Story = {
-  decorators: [
-    StoreDecorator({ articleDetails: { isLoading: true } }),
-    ThemeDecorator(Theme.DARK)
-  ]
-}
-
-export const LoadingGreen: Story = {
-  decorators: [
-    StoreDecorator({ articleDetails: { isLoading: true } }),
-    ThemeDecorator(Theme.GREEN)
-  ]
 }
 
 export const Error: Story = {

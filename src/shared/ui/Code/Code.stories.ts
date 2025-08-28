@@ -1,6 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
-
 import { Code } from './Code'
 
 import type { Meta, StoryObj } from '@storybook/react'
@@ -31,18 +28,4 @@ export const Primary: Story = {
   args: {
     text
   }
-}
-
-export const Dark: Story = {
-  args: {
-    text
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const Green: Story = {
-  args: {
-    text
-  },
-  decorators: [ThemeDecorator(Theme.GREEN)]
 }

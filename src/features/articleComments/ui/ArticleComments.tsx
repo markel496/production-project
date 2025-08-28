@@ -53,10 +53,11 @@ export const ArticleComments = memo((props: ArticleCommentsProps) => {
   const dispatch = useAppDispatch()
 
   const onSendComment = useCallback(
-    (comment: string) => {
-      dispatch(addNewCommentForArticle(comment))
+    async (comment: string) => {
+      await dispatch(addNewCommentForArticle({ comment, id }))
+      dispatch(fetchCommentsByArticleId(id))
     },
-    [dispatch]
+    [dispatch, id]
   )
 
   const onDeleteComment = useCallback(

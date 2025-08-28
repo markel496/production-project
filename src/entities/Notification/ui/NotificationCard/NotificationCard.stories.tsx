@@ -1,6 +1,4 @@
 import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
 
 import { Notification } from '../../model/types/notification'
 
@@ -33,22 +31,10 @@ export const Primary: Story = {
   }
 }
 
-export const Dark: Story = {
-  args: { notification },
-  decorators: [ThemeDecorator(Theme.DARK)]
+export const WithLink: Story = {
+  args: { notification: { ...notification, href: 'asdas' } }
 }
 
-export const DarkWithLink: Story = {
-  args: { notification: { ...notification, href: 'asdas' } },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const DarkWithoutDescription: Story = {
-  args: { notification: { ...notification, description: undefined } },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const Green: Story = {
-  args: { notification },
-  decorators: [ThemeDecorator(Theme.GREEN)]
+export const WithoutDescription: Story = {
+  args: { notification: { ...notification, description: undefined } }
 }

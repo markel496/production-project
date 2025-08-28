@@ -1,6 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
-
 import { ThemeSwitcher } from './ThemeSwitcher'
 
 import type { Meta, StoryObj } from '@storybook/react'
@@ -15,12 +12,4 @@ const meta: Meta<typeof ThemeSwitcher> = {
 export default meta
 type Story = StoryObj<typeof ThemeSwitcher>
 
-export const Light: Story = {}
-
-export const Dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const Green: Story = {
-  decorators: [ThemeDecorator(Theme.GREEN)]
-}
+export const Primary: Story = {}

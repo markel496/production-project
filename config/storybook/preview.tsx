@@ -4,6 +4,7 @@ import '../../src/app/styles/index.scss'
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator'
 import { WrapperDecorator } from '../../src/shared/config/storybook/WrapperDecorator'
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator'
+import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator'
 import { Theme } from '../../src/shared/const/theme'
 
 import type { Preview } from '@storybook/react'
@@ -34,7 +35,8 @@ const preview: Preview = {
   decorators: [
     WrapperDecorator({ padding: 20 }),
     ThemeDecorator(Theme.LIGHT),
-    RouterDecorator
+    RouterDecorator,
+    StoreDecorator({})
   ]
 }
 

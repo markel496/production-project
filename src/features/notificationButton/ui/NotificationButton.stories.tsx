@@ -2,15 +2,13 @@ import { mswLoader } from 'msw-storybook-addon'
 
 import { http, HttpResponse, delay } from 'msw'
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
 import { Notification } from '@/entities/Notification'
 
 import { NotificationButton } from './NotificationButton'
 
-import type { Decorator, Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof NotificationButton> = {
   title: 'features/NotificationButton',
@@ -18,6 +16,14 @@ const meta: Meta<typeof NotificationButton> = {
   decorators: [
     StoreDecorator({
       user: { authData: { _id: '1234' } }
+    }),
+    WrapperDecorator({
+      height: '50px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      paddingRight: 50,
+      background: 'var(--inverted-bg-color)'
     })
   ],
   loaders: [mswLoader],
@@ -27,22 +33,6 @@ const meta: Meta<typeof NotificationButton> = {
 
 export default meta
 type Story = StoryObj<typeof NotificationButton>
-
-enum BackgroundColor {
-  LIGHT = '#000036',
-  DARK = '#dddcdc',
-  GREEN = '#107c0a'
-}
-
-const BackgroundDecorator = (background: BackgroundColor): Decorator =>
-  WrapperDecorator({
-    height: '50px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    paddingRight: 50,
-    background
-  })
 
 const notification: Notification = {
   _id: '1',
@@ -56,39 +46,6 @@ const notifications = [...new Array(12)].map((_, idx) => {
 })
 
 export const Primary: Story = {
-  decorators: [BackgroundDecorator(BackgroundColor.LIGHT)],
-  parameters: {
-    msw: {
-      handlers: [
-        http.get(__API__ + '/notifications/1234', () => {
-          return HttpResponse.json(notifications)
-        })
-      ]
-    }
-  }
-}
-
-export const Dark: Story = {
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    BackgroundDecorator(BackgroundColor.DARK)
-  ],
-  parameters: {
-    msw: {
-      handlers: [
-        http.get(__API__ + '/notifications/1234', () => {
-          return HttpResponse.json(notifications)
-        })
-      ]
-    }
-  }
-}
-
-export const Green: Story = {
-  decorators: [
-    ThemeDecorator(Theme.GREEN),
-    BackgroundDecorator(BackgroundColor.GREEN)
-  ],
   parameters: {
     msw: {
       handlers: [
@@ -103,39 +60,6 @@ export const Green: Story = {
 //===============================================================================================
 
 export const Loading: Story = {
-  decorators: [BackgroundDecorator(BackgroundColor.LIGHT)],
-  parameters: {
-    msw: {
-      handlers: [
-        http.get(__API__ + '/notifications/1234', () => {
-          return delay('infinite')
-        })
-      ]
-    }
-  }
-}
-
-export const LoadingDark: Story = {
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    BackgroundDecorator(BackgroundColor.DARK)
-  ],
-  parameters: {
-    msw: {
-      handlers: [
-        http.get(__API__ + '/notifications/1234', () => {
-          return delay('infinite')
-        })
-      ]
-    }
-  }
-}
-
-export const LoadingGreen: Story = {
-  decorators: [
-    ThemeDecorator(Theme.GREEN),
-    BackgroundDecorator(BackgroundColor.GREEN)
-  ],
   parameters: {
     msw: {
       handlers: [
@@ -150,7 +74,6 @@ export const LoadingGreen: Story = {
 //===============================================================================================
 
 export const Error: Story = {
-  decorators: [BackgroundDecorator(BackgroundColor.LIGHT)],
   parameters: {
     msw: {
       handlers: [
@@ -167,10 +90,6 @@ export const Error: Story = {
 //===============================================================================================
 
 export const NoData: Story = {
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    BackgroundDecorator(BackgroundColor.DARK)
-  ],
   parameters: {
     msw: {
       handlers: [

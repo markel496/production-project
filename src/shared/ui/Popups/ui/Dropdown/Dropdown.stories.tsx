@@ -1,7 +1,5 @@
 /* eslint-disable i18next/no-literal-string */
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
-import { Theme } from '@/shared/const/theme'
 
 import { Button } from '../../../Button/Button'
 
@@ -34,15 +32,7 @@ const meta: Meta<typeof Dropdown> = {
 export default meta
 type Story = StoryObj<typeof Dropdown>
 
-export const Light: Story = {}
-
-export const Dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const Green: Story = {
-  decorators: [ThemeDecorator(Theme.GREEN)]
-}
+export const Primary: Story = {}
 
 export const BottomLeft: Story = {
   args: {

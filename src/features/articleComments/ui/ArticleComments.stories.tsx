@@ -1,5 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
 import avatar from '@/shared/assets/tests/avatar.jpg'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 
@@ -48,24 +46,6 @@ const comments: ArticleCommentsSchema = {
 
 export const Primary: Story = {
   decorators: [
-    StoreDecorator({
-      articleComments: comments
-    })
-  ]
-}
-
-export const Dark: Story = {
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-      articleComments: comments
-    })
-  ]
-}
-
-export const Green: Story = {
-  decorators: [
-    ThemeDecorator(Theme.GREEN),
     StoreDecorator({
       articleComments: comments
     })

@@ -30,7 +30,7 @@ interface ArticleViewSelectorProps {
 }
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
-  const { className, view, onViewClick, size } = props
+  const { className, view, onViewClick, size = 24 } = props
 
   //onClick аргументом всегда принимает event, но мне надо также передавать новый вид отображения, который выбрал пользователь. Поэтому тут воспользовался замыканием
   const onClick = (viewType: ArticleView) => () => onViewClick(viewType)

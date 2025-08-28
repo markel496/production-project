@@ -1,5 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
@@ -24,6 +22,7 @@ export default meta
 type Story = StoryObj<typeof ProfilePage>
 
 const profile: Profile = {
+  id: '1',
   first: 'Ivan',
   lastname: 'Markelov',
   age: '26',
@@ -34,40 +33,16 @@ const profile: Profile = {
   avatar
 }
 
-export const Light: Story = {
+export const Primary: Story = {
   decorators: [
     StoreDecorator({
       profile: {
         data: profile,
-        initialData: { id: '1', ...profile },
+        initialData: profile,
         readonly: true
       },
       user: { authData: { _id: '1' } }
     })
-  ]
-}
-
-export const Dark: Story = {
-  decorators: [
-    StoreDecorator({
-      profile: {
-        data: profile,
-        readonly: true
-      }
-    }),
-    ThemeDecorator(Theme.DARK)
-  ]
-}
-
-export const Green: Story = {
-  decorators: [
-    StoreDecorator({
-      profile: {
-        data: profile,
-        readonly: true
-      }
-    }),
-    ThemeDecorator(Theme.GREEN)
   ]
 }
 

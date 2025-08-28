@@ -2,9 +2,6 @@ import { mswLoader } from 'msw-storybook-addon'
 
 import { http, HttpResponse, delay, HttpHandler } from 'msw'
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
-
 import { RatingSchema } from '@/entities/Rating'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 
@@ -48,7 +45,7 @@ const addArticleRatingHandler: HttpHandler = http.post(url.post, () =>
 
 const loadingHandler: HttpHandler = http.get(url.get, () => delay('infinite'))
 
-export const RatedPrimary: Story = {
+export const Rated: Story = {
   parameters: {
     msw: {
       handlers: [getAricleRatingHandler(rating)]
@@ -56,45 +53,9 @@ export const RatedPrimary: Story = {
   }
 }
 
-export const RatedDark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  parameters: {
-    msw: {
-      handlers: [getAricleRatingHandler({ ...rating, rating: 5 })]
-    }
-  }
-}
-
-export const RatedGreen: Story = {
-  decorators: [ThemeDecorator(Theme.GREEN)],
-  parameters: {
-    msw: {
-      handlers: [getAricleRatingHandler({ ...rating, rating: 3 })]
-    }
-  }
-}
-
 //===============================================================================================
 
-export const LoadingPrimary: Story = {
-  parameters: {
-    msw: {
-      handlers: [loadingHandler]
-    }
-  }
-}
-
-export const LoadingDark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  parameters: {
-    msw: {
-      handlers: [loadingHandler]
-    }
-  }
-}
-
-export const LoadingGreen: Story = {
-  decorators: [ThemeDecorator(Theme.GREEN)],
+export const Loading: Story = {
   parameters: {
     msw: {
       handlers: [loadingHandler]
@@ -104,25 +65,7 @@ export const LoadingGreen: Story = {
 
 //===============================================================================================
 
-export const NoRatedPrimary: Story = {
-  parameters: {
-    msw: {
-      handlers: [getAricleRatingHandler(), addArticleRatingHandler]
-    }
-  }
-}
-
-export const NoRatedDark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  parameters: {
-    msw: {
-      handlers: [getAricleRatingHandler(), addArticleRatingHandler]
-    }
-  }
-}
-
-export const NoRatedGreen: Story = {
-  decorators: [ThemeDecorator(Theme.GREEN)],
+export const NoRated: Story = {
   parameters: {
     msw: {
       handlers: [getAricleRatingHandler(), addArticleRatingHandler]

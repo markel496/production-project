@@ -1,5 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
 import { ArticleView } from '@/entities/Article'
 
 import { ArticleViewSelector } from './ArticleViewSelector'
@@ -16,22 +14,21 @@ const meta: Meta<typeof ArticleViewSelector> = {
 export default meta
 type Story = StoryObj<typeof ArticleViewSelector>
 
-export const Primary: Story = {
+export const Small: Story = {
   args: {
     view: ArticleView.SMALL
   }
 }
 
-export const Dark: Story = {
+export const Big: Story = {
   args: {
     view: ArticleView.BIG
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
+  }
 }
 
-export const Green: Story = {
+export const WithSize: Story = {
   args: {
-    view: ArticleView.SMALL
-  },
-  decorators: [ThemeDecorator(Theme.GREEN)]
+    view: ArticleView.BIG,
+    size: 50
+  }
 }

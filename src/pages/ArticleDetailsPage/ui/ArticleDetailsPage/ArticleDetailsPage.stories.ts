@@ -1,8 +1,5 @@
 import { QueryStatus } from '@reduxjs/toolkit/dist/query'
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-
-import { Theme } from '@/shared/const/theme'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import { Article, ArticleBlockType, ArticleType } from '@/entities/Article'
 
@@ -131,42 +128,8 @@ const articleDetailsComments: ArticleCommentsSchema = {
   }
 }
 
-export const Light: Story = {
+export const Primary: Story = {
   decorators: [
-    StoreDecorator({
-      articleComments: articleDetailsComments,
-      articleDetails: { data: article },
-      api: {
-        queries: {
-          'getArticleRecommendations({"limit":4})': {
-            data: articles
-          }
-        }
-      }
-    })
-  ]
-}
-
-export const Dark: Story = {
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-      articleComments: articleDetailsComments,
-      articleDetails: { data: article },
-      api: {
-        queries: {
-          'getArticleRecommendations({"limit":4})': {
-            data: articles
-          }
-        }
-      }
-    })
-  ]
-}
-
-export const Green: Story = {
-  decorators: [
-    ThemeDecorator(Theme.GREEN),
     StoreDecorator({
       articleComments: articleDetailsComments,
       articleDetails: { data: article },
@@ -190,37 +153,8 @@ export const Loading: Story = {
         queries: {
           'getArticleRecommendations({"limit":4})': {
             status: QueryStatus.pending
-          }
-        }
-      }
-    })
-  ]
-}
-export const LoadingDark: Story = {
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-      articleComments: { ids: [], entities: {}, isLoading: true },
-      articleDetails: { isLoading: true },
-      api: {
-        queries: {
-          'getArticleRecommendations({"limit":4})': {
-            status: QueryStatus.pending
-          }
-        }
-      }
-    })
-  ]
-}
-export const LoadingGreen: Story = {
-  decorators: [
-    ThemeDecorator(Theme.GREEN),
-    StoreDecorator({
-      articleComments: { ids: [], entities: {}, isLoading: true },
-      articleDetails: { isLoading: true },
-      api: {
-        queries: {
-          'getArticleRecommendations({"limit":4})': {
+          },
+          'getArticleRating({})': {
             status: QueryStatus.pending
           }
         }
@@ -237,6 +171,9 @@ export const Error: Story = {
       api: {
         queries: {
           'getArticleRecommendations({"limit":4})': {
+            status: QueryStatus.rejected
+          },
+          'getArticleRating({})': {
             status: QueryStatus.rejected
           }
         }

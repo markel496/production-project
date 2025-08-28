@@ -1,6 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
-
 import { Select } from './Select'
 
 import type { Meta, StoryObj } from '@storybook/react'
@@ -27,20 +24,4 @@ export const Primary: Story = {
     label: 'Укажите значение',
     options
   }
-}
-
-export const Dark: Story = {
-  args: {
-    label: 'Укажите значение',
-    options
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const Green: Story = {
-  args: {
-    label: 'Укажите значение',
-    options
-  },
-  decorators: [ThemeDecorator(Theme.GREEN)]
 }

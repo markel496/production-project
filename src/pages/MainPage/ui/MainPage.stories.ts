@@ -1,5 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 
 import MainPage from './MainPage'
@@ -24,12 +22,4 @@ const meta: Meta<typeof MainPage> = {
 export default meta
 type Story = StoryObj<typeof MainPage>
 
-export const Light: Story = {}
-
-export const Dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const Green: Story = {
-  decorators: [ThemeDecorator(Theme.GREEN)]
-}
+export const Primary: Story = {}

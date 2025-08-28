@@ -1,5 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
 import { UserRole } from '@/entities/User'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import avatar from '@/shared/assets/tests/avatar.jpg'
@@ -7,13 +5,24 @@ import { WrapperDecorator } from '@/shared/config/storybook/WrapperDecorator'
 
 import { AvatarDropdown } from './AvatarDropdown'
 
-import type { Decorator, Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof AvatarDropdown> = {
   title: 'features/AvatarDropdown',
   component: AvatarDropdown,
 
-  decorators: [StoreDecorator({})],
+  decorators: [
+    StoreDecorator({}),
+    WrapperDecorator({
+      height: 'var(--navbar-height)',
+      display: 'flex',
+      width: '100%',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      padding: 20,
+      background: 'var(--inverted-bg-color)'
+    })
+  ],
   tags: ['autodocs'],
   argTypes: {}
 }
@@ -21,62 +30,27 @@ const meta: Meta<typeof AvatarDropdown> = {
 export default meta
 type Story = StoryObj<typeof AvatarDropdown>
 
-enum BackgroundColor {
-  LIGHT = '#000036',
-  DARK = '#dddcdc',
-  GREEN = '#107c0a'
-}
-
-const BackgroundDecorator = (background: BackgroundColor): Decorator =>
-  WrapperDecorator({
-    height: '50px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: 20,
-    background
-  })
-
-export const PrimaryAdmin: Story = {
+export const Admin: Story = {
   args: {
     authData: {
       _id: '1',
       username: 'Vanya',
       roles: [UserRole.ADMIN]
     }
-  },
-  decorators: [BackgroundDecorator(BackgroundColor.LIGHT)]
+  }
 }
 
-export const DarkAdmin: Story = {
-  args: {
-    authData: {
-      _id: '1',
-      username: 'Vanya',
-      roles: [UserRole.ADMIN]
-    }
-  },
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    BackgroundDecorator(BackgroundColor.DARK)
-  ]
-}
-
-export const GreenUser: Story = {
+export const User: Story = {
   args: {
     authData: {
       _id: '1',
       username: 'Vanya',
       roles: [UserRole.USER]
     }
-  },
-  decorators: [
-    ThemeDecorator(Theme.GREEN),
-    BackgroundDecorator(BackgroundColor.GREEN)
-  ]
+  }
 }
 
-export const PrimaryAdminWithAvatar: Story = {
+export const AdminWithAvatar: Story = {
   args: {
     authData: {
       _id: '1',
@@ -84,6 +58,5 @@ export const PrimaryAdminWithAvatar: Story = {
       roles: [UserRole.ADMIN],
       avatar
     }
-  },
-  decorators: [BackgroundDecorator(BackgroundColor.LIGHT)]
+  }
 }

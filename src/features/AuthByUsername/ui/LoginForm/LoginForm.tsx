@@ -9,7 +9,7 @@ import { Input } from '@/shared/ui/Input'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 
-import { Text, TextTheme } from '@/shared/ui/Text'
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text'
 
 import {
   DynamicModuleLoader,
@@ -20,13 +20,14 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 
 import { VStack } from '@/shared/ui/Stack'
 
+import { Loader } from '@/shared/ui/Loader'
+
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername'
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading'
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
-
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
 
 import cls from './LoginForm.module.scss'
@@ -91,28 +92,37 @@ const LoginForm = memo((props: LoginFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <VStack className={classNames(cls.LoginForm, {}, [className])} gap="10">
-        <Text title={t('Форма авторизации')} />
+      <VStack
+        className={classNames(cls.LoginForm, {}, [className])}
+        gap="10"
+        align="stretch"
+      >
+        <Text align={TextAlign.CENTER} title={t('Форма авторизации')} />
         {error && <Text text={errorTranslates} theme={TextTheme.ERROR} />}
-        <Input
-          placeholder={t('Пользователь')}
-          onChange={onChangeUsername}
-          value={username}
-          autoFocus={Boolean(!isLoading)}
-        />
-        <Input
-          placeholder={t('Пароль')}
-          value={password}
-          onChange={onChangePassword}
-        />
-        <Button
-          className={cls.formBtn}
-          theme={ButtonTheme.OUTLINE}
-          onClick={onLoginClick}
-          disabled={isLoading}
-        >
-          {t('Войти')}
-        </Button>
+        {!isLoading ? (
+          <>
+            <Input
+              placeholder={t('Пользователь')}
+              onChange={onChangeUsername}
+              value={username}
+              autoFocus={Boolean(!isLoading)}
+            />
+            <Input
+              placeholder={t('Пароль')}
+              value={password}
+              onChange={onChangePassword}
+            />
+            <Button
+              className={cls.formBtn}
+              theme={ButtonTheme.OUTLINE}
+              onClick={onLoginClick}
+            >
+              {t('Войти')}
+            </Button>
+          </>
+        ) : (
+          <Loader className={cls.loader} />
+        )}
       </VStack>
     </DynamicModuleLoader>
   )

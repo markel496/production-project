@@ -1,5 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 
 import { Navbar } from './Navbar'
@@ -16,32 +14,8 @@ const meta: Meta<typeof Navbar> = {
 export default meta
 type Story = StoryObj<typeof Navbar>
 
-export const Light: Story = {
-  decorators: [StoreDecorator({})]
-}
-
-export const Dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})]
-}
-
-export const Green: Story = {
-  decorators: [ThemeDecorator(Theme.GREEN), StoreDecorator({})]
-}
+export const Primary: Story = {}
 
 export const AuthNavbar: Story = {
   decorators: [StoreDecorator({ user: { authData: {} } })]
-}
-
-export const AuthNavbarDark: Story = {
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({ user: { authData: {} } })
-  ]
-}
-
-export const AuthNavbarGreen: Story = {
-  decorators: [
-    ThemeDecorator(Theme.GREEN),
-    StoreDecorator({ user: { authData: {} } })
-  ]
 }

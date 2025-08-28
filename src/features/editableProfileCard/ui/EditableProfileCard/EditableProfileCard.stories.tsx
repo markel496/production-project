@@ -1,5 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
 import { Profile } from '@/entities/Profile'
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
@@ -34,49 +32,21 @@ const profile: Profile = {
   avatar
 }
 
-export const PrimaryOnlyReadonly: Story = {
+export const Primary: Story = {
+  decorators: [
+    StoreDecorator({
+      profile: { initialData: profile, data: profile, readonly: true },
+      user: { authData: { _id: '1' } }
+    })
+  ]
+}
+
+export const Readonly: Story = {
   decorators: [StoreDecorator({ profile: { data: profile, readonly: true } })]
-}
-
-export const Dark: Story = {
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-      profile: { data: profile, initialData: profile, readonly: true },
-      user: { authData: { _id: '1' } }
-    })
-  ]
-}
-
-export const Green: Story = {
-  decorators: [
-    ThemeDecorator(Theme.GREEN),
-    StoreDecorator({
-      profile: { data: profile, initialData: profile, readonly: true },
-      user: { authData: { _id: '1' } }
-    })
-  ]
 }
 
 export const Loading: Story = {
   decorators: [
-    ThemeDecorator(Theme.LIGHT),
-    StoreDecorator({
-      profile: { isLoading: true, readonly: true }
-    })
-  ]
-}
-export const LoadingDark: Story = {
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-      profile: { isLoading: true, readonly: true }
-    })
-  ]
-}
-export const LoadingGreen: Story = {
-  decorators: [
-    ThemeDecorator(Theme.GREEN),
     StoreDecorator({
       profile: { isLoading: true, readonly: true }
     })
@@ -85,7 +55,6 @@ export const LoadingGreen: Story = {
 
 export const WithErrors: Story = {
   decorators: [
-    ThemeDecorator(Theme.DARK),
     StoreDecorator({
       profile: {
         data: {

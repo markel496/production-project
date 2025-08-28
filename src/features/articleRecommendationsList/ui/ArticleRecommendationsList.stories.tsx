@@ -2,8 +2,6 @@ import { mswLoader } from 'msw-storybook-addon'
 
 import { http, HttpResponse, delay } from 'msw'
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
 import { ArticleType } from '@/entities/Article'
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
@@ -53,57 +51,7 @@ export const Primary: Story = {
   }
 }
 
-export const Dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  parameters: {
-    msw: {
-      handlers: [
-        http.get(__API__ + '/articles/1/recommended', () => {
-          return HttpResponse.json(articles)
-        })
-      ]
-    }
-  }
-}
-
-export const Green: Story = {
-  decorators: [ThemeDecorator(Theme.GREEN)],
-  parameters: {
-    msw: {
-      handlers: [
-        http.get(__API__ + '/articles/1/recommended', () => {
-          return HttpResponse.json(articles)
-        })
-      ]
-    }
-  }
-}
-
 export const Loading: Story = {
-  parameters: {
-    msw: {
-      handlers: [
-        http.get(__API__ + '/articles/1/recommended', () => {
-          return delay('infinite')
-        })
-      ]
-    }
-  }
-}
-export const LoadingDark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  parameters: {
-    msw: {
-      handlers: [
-        http.get(__API__ + '/articles/1/recommended', () => {
-          return delay('infinite')
-        })
-      ]
-    }
-  }
-}
-export const LoadingGreen: Story = {
-  decorators: [ThemeDecorator(Theme.GREEN)],
   parameters: {
     msw: {
       handlers: [

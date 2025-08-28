@@ -44,7 +44,7 @@ export const EditableProfileCardHeader = memo(
 
     if (error) {
       return (
-        <div className={cls.ProfilePageHeader}>
+        <div className={cls.EditableProfileCardHeader}>
           <Text title={t('Профиль')} />
         </div>
       )

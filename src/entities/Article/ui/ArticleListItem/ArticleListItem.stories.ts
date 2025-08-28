@@ -1,5 +1,3 @@
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
 import i18n from '@/shared/config/i18n/i18n'
 import avatar from '@/shared/assets/tests/avatar.jpg'
 
@@ -53,55 +51,17 @@ const article: Article = {
 
 const t = i18n.t
 
-export const PrimarySmall: Story = {
+export const Small: Story = {
   args: {
     article,
     view: ArticleView.SMALL
   }
 }
 
-export const PrimaryBig: Story = {
+export const Big: Story = {
   args: {
     article,
     view: ArticleView.BIG,
     t
   }
-}
-
-//===============================================================================================
-
-export const DarkSmall: Story = {
-  args: {
-    article,
-    view: ArticleView.SMALL
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-export const DarkBig: Story = {
-  args: {
-    article,
-    view: ArticleView.BIG,
-    t
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-//===============================================================================================
-
-export const GreenSmall: Story = {
-  args: {
-    article,
-    view: ArticleView.SMALL
-  },
-  decorators: [ThemeDecorator(Theme.GREEN)]
-}
-
-export const GreenBig: Story = {
-  args: {
-    article,
-    view: ArticleView.BIG,
-    t
-  },
-  decorators: [ThemeDecorator(Theme.GREEN)]
 }

@@ -3,43 +3,45 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '@/app/providers/StoreProvider'
 import { Comment } from '@/entities/Comment'
 import { getUserAuthData } from '@/entities/User'
-import { getArticleDetailsData } from '@/entities/Article'
 
-import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId'
+interface AddNewCommentForArticleArgs {
+  comment: string
+  id?: string
+}
 
 export const addNewCommentForArticle = createAsyncThunk<
   Comment,
-  string,
+  AddNewCommentForArticleArgs,
   ThunkConfig<string>
->('articleDetails/addNewComment', async (comment, thunkAPI) => {
-  const { dispatch, extra, rejectWithValue, getState } = thunkAPI
+>(
+  'articleDetails/addNewComment',
+  async ({ comment, id: articleId }, thunkAPI) => {
+    const { extra, rejectWithValue, getState } = thunkAPI
 
-  const articleId = getArticleDetailsData(getState())?._id
-  const userId = getUserAuthData(getState())?._id
+    const userId = getUserAuthData(getState())?._id
 
-  if (!articleId || !userId) {
-    return rejectWithValue('no data')
-  }
-
-  const newComment = {
-    text: comment,
-    user: userId,
-    ref: 'ARTICLE'
-  }
-
-  try {
-    const response = await extra.api.post<Comment>(
-      `/articles/${articleId}/add_comment`,
-      newComment
-    )
-    if (!response.data) {
-      throw new Error()
+    if (!articleId || !userId) {
+      return rejectWithValue('no data')
     }
 
-    dispatch(fetchCommentsByArticleId(articleId))
+    const newComment = {
+      text: comment,
+      user: userId,
+      ref: 'ARTICLE'
+    }
 
-    return response.data
-  } catch (e) {
-    return rejectWithValue(String(e))
+    try {
+      const response = await extra.api.post<Comment>(
+        `/articles/${articleId}/add_comment`,
+        newComment
+      )
+      if (!response.data) {
+        throw new Error()
+      }
+
+      return response.data
+    } catch (e) {
+      return rejectWithValue(String(e))
+    }
   }
-})
+)
