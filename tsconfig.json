@@ -16,7 +16,8 @@
     //Вместо import * as React from 'react' можно import React from 'react'
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true, //можно import export вместо require() module.export (commonjs)
-    "isolatedModules": true
+    "isolatedModules": true,
+    "resolveJsonModule": true
   },
   "ts-node": {
     "compilerOptions": {

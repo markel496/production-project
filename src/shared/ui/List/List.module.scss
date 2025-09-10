@@ -1,0 +1,15 @@
+.List {
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .bullet {
+    color: var(--inverted-secondary-color); // фиолетовый по умолчанию
+    font-weight: bold;
+    min-width: 1em;
+    text-align: center;
+  }
+}

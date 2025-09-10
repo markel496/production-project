@@ -174,6 +174,7 @@ of: функция, которая отработает после ВЫключ�
 - [articleRecommendationsList](/src/features/articleRecommendationsList)
 - [articleSearch](/src/features/articleSearch)
 - [articleSortSelector](/src/features/articleSortSelector)
+- [articlesPageGreeting](/src/features/articlesPageGreeting)
 - [articleTypeTabs](/src/features/articleTypeTabs)
 - [articleViewSelector](/src/features/articleViewSelector)
 - [AuthByUsername](/src/features/AuthByUsername)

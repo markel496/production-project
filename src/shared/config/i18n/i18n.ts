@@ -13,6 +13,18 @@ i18n
     // debug: __IS_DEV__,
     debug: false,
 
+    ns: [
+      'translation',
+      'about',
+      'admin',
+      'articles',
+      'comments',
+      'edit',
+      'main',
+      'profile'
+    ], // 👈 перечисляем доступные namespaces
+    defaultNS: 'translation', // 👈 по умолчанию остаётся translation
+
     interpolation: {
       escapeValue: false // not needed for react as it escapes by default
     }
