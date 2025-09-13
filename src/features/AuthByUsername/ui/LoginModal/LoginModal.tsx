@@ -6,6 +6,7 @@ import { Loader } from '@/shared/ui/Loader'
 
 import { LoginFormAsync } from '../LoginForm/LoginForm.async'
 
+import cls from './LoginModal.module.scss'
 
 interface LoginModalProps {
   className?: string
@@ -17,9 +18,14 @@ export const LoginModal = (props: LoginModalProps) => {
   const { className, isOpen, onClose } = props
 
   return (
-    <Modal className={className} isOpen={isOpen} onClose={onClose}>
+    <Modal
+      className={className}
+      clsContent={cls.loginForm}
+      isOpen={isOpen}
+      onClose={onClose}
+    >
       <Suspense fallback={<Loader />}>
-        <LoginFormAsync onSuccess={onClose} />
+        <LoginFormAsync className={cls.loginForm} onSuccess={onClose} />
       </Suspense>
     </Modal>
   )

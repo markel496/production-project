@@ -109,12 +109,13 @@ export const Rating = memo((props: RatingProps) => {
 
       <BrowserView>
         <Modal
+          clsContent={cls.modalContent}
           isOpen={isModalOpen}
           onClose={cancelHandle}
           closeButtonRef={cancelButtonRef}
           lazy
         >
-          <VStack className={cls.modalContent} gap="32" max>
+          <VStack gap="32" max>
             {modalContent(cls.modal)}
             <HStack justify="end" gap="16" max>
               <Button
@@ -137,7 +138,7 @@ export const Rating = memo((props: RatingProps) => {
 
       <MobileView>
         <Drawer isOpen={isModalOpen} onClose={cancelHandle}>
-          <VStack className={cls.drawerWrapper} gap="20" max align="center">
+          <VStack gap="20" max align="center">
             {modalContent(cls.drawer)}
 
             <Button onClick={acceptHandle} max>

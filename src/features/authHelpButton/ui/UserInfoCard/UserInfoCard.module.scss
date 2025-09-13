@@ -1,0 +1,46 @@
+.user,
+.login,
+.password,
+.no,
+.yes {
+  display: flex;
+  align-items: center;
+
+  &::before {
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+  }
+}
+
+.user {
+  &::before {
+    content: '👤';
+  }
+}
+
+.login {
+  &::before {
+    content: '🔑';
+  }
+}
+
+.password {
+  &::before {
+    content: '🔒';
+  }
+}
+
+.no {
+  &::before {
+    content: '🚫';
+  }
+}
+
+.yes {
+  &::before {
+    content: '✅';
+  }
+}

@@ -13,18 +13,24 @@
 }
 
 .content {
+  max-height: 80vh; // ограничиваем высоту окна
   min-width: var(--modal-min-width);
-  max-width: var(--modal-max-width);
   width: 100%;
   margin: 0 20px;
-  padding: 20px;
   border-radius: 12px;
+  overflow: hidden; // чтобы border-radius обрезал всё внутри
   background-color: var(--bg-color);
   transform: scale(0.5);
   opacity: 0;
   transition:
     opacity 0.3s,
     transform 0.3s;
+}
+
+.scrollArea {
+  max-height: inherit;
+  overflow-y: auto;
+  padding: 20px; // переносим сюда отступы
 }
 
 .opened {

@@ -28,7 +28,7 @@ const AboutPage = () => {
         <List list={backendSkills} bullet="✔" />
       </VStack>
 
-      <VStack className={cls.skills} gap="16">
+      <VStack gap="16">
         <Text title={t.skills_title} size={TextSize.L} />
         <List list={generalSkills} bullet="➤" />
       </VStack>

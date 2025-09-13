@@ -1,3 +1,13 @@
 {
-  "Главная страница": "Main page"
+  "Главная страница": "Main page",
+  "Данные для авторизации": "Authorisation details",
+  "В проекте использую feature flags и храню пользовательские настройки (например, тему) в базе данных.": "In the project, I use feature flags and store user settings (e.g., theme) in the database.",
+  "Логин": "Login",
+  "Пароль": "Password",
+  "На главной странице отсутствует компонент счетчика": "The counter component is missing on the main page",
+  "Нельзя оценить статью": "The user cannot rate the article",
+  "Нет админ панели": "No admin panel",
+  "На главной странице есть компонент счетчика": "The counter component is on the main page",
+  "Есть возможность оценки статьи": "The user can rate the article",
+  "Есть админ панель": "The admin panel exists"
 }

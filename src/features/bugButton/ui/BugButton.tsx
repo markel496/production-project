@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import { Button } from '@/shared/ui/Button'
 
-export const BugButton = () => {
+export const BugButton = ({ className }: { className?: string }) => {
   const [error, setError] = useState(false)
   const { t } = useTranslation()
 
@@ -13,5 +13,9 @@ export const BugButton = () => {
     }
   }, [error])
 
-  return <Button onClick={() => setError(true)}>{t('ОШИБКА')}</Button>
+  return (
+    <Button className={className} onClick={() => setError(true)}>
+      {t('ОШИБКА')}
+    </Button>
+  )
 }

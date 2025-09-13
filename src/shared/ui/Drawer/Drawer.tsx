@@ -20,13 +20,14 @@ interface DrawerProps {
   isOpen?: boolean
   onClose?: () => void
   lazy?: boolean
+  clsContent?: string
 }
 
 const ANIMATION_DELAY = 300
-const height = window.innerHeight - 100
+const height = typeof window !== 'undefined' ? window.innerHeight - 100 : 600
 
 const DrawerContent = (props: DrawerProps) => {
-  const { className, children, isOpen, onClose, lazy } = props
+  const { className, children, isOpen, onClose, lazy, clsContent } = props
 
   const { Gesture, Spring } = useAnimationLibs()
 
@@ -88,7 +89,7 @@ const DrawerContent = (props: DrawerProps) => {
 
   if (lazy && !isMounted) return null
 
-  const display = y.to((py) => (py < height ? 'block' : 'none'))
+  const display = y.to((py) => (py < height ? 'flex' : 'none'))
 
   return (
     <Portal>
@@ -101,11 +102,11 @@ const DrawerContent = (props: DrawerProps) => {
       >
         <Overlay onClick={closeHandler} />
         <Spring.a.div
-          className={cls.sheet}
-          style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}
+          className={classNames(cls.sheet, {}, [clsContent])}
+          style={{ display, bottom: 0, y }}
           {...bind()}
         >
-          {children}
+          <div className={cls.scrollArea}>{children}</div>
         </Spring.a.div>
       </div>
     </Portal>

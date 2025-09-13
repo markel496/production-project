@@ -2,8 +2,6 @@ import { ReactNode } from 'react'
 
 import { List } from '@/shared/ui/List'
 
-import cls from '../../ui/AboutPage.module.scss'
-
 import { useAboutTextTranslate } from './useAboutTextTranslate'
 
 export function useAboutPageData() {
@@ -24,12 +22,7 @@ export function useAboutPageData() {
     t.frontend_optimisation,
     t.frontend_ci_cd,
     t.frontend_testing,
-    <List
-      className={cls.testing}
-      key="testing"
-      list={testingWork}
-      bullet="▪"
-    />,
+    <List key="testing" list={testingWork} bullet="▪" />,
     t.frontend_error_boundary,
     t.frontend_feature_flags,
     t.frontend_react_migration

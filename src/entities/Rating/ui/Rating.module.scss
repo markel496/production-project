@@ -1,9 +1,6 @@
 .modalContent {
   min-width: 450px;
-}
-
-.drawerWrapper {
-  height: 100%;
+  max-width: 800px;
 }
 
 .textarea {
@@ -30,7 +27,7 @@
   }
 
   &.drawer {
-    height: calc(100vh - 40%);
+    height: 30vh;
     resize: none;
   }
 }
